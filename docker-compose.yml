@@ -1,0 +1,62 @@
+# version: "3"
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-uikit
+    ports:
+      - "8085:80"
+    restart: always
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - .:/var/www/html/uikit
+    depends_on:
+      - php
+    networks:
+      - uikit_network
+  php:
+#    image: php:8.2-fpm
+    build:
+      context: ./
+      dockerfile: ./php/Dockerfile
+    tty: true
+    working_dir: /var/www/html/uikit
+    container_name: php-uikit
+    environment:
+      PHP_IDE_CONFIG: serverName=homesstaging.ru
+    volumes:
+      - ./:/var/www/html/uikit
+#    command:
+#      - php /bin/test_run.php
+#      - php /var/www/html/homes_staging/bin/test_run.php
+#      - php /bin/registration.php
+    networks:
+      - uikit_network
+
+networks:
+  uikit_network:
+    driver: bridge
+
+#  php:
+#    image: php:8.2-fpm
+#    container_name: php-hst
+#    working_dir: /var/www/html/homes_staging
+#    volumes:
+#      - .:/var/www/html/homes_staging
+#    environment:
+#     PHP_IDE_CONFIG: serverName=homesstaging
+#    networks:
+#      - app_network
+
+#  app:
+#    build:
+#      context: ./
+#    tty: true
+#    working_dir: /app
+#    container_name: php-hs
+#    volumes:
+#      - ./:/app
+#    networks:
+#      - app_network

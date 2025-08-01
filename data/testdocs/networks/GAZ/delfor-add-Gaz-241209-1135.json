@@ -1,0 +1,1511 @@
+{
+    "comment": "delforNew1245078Gaz",
+    "metaData": {
+        "header": {
+            "name": "header",
+            "label": "",
+            "dataType": "section"
+        },
+        "title": {
+            "name": "title",
+            "label": "ГРАФИК ПОСТАВКИ",
+            "dataType": "section",
+            "attributes": {
+                "class": "title"
+            },
+            "style": {
+                "justifySelf": "start",
+                "textAlign": "center",
+                "display": "flex"
+            }
+        },
+        "title2": {
+            "name": "title2",
+            "label": "",
+            "dataType": "section"
+        },
+        "title3": {
+            "name": "title3",
+            "label": "Схема Delfor-Desadv",
+            "dataType": "section"
+        },
+        "customBlock": {
+            "name": "customBlock",
+            "label": "",
+            "dataType": "section"
+        }
+    },
+    "data": {
+        "id": null,
+        "status": "0",
+        "docType": "DELFOR",
+        "parentId": "1245078",
+        "buyerId": "1852",
+        "parentDocType": "DELFOR",
+        "buyerToken": "GAZ",
+        "docDate": "2024-12-09T00:00:00",
+        "docNumber": "1063814_0757_c_120435",
+        "delivDate": null,
+        "location": null,
+        "itemsCount": "11",
+        "senderCode": null,
+        "options__Func": "2",
+        "options__ContractNumber": "ДС07/0261/003/21 от 11 октября 2021 г.",
+        "options__Performer": "Самарина Маргарита Владимировна",
+        "options__DeliveryPeriodPrediction": "2024-01-01/2024-03-01",
+        "options__DateFormat": "D",
+        "options__DateFormatPrediction": "M",
+        "canAccept": true,
+        "history": [
+            {
+                "id": 1245079,
+                "docNumber": "1063814_0757_c_125105",
+                "docDate": "2023-12-25T12:51:05.14",
+                "senderName": "Тестовый поставщик ГАЗ",
+                "status": "коррекция"
+            },
+            {
+                "id": 1245081,
+                "docNumber": "1063814_0757_c_143944",
+                "docDate": "2023-12-25T14:39:44.027",
+                "senderName": "Автомобильный завод \"ГАЗ\"",
+                "status": "коррекция"
+            },
+            {
+                "id": 1245084,
+                "docNumber": "1063814_0757_c_173745",
+                "docDate": "2023-12-25T17:37:45.21",
+                "senderName": "Тестовый поставщик ГАЗ",
+                "status": "коррекция"
+            },
+            {
+                "id": 1245085,
+                "docNumber": "1063814_0757_c_175114",
+                "docDate": "2023-12-25T17:51:14.95",
+                "senderName": "Автомобильный завод \"ГАЗ\"",
+                "status": "коррекция"
+            },
+            {
+                "id": 1248361,
+                "docNumber": "1063814_0757_c_060809",
+                "docDate": "2024-12-09T00:00:00",
+                "senderName": "Тестовый поставщик ГАЗ",
+                "status": "коррекция(черновик)"
+            }
+        ],
+        "qtyOptionSums": {
+            "qtyOfShipmentDate_2023-12-31": 517,
+            "qtyOfShipmentDateCorr_2023-12-31": 417,
+            "QuantityTo": 0,
+            "QuantityAfter": 517,
+            "Prediction1": 0,
+            "Prediction2": 0,
+            "qtyAll": 517,
+            "qtyAllCorrect": 417
+        },
+        "itemsCountSimple": "11",
+        "tabVisibility": {
+            "tabGroupOfArrival": false,
+            "tabGroupOfShipment": true,
+            "tabGroupOfArrivalCorr": false,
+            "tabGroupOfShipmentCorr": true
+        },
+        "senderRole": "2",
+        "recvCode": null,
+        "delivType": "2023-12-01/2024-01-01",
+        "locationGln": null,
+        "locationDscr": null,
+        "locationAddr": null,
+        "supplierId": "1877",
+        "supplierName": "Тестовый поставщик ГАЗ",
+        "supplierYurAddr": "Тестовый адресс",
+        "supplierGln": "3528090760",
+        "supplierCode": null,
+        "buyerName": "Автомобильный завод \"ГАЗ\"",
+        "buyerYurAddr": "Тест Юр. Адрес Автомобильный завод \"ГАЗ\"",
+        "buyerGln": "5250018433",
+        "curr": null,
+        "comment": null,
+        "fmt": "XML",
+        "paymType": null,
+        "schemeType": "21",
+        "docLinkUpdUrl": null,
+        "clientStatus": "1",
+        "totalQty": "0",
+        "logo": null
+    },
+    "docItems": [
+        {
+            "id": 18159079,
+            "parentId": null,
+            "sequenceNumber": 1,
+            "ean": null,
+            "local": null,
+            "prdTo": "020040000399327",
+            "prdDscr": "Пластина сменная MGMN 600 M MK371 Microbor",
+            "prd3": null,
+            "uom": "PCE",
+            "orderQty": null,
+            "orderUom": null,
+            "totalDesAdvQty": 0,
+            "qty": null,
+            "itemsPerUnit": null,
+            "price1": null,
+            "vatPrc": null,
+            "price2": null,
+            "originCountry": null,
+            "custDeclar": null,
+            "priceType": null,
+            "options": [
+                {
+                    "name": "Code_okv",
+                    "value": ""
+                },
+                {
+                    "name": "Prediction1",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "Prediction2",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "ShipmentDate1",
+                    "value": "2024-02-01"
+                },
+                {
+                    "name": "ShipmentDate2",
+                    "value": "2024-01-01"
+                },
+                {
+                    "name": "QuantityTo",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "QuantityAfter",
+                    "value": "50.0000"
+                },
+                {
+                    "name": "DP_GLN",
+                    "value": "98435_"
+                },
+                {
+                    "name": "DP_NAME",
+                    "value": "Нижегородские Автокомпоненты"
+                },
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "50.0000"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "optionsCorrection": [
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "5"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "qtyAll": 50,
+            "qtyAllCorrection": 5
+        },
+        {
+            "id": 18159080,
+            "parentId": null,
+            "sequenceNumber": 2,
+            "ean": null,
+            "local": null,
+            "prdTo": "40300004479",
+            "prdDscr": "Пластина сменная RNGN 090300 T01025N-S000 MBR7010M Microbor",
+            "prd3": null,
+            "uom": "PCE",
+            "orderQty": null,
+            "orderUom": null,
+            "totalDesAdvQty": 0,
+            "qty": null,
+            "itemsPerUnit": null,
+            "price1": null,
+            "vatPrc": null,
+            "price2": null,
+            "originCountry": null,
+            "custDeclar": null,
+            "priceType": null,
+            "options": [
+                {
+                    "name": "Code_okv",
+                    "value": ""
+                },
+                {
+                    "name": "Prediction1",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "Prediction2",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "ShipmentDate1",
+                    "value": "2024-02-01"
+                },
+                {
+                    "name": "ShipmentDate2",
+                    "value": "2024-01-01"
+                },
+                {
+                    "name": "QuantityTo",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "QuantityAfter",
+                    "value": "27.0000"
+                },
+                {
+                    "name": "DP_GLN",
+                    "value": "98435_"
+                },
+                {
+                    "name": "DP_NAME",
+                    "value": "Нижегородские Автокомпоненты"
+                },
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "27.0000"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "optionsCorrection": [
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "27"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "qtyAll": 27,
+            "qtyAllCorrection": 27
+        },
+        {
+            "id": 18159081,
+            "parentId": null,
+            "sequenceNumber": 3,
+            "ean": null,
+            "local": null,
+            "prdTo": "40300006195",
+            "prdDscr": "Пластина сменная SNGX 120716 T02020N-S000 M6025S Microbor",
+            "prd3": null,
+            "uom": "PCE",
+            "orderQty": null,
+            "orderUom": null,
+            "totalDesAdvQty": 0,
+            "qty": null,
+            "itemsPerUnit": null,
+            "price1": null,
+            "vatPrc": null,
+            "price2": null,
+            "originCountry": null,
+            "custDeclar": null,
+            "priceType": null,
+            "options": [
+                {
+                    "name": "Code_okv",
+                    "value": ""
+                },
+                {
+                    "name": "Prediction1",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "Prediction2",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "ShipmentDate1",
+                    "value": "2024-02-01"
+                },
+                {
+                    "name": "ShipmentDate2",
+                    "value": "2024-01-01"
+                },
+                {
+                    "name": "QuantityTo",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "QuantityAfter",
+                    "value": "60.0000"
+                },
+                {
+                    "name": "DP_GLN",
+                    "value": "98435_"
+                },
+                {
+                    "name": "DP_NAME",
+                    "value": "Нижегородские Автокомпоненты"
+                },
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "60.0000"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "optionsCorrection": [
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "5"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "qtyAll": 60,
+            "qtyAllCorrection": 5
+        },
+        {
+            "id": 18159082,
+            "parentId": null,
+            "sequenceNumber": 4,
+            "ean": null,
+            "local": null,
+            "prdTo": "40300006196",
+            "prdDscr": "Пластина сменная SCGN 090408 T01020-S000 MBR7010M Microbor",
+            "prd3": null,
+            "uom": "PCE",
+            "orderQty": null,
+            "orderUom": null,
+            "totalDesAdvQty": 0,
+            "qty": null,
+            "itemsPerUnit": null,
+            "price1": null,
+            "vatPrc": null,
+            "price2": null,
+            "originCountry": null,
+            "custDeclar": null,
+            "priceType": null,
+            "options": [
+                {
+                    "name": "Code_okv",
+                    "value": ""
+                },
+                {
+                    "name": "Prediction1",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "Prediction2",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "ShipmentDate1",
+                    "value": "2024-02-01"
+                },
+                {
+                    "name": "ShipmentDate2",
+                    "value": "2024-01-01"
+                },
+                {
+                    "name": "QuantityTo",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "QuantityAfter",
+                    "value": "30.0000"
+                },
+                {
+                    "name": "DP_GLN",
+                    "value": "98435_"
+                },
+                {
+                    "name": "DP_NAME",
+                    "value": "Нижегородские Автокомпоненты"
+                },
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "30.0000"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "optionsCorrection": [
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "30"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "qtyAll": 30,
+            "qtyAllCorrection": 30
+        },
+        {
+            "id": 18159083,
+            "parentId": null,
+            "sequenceNumber": 5,
+            "ean": null,
+            "local": null,
+            "prdTo": "40300006198",
+            "prdDscr": "Пластина сменная CNGN 120416 T02025-S000 MBR7010M Microbor",
+            "prd3": null,
+            "uom": "PCE",
+            "orderQty": null,
+            "orderUom": null,
+            "totalDesAdvQty": 0,
+            "qty": null,
+            "itemsPerUnit": null,
+            "price1": null,
+            "vatPrc": null,
+            "price2": null,
+            "originCountry": null,
+            "custDeclar": null,
+            "priceType": null,
+            "options": [
+                {
+                    "name": "Code_okv",
+                    "value": ""
+                },
+                {
+                    "name": "Prediction1",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "Prediction2",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "ShipmentDate1",
+                    "value": "2024-02-01"
+                },
+                {
+                    "name": "ShipmentDate2",
+                    "value": "2024-01-01"
+                },
+                {
+                    "name": "QuantityTo",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "QuantityAfter",
+                    "value": "60.0000"
+                },
+                {
+                    "name": "DP_GLN",
+                    "value": "98435_"
+                },
+                {
+                    "name": "DP_NAME",
+                    "value": "Нижегородские Автокомпоненты"
+                },
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "60.0000"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "optionsCorrection": [
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "60"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "qtyAll": 60,
+            "qtyAllCorrection": 60
+        },
+        {
+            "id": 18159084,
+            "parentId": null,
+            "sequenceNumber": 6,
+            "ean": null,
+            "local": null,
+            "prdTo": "40300006405",
+            "prdDscr": "Пластина сменная CNMG 120412 XR MK6020 Microbor",
+            "prd3": null,
+            "uom": "PCE",
+            "orderQty": null,
+            "orderUom": null,
+            "totalDesAdvQty": 0,
+            "qty": null,
+            "itemsPerUnit": null,
+            "price1": null,
+            "vatPrc": null,
+            "price2": null,
+            "originCountry": null,
+            "custDeclar": null,
+            "priceType": null,
+            "options": [
+                {
+                    "name": "Code_okv",
+                    "value": ""
+                },
+                {
+                    "name": "Prediction1",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "Prediction2",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "ShipmentDate1",
+                    "value": "2024-02-01"
+                },
+                {
+                    "name": "ShipmentDate2",
+                    "value": "2024-01-01"
+                },
+                {
+                    "name": "QuantityTo",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "QuantityAfter",
+                    "value": "200.0000"
+                },
+                {
+                    "name": "DP_GLN",
+                    "value": "98435_"
+                },
+                {
+                    "name": "DP_NAME",
+                    "value": "Нижегородские Автокомпоненты"
+                },
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "200.0000"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "optionsCorrection": [
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "200"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "qtyAll": 200,
+            "qtyAllCorrection": 200
+        },
+        {
+            "id": 18159085,
+            "parentId": null,
+            "sequenceNumber": 7,
+            "ean": null,
+            "local": null,
+            "prdTo": "59100132268",
+            "prdDscr": "Пластина опорная для токарной державки AAVN-2-0002 Microbor",
+            "prd3": null,
+            "uom": "PCE",
+            "orderQty": null,
+            "orderUom": null,
+            "totalDesAdvQty": 0,
+            "qty": null,
+            "itemsPerUnit": null,
+            "price1": null,
+            "vatPrc": null,
+            "price2": null,
+            "originCountry": null,
+            "custDeclar": null,
+            "priceType": null,
+            "options": [
+                {
+                    "name": "Code_okv",
+                    "value": ""
+                },
+                {
+                    "name": "Prediction1",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "Prediction2",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "ShipmentDate1",
+                    "value": "2024-02-01"
+                },
+                {
+                    "name": "ShipmentDate2",
+                    "value": "2024-01-01"
+                },
+                {
+                    "name": "QuantityTo",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "QuantityAfter",
+                    "value": "20.0000"
+                },
+                {
+                    "name": "DP_GLN",
+                    "value": "98435_"
+                },
+                {
+                    "name": "DP_NAME",
+                    "value": "Нижегородские Автокомпоненты"
+                },
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "20.0000"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "optionsCorrection": [
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "20"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "qtyAll": 20,
+            "qtyAllCorrection": 20
+        },
+        {
+            "id": 18159086,
+            "parentId": null,
+            "sequenceNumber": 8,
+            "ean": null,
+            "local": null,
+            "prdTo": "59100132269",
+            "prdDscr": "Прижим пластины ATK-03 Microbor",
+            "prd3": null,
+            "uom": "PCE",
+            "orderQty": null,
+            "orderUom": null,
+            "totalDesAdvQty": 0,
+            "qty": null,
+            "itemsPerUnit": null,
+            "price1": null,
+            "vatPrc": null,
+            "price2": null,
+            "originCountry": null,
+            "custDeclar": null,
+            "priceType": null,
+            "options": [
+                {
+                    "name": "Code_okv",
+                    "value": ""
+                },
+                {
+                    "name": "Prediction1",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "Prediction2",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "ShipmentDate1",
+                    "value": "2024-02-01"
+                },
+                {
+                    "name": "ShipmentDate2",
+                    "value": "2024-01-01"
+                },
+                {
+                    "name": "QuantityTo",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "QuantityAfter",
+                    "value": "20.0000"
+                },
+                {
+                    "name": "DP_GLN",
+                    "value": "98435_"
+                },
+                {
+                    "name": "DP_NAME",
+                    "value": "Нижегородские Автокомпоненты"
+                },
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "20.0000"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "optionsCorrection": [
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "20"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "qtyAll": 20,
+            "qtyAllCorrection": 20
+        },
+        {
+            "id": 18159087,
+            "parentId": null,
+            "sequenceNumber": 9,
+            "ean": null,
+            "local": null,
+            "prdTo": "59100132270",
+            "prdDscr": "Винт опорной пластины AAV-04-M5x12 Microbor",
+            "prd3": null,
+            "uom": "PCE",
+            "orderQty": null,
+            "orderUom": null,
+            "totalDesAdvQty": 0,
+            "qty": null,
+            "itemsPerUnit": null,
+            "price1": null,
+            "vatPrc": null,
+            "price2": null,
+            "originCountry": null,
+            "custDeclar": null,
+            "priceType": null,
+            "options": [
+                {
+                    "name": "Code_okv",
+                    "value": ""
+                },
+                {
+                    "name": "Prediction1",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "Prediction2",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "ShipmentDate1",
+                    "value": "2024-02-01"
+                },
+                {
+                    "name": "ShipmentDate2",
+                    "value": "2024-01-01"
+                },
+                {
+                    "name": "QuantityTo",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "QuantityAfter",
+                    "value": "20.0000"
+                },
+                {
+                    "name": "DP_GLN",
+                    "value": "98435_"
+                },
+                {
+                    "name": "DP_NAME",
+                    "value": "Нижегородские Автокомпоненты"
+                },
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "20.0000"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "optionsCorrection": [
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "20"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "qtyAll": 20,
+            "qtyAllCorrection": 20
+        },
+        {
+            "id": 18159088,
+            "parentId": null,
+            "sequenceNumber": 10,
+            "ean": null,
+            "local": null,
+            "prdTo": "59100132271",
+            "prdDscr": "Винт крепежный AKV-30-M6x22 Microbor",
+            "prd3": null,
+            "uom": "PCE",
+            "orderQty": null,
+            "orderUom": null,
+            "totalDesAdvQty": 0,
+            "qty": null,
+            "itemsPerUnit": null,
+            "price1": null,
+            "vatPrc": null,
+            "price2": null,
+            "originCountry": null,
+            "custDeclar": null,
+            "priceType": null,
+            "options": [
+                {
+                    "name": "Code_okv",
+                    "value": ""
+                },
+                {
+                    "name": "Prediction1",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "Prediction2",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "ShipmentDate1",
+                    "value": "2024-02-01"
+                },
+                {
+                    "name": "ShipmentDate2",
+                    "value": "2024-01-01"
+                },
+                {
+                    "name": "QuantityTo",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "QuantityAfter",
+                    "value": "20.0000"
+                },
+                {
+                    "name": "DP_GLN",
+                    "value": "98435_"
+                },
+                {
+                    "name": "DP_NAME",
+                    "value": "Нижегородские Автокомпоненты"
+                },
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "20.0000"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "optionsCorrection": [
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "20"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "qtyAll": 20,
+            "qtyAllCorrection": 20
+        },
+        {
+            "id": 18159089,
+            "parentId": null,
+            "sequenceNumber": 11,
+            "ean": null,
+            "local": null,
+            "prdTo": "59100132272",
+            "prdDscr": "Кольцо стопорное AS-01 Microbor",
+            "prd3": null,
+            "uom": "PCE",
+            "orderQty": null,
+            "orderUom": null,
+            "totalDesAdvQty": 0,
+            "qty": null,
+            "itemsPerUnit": null,
+            "price1": null,
+            "vatPrc": null,
+            "price2": null,
+            "originCountry": null,
+            "custDeclar": null,
+            "priceType": null,
+            "options": [
+                {
+                    "name": "Code_okv",
+                    "value": ""
+                },
+                {
+                    "name": "Prediction1",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "Prediction2",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "ShipmentDate1",
+                    "value": "2024-02-01"
+                },
+                {
+                    "name": "ShipmentDate2",
+                    "value": "2024-01-01"
+                },
+                {
+                    "name": "QuantityTo",
+                    "value": "0.0000"
+                },
+                {
+                    "name": "QuantityAfter",
+                    "value": "10.0000"
+                },
+                {
+                    "name": "DP_GLN",
+                    "value": "98435_"
+                },
+                {
+                    "name": "DP_NAME",
+                    "value": "Нижегородские Автокомпоненты"
+                },
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "10.0000"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "optionsCorrection": [
+                {
+                    "name": "QTYOption",
+                    "value": null,
+                    "options": [
+                        {
+                            "name": "QTY",
+                            "value": "10"
+                        },
+                        {
+                            "name": "ShipmentDate",
+                            "value": "2023-12-31"
+                        },
+                        {
+                            "name": "ArrivalDate",
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "qtyAll": 10,
+            "qtyAllCorrection": 10
+        }
+    ],
+    "catalogs": {
+        "uom": {
+            "-": "Килограмм пероксида водорода",
+            "10 ШТ.": "10 штук",
+            "CEN": "Сто штук",
+            "CMT": "СМ",
+            "CT": "КАРТ.КОР",
+            "KGM": "КГ",
+            "KPO": "Килограмм оксида калия",
+            "KSD": "Килограмм 90%-го сухого вещества",
+            "LEF": "ЛИСТ",
+            "LTR": "Л",
+            "MIL": "ТЫС ШТ",
+            "MLT": "МЛ",
+            "MTK": "М2",
+            "MTR": "М",
+            "NMP": "УПАК",
+            "NPL": "РУЛ",
+            "NPR": "ПАР",
+            "PCE": "Штука",
+            "PF": "ПАЛЛЕТ",
+            "POG": "ПОГ М",
+            "TNE": "Т",
+            "БЛОК": "БЛОК",
+            "КГ УСЛ ТОП/КГ": "Килограмм условного топлива на килограмм",
+            "КОМПЛ": "Комплект",
+            "КОР": "КОРОБКА",
+            "ПАЧ": "ПАЧКА",
+            "ШТ/1000 ШТ": "Штук на 1000 штук"
+        },
+        "taxes": {},
+        "country": {
+            "keyNull": " ",
+            "AD": "Андорра",
+            "AE": "Объединенные Арабские Эмираты",
+            "AF": "Афганистан",
+            "AG": "Антигуа и Барбуда",
+            "AI": "Ангилья о. (GB)",
+            "AL": "Албания",
+            "AM": "Армения",
+            "AN": "Антильские о-ва (NL)",
+            "AO": "Ангола",
+            "AQ": "Антарктика",
+            "AR": "Аргентина",
+            "AS": "Восточное Самоа (US)",
+            "AT": "Австрия",
+            "AU": "Австралия",
+            "AW": "Аруба",
+            "AZ": "Азербайджан",
+            "BA": "Босния и Герцеговина",
+            "BB": "Барбадос",
+            "BD": "Бангладеш",
+            "BE": "Бельгия",
+            "BF": "Буркина-Фасо",
+            "BG": "Болгария",
+            "BH": "Бахрейн",
+            "BI": "Бурунди",
+            "BJ": "Бенин",
+            "BM": "Бермуды",
+            "BN": "Бруней Дарассалам",
+            "BO": "Боливия",
+            "BR": "Бразилия",
+            "BS": "Багамы",
+            "BT": "Бутан",
+            "BV": "Бове о. (NO)",
+            "BW": "Ботсвана",
+            "BY": "Беларусь",
+            "BZ": "Белиз",
+            "CA": "Канада",
+            "CC": "Кокосовые (Киилинг) о-ва (AU)",
+            "CD": "Демократическая Республика Конго",
+            "CF": "Центрально-африканская Республика",
+            "CG": "Конго",
+            "CH": "Швейцария",
+            "CI": "Кот-д'Ивуар",
+            "CK": "Кука о-ва (NZ)",
+            "CL": "Чили",
+            "CM": "Камерун",
+            "CN": "Китай",
+            "CO": "Колумбия",
+            "CR": "Коста-Рика",
+            "CU": "Куба",
+            "CV": "Кабо-Верде",
+            "CX": "Рождества о. (AU)",
+            "CY": "Кипр",
+            "CZ": "Чехия",
+            "DE": "Германия",
+            "DJ": "Джибути",
+            "DK": "Дания",
+            "DM": "Доминика",
+            "DO": "Доминиканская Республика",
+            "DZ": "Алжир",
+            "EC": "Эквадор",
+            "EE": "Эстония",
+            "EG": "Египет",
+            "EH": "Западная Сахара",
+            "ER": "Эритрия",
+            "ES": "Испания",
+            "ET": "Эфиопия",
+            "FI": "Финляндия",
+            "FJ": "Фиджи",
+            "FK": "Фолклендские (Мальвинские) о-ва (GB/AR)",
+            "FM": "Микронезия (US)",
+            "FO": "Фарерские о-ва (DK)",
+            "FR": "Франция",
+            "GA": "Габон",
+            "GB": "Великобритания",
+            "GD": "Гренада",
+            "GE": "Грузия",
+            "GF": "Французская Гвиана (FR)",
+            "GH": "Гана",
+            "GI": "Гибралтар",
+            "GL": "Гренландия (DK)",
+            "GM": "Гамбия",
+            "GN": "Гвинея",
+            "GP": "Гваделупа",
+            "GQ": "Экваториальная Гвинея",
+            "GR": "Греция",
+            "GS": "Южная Георгия и Южные Сандвичевы о-ва",
+            "GT": "Гватемала",
+            "GU": "Гуам",
+            "GW": "Гвинея-Бисау",
+            "GY": "Гайана",
+            "HK": "Гонконг (CN)",
+            "HM": "Херд и Макдональд о-ва (AU)",
+            "HN": "Гондурас",
+            "HR": "Хорватия",
+            "HT": "Гаити",
+            "HU": "Венгрия",
+            "ID": "Индонезия",
+            "IE": "Ирландия",
+            "IL": "Израиль",
+            "IN": "Индия",
+            "IQ": "Ирак",
+            "IR": "Иран",
+            "IS": "Исландия",
+            "IT": "Италия",
+            "JM": "Ямайка",
+            "JO": "Иордания",
+            "JP": "Япония",
+            "KE": "Кения",
+            "KG": "Киргизстан",
+            "KH": "Камбоджа",
+            "KI": "Кирибати",
+            "KM": "Коморские о-ва",
+            "KN": "Сент-Кристофер и Невис",
+            "KP": "Северная Корея (КНДР)",
+            "KR": "Южная Корея (Республика Корея)",
+            "KW": "Кувейт",
+            "KY": "Каймановы о-ва (GB)",
+            "KZ": "Казахстан",
+            "LA": "Лаос",
+            "LB": "Ливан",
+            "LC": "Сент-Люсия",
+            "LI": "Лихтенштейн",
+            "LK": "Шри-Ланка",
+            "LR": "Либерия",
+            "LS": "Лесото",
+            "LT": "Литва",
+            "LU": "Люксембург",
+            "LV": "Латвия",
+            "LY": "Ливия",
+            "MA": "Марокко",
+            "MC": "Монако",
+            "MD": "Молдова",
+            "MG": "Мадагаскар",
+            "MH": "Маршалловы о-ва",
+            "MK": "Македония",
+            "ML": "Мали",
+            "MM": "Мьянма",
+            "MN": "Монголия",
+            "MO": "Макао (PT)",
+            "MP": "Северные Марианские о-ва (US)",
+            "MQ": "Мартиника",
+            "MR": "Мавритания",
+            "MS": "Монсеррат о. (GB)",
+            "MT": "Мальта",
+            "MU": "Маврикий",
+            "MV": "Мальдивы",
+            "MW": "Малави",
+            "MX": "Мексика",
+            "MY": "Малайзия",
+            "MZ": "Мозамбик",
+            "NA": "Намибия",
+            "NC": "Новая Каледония о. (FR)",
+            "NE": "Нигер",
+            "NF": "Норфолк о. (AU)",
+            "NG": "Нигерия",
+            "NI": "Никарагуа",
+            "NL": "Нидерланды",
+            "NO": "Норвегия",
+            "NP": "Непал",
+            "NR": "Науру",
+            "NU": "Ниуэ о. (NZ)",
+            "NZ": "Новая Зеландия",
+            "OM": "Оман",
+            "PA": "Панама",
+            "PE": "Перу",
+            "PF": "Французская Полинезия",
+            "PG": "Папуа-Новая Гвинея",
+            "PH": "Филиппины",
+            "PK": "Пакистан",
+            "PL": "Польша",
+            "PM": "Сен-Пьер и Микелон (FR)",
+            "PN": "Питкэрн о-ва (GB)",
+            "PR": "Пуэрто-Рико (US)",
+            "PS": "Палестинская автономия",
+            "PT": "Португалия",
+            "PW": "Палау (US)",
+            "PY": "Парагвай",
+            "QA": "Катар",
+            "RE": "Реюньон о. (FR)",
+            "RO": "Румыния",
+            "RS": "Сербия",
+            "RU": "Россия",
+            "RW": "Руанда",
+            "SA": "Саудовская Аравия",
+            "SB": "Соломоновы о-ва",
+            "SC": "Сейшелы",
+            "SD": "Судан",
+            "SE": "Швеция",
+            "SG": "Сингапур",
+            "SH": "Святой Елены о. (GB)",
+            "SI": "Словения",
+            "SJ": "Свалбард и Ян Мейен о-ва (NO)",
+            "SK": "Словакия",
+            "SL": "Сьерра-Леоне",
+            "SM": "Сан Марино",
+            "SN": "Сенегал",
+            "SO": "Сомали",
+            "SR": "Суринам",
+            "ST": "Сан-Томе и Принсипи",
+            "SV": "Сальвадор",
+            "SY": "Сирия",
+            "SZ": "Свазиленд",
+            "TC": "Теркс и Кайкос о-ва (GB)",
+            "TD": "Чад",
+            "TG": "Того",
+            "TH": "Таиланд",
+            "TJ": "Таджикистан",
+            "TK": "Токелау о-ва (NZ)",
+            "TM": "Туркменистан",
+            "TN": "Тунис",
+            "TO": "Тонга",
+            "TP": "Восточный Тимор",
+            "TR": "Турция",
+            "TT": "Тринидад и Тобаго",
+            "TV": "Тувалу",
+            "TW": "Тайвань",
+            "TZ": "Танзания",
+            "UA": "Украина",
+            "UG": "Уганда",
+            "US": "Соединенные Штаты Америки",
+            "UY": "Уругвай",
+            "UZ": "Узбекистан",
+            "VA": "Ватикан",
+            "VC": "Сен-Винсент и Гренадины",
+            "VE": "Венесуэла",
+            "VG": "Виргинские о-ва (GB)",
+            "VI": "Виргинские о-ва (US)",
+            "VN": "Вьетнам",
+            "VU": "Вануату",
+            "WF": "Уоллис и Футуна о-ва (FR)",
+            "WS": "Самоа",
+            "YE": "Йемен",
+            "YT": "Майотта о. (KM)",
+            "YU": "Югославия",
+            "ZA": "Южная Африка",
+            "ZM": "Замбия",
+            "ZW": "Зимбабве"
+        }
+    }
+}

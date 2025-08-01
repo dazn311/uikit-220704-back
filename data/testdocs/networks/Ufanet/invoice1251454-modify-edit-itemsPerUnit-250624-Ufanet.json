@@ -1,0 +1,806 @@
+{
+  "metaData": {
+    "header": {
+      "name": "header",
+      "label": "",
+      "dataType": "section"
+    },
+    "title": {
+      "name": "title",
+      "label": "СЧЕТ (Новый)",
+      "dataType": "section",
+      "attributes": {
+        "class": "title"
+      },
+      "style": {
+        "justifySelf": "start",
+        "textAlign": "center",
+        "display": "flex"
+      }
+    },
+    "tabInfo": {
+      "name": "tabInfo",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "tabInfo"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "location": {
+          "name": "location",
+          "label": "Точка доставки",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "locationDscr": {
+              "name": "locationDscr",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "locationAddr": {
+              "name": "locationAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "locationGln": {
+              "name": "locationGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        },
+        "supplier": {
+          "name": "supplier",
+          "label": "Поставщик",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "supplierName": {
+              "name": "supplierName",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "supplierYurAddr": {
+              "name": "supplierYurAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "supplierGln": {
+              "name": "supplierGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        },
+        "buyer": {
+          "name": "buyer",
+          "label": "Покупатель",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "buyerName": {
+              "name": "buyerName",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "buyerYurAddr": {
+              "name": "buyerYurAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "buyerGln": {
+              "name": "buyerGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        },
+        "logo": {
+          "name": "logo",
+          "label": "",
+          "dataType": "image"
+        }
+      }
+    },
+    "tabServiceInfo": {
+      "name": "tabServiceInfo",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "tabServiceInfo"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex",
+        "flexDirection": "column"
+      },
+      "items": {
+        "tabServiceInfoRow1": {
+          "name": "tabServiceInfoRow1",
+          "label": "",
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "orderNumber": {
+              "name": "orderNumber",
+              "label": "Номер заказа:",
+              "dataType": "string"
+            },
+            "orderDate": {
+              "name": "orderDate",
+              "label": "Дата заказа:",
+              "dataType": "date"
+            }
+          }
+        },
+        "tabServiceInfoRow2": {
+          "name": "tabServiceInfoRow2",
+          "label": "",
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "docNumber": {
+              "name": "docNumber",
+              "label": "Номер счета:",
+              "dataType": "string",
+              "isEditable": true,
+              "required": true,
+              "rules": [
+                {
+                  "name": "require"
+                }
+              ]
+            },
+            "docDate": {
+              "name": "docDate",
+              "label": "Дата счета:",
+              "dataType": "date",
+              "isEditable": true,
+              "required": true
+            },
+            "delivDate": {
+              "name": "delivDate",
+              "label": "Дата доставки:",
+              "dataType": "date",
+              "isEditable": true,
+              "required": true
+            }
+          }
+        },
+        "tabServiceInfoRow3": {
+          "name": "tabServiceInfoRow3",
+          "label": null,
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "options__Bank": {
+              "name": "options__Bank",
+              "label": "Банк поставщика:",
+              "dataType": "string",
+              "isEditable": true,
+              "required": true
+            },
+            "options__BIC": {
+              "name": "options__BIC",
+              "label": "БИК поставщика:",
+              "dataType": "number",
+              "isEditable": true,
+              "required": true,
+              "rules": [
+                {
+                  "name": "checkStringLength",
+                  "params": {
+                    "min": "9",
+                    "max": "9"
+                  }
+                }
+              ]
+            },
+            "options__SenderInn": {
+              "name": "options__SenderInn",
+              "label": "ИНН поставщика:",
+              "dataType": "number",
+              "isEditable": true,
+              "required": true,
+              "rules": [
+                {
+                  "name": "checkStringLength",
+                  "params": {
+                    "min": "10",
+                    "max": "12"
+                  }
+                }
+              ]
+            },
+            "options__SenderKpp": {
+              "name": "options__SenderKpp",
+              "label": "КПП поставщика:",
+              "dataType": "number",
+              "isEditable": true,
+              "required": false,
+              "rules": [
+                {
+                  "name": "checkStringLength",
+                  "params": {
+                    "min": "0",
+                    "max": "9"
+                  }
+                }
+              ]
+            },
+            "options__CorrAccount": {
+              "name": "options__CorrAccount",
+              "label": "к/с поставщика:",
+              "dataType": "number",
+              "isEditable": true,
+              "required": true,
+              "rules": [
+                {
+                  "name": "checkStringLength",
+                  "params": {
+                    "min": "0",
+                    "max": "20"
+                  }
+                }
+              ]
+            },
+            "options__Account": {
+              "name": "options__Account",
+              "label": "р/с поставщика:",
+              "dataType": "number",
+              "isEditable": true,
+              "required": true,
+              "rules": [
+                {
+                  "name": "checkStringLength",
+                  "params": {
+                    "min": "0",
+                    "max": "20"
+                  }
+                }
+              ]
+            },
+            "options__Purpose": {
+              "name": "options__Purpose",
+              "label": "Назначение платежа:",
+              "dataType": "string",
+              "isEditable": true,
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "serviceTools": {
+      "name": "serviceTools",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "serviceTools"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "selectVat": {
+          "name": "selectVat",
+          "label": "",
+          "dataType": "select",
+          "isEditable": true,
+          "catalog": "taxes"
+        },
+        "setVatButton": {
+          "name": "setVatButton",
+          "label": "Выставить НДС",
+          "dataType": "button",
+          "isEditable": true,
+          "rules": [
+            {
+              "name": "applyValueToColumn",
+              "params": {
+                "selectBlockName": "selectVat",
+                "tableBlockName": "docItems",
+                "columnBlockName": "vatPrc"
+              }
+            }
+          ]
+        },
+        "saveDraftButton": {
+          "name": "saveDraftButton",
+          "label": "Сохранить черновик",
+          "dataType": "button",
+          "isEditable": true,
+          "rules": [
+            {
+              "name": "saveDraft"
+            }
+          ]
+        },
+        "sendButton": {
+          "name": "sendButton",
+          "label": "Отправить",
+          "dataType": "button",
+          "isEditable": true,
+          "rules": [
+            {
+              "name": "send"
+            }
+          ]
+        },
+        "loadFromFileButton": {
+          "name": "loadFromFileButton",
+          "label": "Загрузить из файла",
+          "dataType": "button"
+        }
+      },
+      "rules": [
+        {
+          "name": "loadFromFile"
+        }
+      ]
+    },
+    "docItems": {
+      "name": "docItems",
+      "label": "",
+      "dataType": "array",
+      "attributes": {
+        "class": "tabBlock"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "sequenceNumber": {
+          "name": "sequenceNumber",
+          "label": "№",
+          "dataType": "number",
+          "style": {
+            "minWidth": "53px",
+            "width": "53px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        },
+        "ean": {
+          "name": "ean",
+          "label": "Штрихкод",
+          "dataType": "string",
+          "isEditable": false,
+          "attributes": {
+            "importFileSearchColumn": "true"
+          },
+          "style": {
+            "minWidth": "133px",
+            "width": "133px"
+          }
+        },
+        "local": {
+          "name": "local",
+          "label": "Код заказчика",
+          "dataType": "string",
+          "isEditable": false,
+          "required": true,
+          "attributes": {
+            "importFileSearchColumn": "true"
+          },
+          "style": {
+            "minWidth": "133px",
+            "width": "133px"
+          }
+        },
+        "prdTo": {
+          "name": "prdTo",
+          "label": "Код поставщика",
+          "dataType": "string",
+          "isEditable": false,
+          "attributes": {
+            "importFileSearchColumn": "true"
+          },
+          "style": {
+            "minWidth": "133px",
+            "width": "133px"
+          }
+        },
+        "prdDscr": {
+          "name": "prdDscr",
+          "label": "Наименование",
+          "dataType": "string",
+          "isEditable": false,
+          "required": true
+        },
+        "orderQty": {
+          "name": "orderQty",
+          "label": "Заказанное кол-во",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "3"
+              }
+            }
+          ]
+        },
+        "qty": {
+          "name": "qty",
+          "label": "Кол-во к поставке",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "2"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "3"
+              }
+            },
+            {
+              "name": "validateByParentValue",
+              "params": {
+                "compareTo": "itemsPerUnit",
+                "diffValues": "a % b = 0"
+              }
+            }
+          ]
+        },
+        "uom": {
+          "name": "uom",
+          "label": "Ед. изм.",
+          "dataType": "select",
+          "isEditable": true,
+          "required": true,
+          "style": {
+            "minWidth": "70px",
+            "width": "70px"
+          },
+          "catalog": "uom"
+        },
+        "itemsPerUnit": {
+          "name": "itemsPerUnit",
+          "label": "Вложение в уп.",
+          "dataType": "number",
+          "isEditable": true
+        },
+        "price1": {
+          "name": "price1",
+          "label": "Цена без НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "vatPrc": {
+          "name": "vatPrc",
+          "label": "НДС",
+          "dataType": "select",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "3"
+          },
+          "rules": [
+            {
+              "name": "format"
+            }
+          ],
+          "catalog": "taxes"
+        },
+        "price2": {
+          "name": "price2",
+          "label": "Цена с НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "4"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__NetAmount": {
+          "name": "options__NetAmount",
+          "label": "Сумма без НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "5"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__TaxAmount": {
+          "name": "options__TaxAmount",
+          "label": "Сумма НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "6"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__GrossAmount": {
+          "name": "options__GrossAmount",
+          "label": "Сумма с НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "7"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "addNewLineButton": {
+          "name": "addNewLineButton",
+          "label": "Добавление пустой строки",
+          "dataType": "button"
+        }
+      }
+    },
+    "docSums": {
+      "name": "docSums",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "docSums"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "flexEnd",
+        "display": "flex"
+      },
+      "items": {
+        "itemsCount": {
+          "name": "itemsCount",
+          "label": "Количество позиций:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        },
+        "totalQty": {
+          "name": "totalQty",
+          "label": "Общее количество:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "smartFormat",
+              "params": {
+                "precisionForKGM": "3"
+              }
+            }
+          ]
+        },
+        "options__NetAmount": {
+          "name": "options__NetAmount",
+          "label": "Общая сумма без НДС:",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__GrossAmount": {
+          "name": "options__GrossAmount",
+          "label": "Общая сумма с НДС:",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__TaxAmount": {
+          "name": "options__TaxAmount",
+          "label": "Общая сумма НДС:",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "data": {
+    "id": "1251454",
+    "status": "4",
+    "docType": "INVOIC",
+    "locationCode": null,
+    "parentDocType": "ORDERS",
+    "buyerToken": "Ufanet",
+    "docNumber": "123",
+    "docDate": "2025-06-23T00:00:00",
+    "delivDate": "2025-07-11T00:00:00",
+    "logo": null,
+    "orderNumber": "76",
+    "orderDate": "2025-06-23T00:00:00",
+    "locationDscr": "Тестовая точка Уфанет",
+    "locationAddr": null,
+    "locationGln": "4640118819900",
+    "supplierName": "Тестовый поставщик Уфанет",
+    "supplierYurAddr": null,
+    "supplierGln": "4640118819000",
+    "buyerName": "АО «Уфанет»",
+    "buyerYurAddr": null,
+    "buyerGln": "4640118819994",
+    "itemsCount": "1",
+    "totalQty": "10.0000",
+    "location": "168055",
+    "senderCode": null,
+    "options__NetAmount": "100.00",
+    "options__TaxAmount": "20.00",
+    "options__GrossAmount": "120.00",
+    "options__Bank": "Сбер",
+    "options__BIC": "111111111",
+    "options__SenderInn": "2222222222",
+    "options__SenderKpp": "222201001",
+    "options__CorrAccount": "1111116765767657111",
+    "options__Account": "11115765756765711111",
+    "options__Purpose": "оплата за"
+  },
+  "docItems": [
+    {
+      "id": "18425315",
+      "sequenceNumber": "1",
+      "ean": "7861215151517",
+      "local": "78617",
+      "prdTo": "7860522217",
+      "prdDscr": "Труба ПНД гибкая гофр. д.20мм",
+      "uom": "MTR",
+      "orderQty": "10.0000",
+      "qty": "10.0000",
+      "itemsPerUnit": "1.000",
+      "price1": "10.00",
+      "vatPrc": "20",
+      "price2": "12.00",
+      "options__NetAmount": "100.00",
+      "options__TaxAmount": "20.00",
+      "options__GrossAmount": "120.00",
+      "originCountry": null,
+      "custDeclar": null,
+      "orderPrice1": "10.00",
+      "orderPrice2": "12.00"
+    },
+    {
+      "id": "18425316",
+      "sequenceNumber": "2",
+      "ean": "7861215151518",
+      "local": "78618",
+      "prdTo": "7860522218",
+      "prdDscr": "Труба22 ПНД гибкая гофр. д.20мм",
+      "uom": "MTR",
+      "orderQty": "10.0000",
+      "qty": "10.0000",
+      "itemsPerUnit": "3.000",
+      "price1": "10.00",
+      "vatPrc": "20",
+      "price2": "12.00",
+      "options__NetAmount": "100.00",
+      "options__TaxAmount": "20.00",
+      "options__GrossAmount": "120.00",
+      "originCountry": null,
+      "custDeclar": null,
+      "orderPrice1": "10.00",
+      "orderPrice2": "12.00"
+    }
+  ],
+  "catalogs": {
+    "taxes": {
+      "0": "0%",
+      "5": "5%",
+      "7": "7%",
+      "10": "10%",
+      "20": "20%"
+    },
+    "uom": {
+      "LTR": "л",
+      "MTK": "м2",
+      "MTQ": "м3",
+      "MTR": "метр",
+      "NMP": "упак.",
+      "NPR": "пара",
+      "PCE": "шт.",
+      "SET": "комплект"
+    }
+  },
+  "multipleOptions": null
+}

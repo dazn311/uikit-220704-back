@@ -1,0 +1,995 @@
+{
+  "metaData": {
+    "header": {
+      "name": "header",
+      "label": "",
+      "dataType": "section"
+    },
+    "title": {
+      "name": "title",
+      "label": "ГРАФИК ПОСТАВКИ [КОРРЕКЦИЯ]",
+      "dataType": "section",
+      "attributes": {
+        "class": "title"
+      },
+      "style": {
+        "justifySelf": "start",
+        "textAlign": "center",
+        "display": "flex"
+      }
+    },
+    "title2": {
+      "name": "title2",
+      "label": "Начальный график: LINK",
+      "dataType": "section"
+    },
+    "title3": {
+      "name": "title3",
+      "label": "Схема Delfor-Desadv",
+      "dataType": "section"
+    },
+    "customBlock": {
+      "name": "customBlock",
+      "label": "",
+      "dataType": "section"
+    }
+  },
+  "data": {
+    "id": "1249517",
+    "status": "128",
+    "docType": "DELFOR",
+    "locationCode": null,
+    "parentDocType": "DELFOR",
+    "buyerToken": "GAZ",
+    "docDate": "2025-03-18T00:00:00",
+    "docNumber": "10420_07_c_114800",
+    "delivDate": null,
+    "location": null,
+    "itemsCount": "2",
+    "senderCode": null,
+    "options__Func": "2",
+    "options__ContractNumber": "ДС14/1067/ПАЗ/15 от 02 июля 2015 г.",
+    "options__Performer": "Бакулин Егор Валерьевич",
+    "options__DeliveryPeriodPrediction": "2024-01-01/2024-03-01",
+    "options__DateFormat": "D",
+    "options__DateFormatPrediction": "M",
+    "senderRole": "3",
+    "recvCode": null,
+    "delivType": "2023-12-01/2024-01-01",
+    "locationGln": null,
+    "locationDscr": null,
+    "locationAddr": null,
+    "supplierId": "1630",
+    "supplierName": "Тосол-Синтез-Инвест ООО",
+    "supplierYurAddr": "",
+    "supplierGln": "5249081656",
+    "supplierCode": null,
+    "buyerId": "11164",
+    "buyerName": "ООО \"Павловский автобусный завод\" (GAZ)",
+    "buyerYurAddr": "606108, Нижегородская обл., г. Павлово, ул.Суворова,1",
+    "buyerGln": "5252015220",
+    "curr": null,
+    "comment": null,
+    "fmt": "XML",
+    "paymType": null,
+    "schemeType": "21",
+    "docLinkUpdUrl": null,
+    "clientStatus": "1",
+    "totalQty": "0",
+    "logo": null,
+    "title_LinkId": 1244993,
+    "title_LinkText": "10420_07",
+    "canAccept": false,
+    "history": [
+      {
+        "id": 1249493,
+        "docNumber": "10420_07_c_133154",
+        "docDate": "2025-03-14T00:00:00",
+        "senderName": "Тосол-Синтез-Инвест ООО",
+        "status": "коррекция(черновик)"
+      },
+      {
+        "id": 1249517,
+        "docNumber": "10420_07_c_114800",
+        "docDate": "2025-03-18T00:00:00",
+        "senderName": "Тосол-Синтез-Инвест ООО",
+        "status": "коррекция"
+      }
+    ],
+    "qtyOptionSums": {
+      "qtyOfShipmentDate_2023-12-01": 55,
+      "qtyOfShipmentDate_2023-12-04": 25,
+      "qtyOfShipmentDate_2023-12-05": 25,
+      "qtyOfShipmentDate_2023-12-06": 25,
+      "qtyOfShipmentDate_2023-12-07": 25,
+      "qtyOfShipmentDate_2023-12-08": 25,
+      "qtyOfShipmentDate_2023-12-09": 25,
+      "qtyOfShipmentDate_2023-12-11": 25,
+      "qtyOfShipmentDate_2023-12-12": 25,
+      "qtyOfShipmentDate_2023-12-13": 25,
+      "qtyOfShipmentDate_2023-12-14": 25,
+      "qtyOfShipmentDate_2023-12-15": 25,
+      "qtyOfShipmentDate_2023-12-16": 25,
+      "qtyOfShipmentDate_2023-12-18": 25,
+      "qtyOfShipmentDate_2023-12-19": 25,
+      "qtyOfShipmentDate_2023-12-20": 25,
+      "qtyOfShipmentDate_2023-12-21": 25,
+      "qtyOfShipmentDate_2023-12-22": 25,
+      "qtyOfShipmentDate_2023-12-23": 25,
+      "qtyOfShipmentDate_2023-12-25": 25,
+      "qtyOfShipmentDate_2023-12-26": 25,
+      "qtyOfShipmentDate_2023-12-27": 25,
+      "qtyOfShipmentDate_2023-12-28": 25,
+      "qtyOfShipmentDate_2023-12-29": 25,
+      "QuantityTo": 630,
+      "QuantityAfter": 0,
+      "Prediction1": 695,
+      "Prediction2": 695,
+      "qtyAll": 630,
+      "qtyAllCorrection": 0
+    },
+    "itemsCountSimple": "25",
+    "tabVisibility": {
+      "tabGroupOfArrival": false,
+      "tabGroupOfShipment": true,
+      "tabGroupOfArrivalCorr": false,
+      "tabGroupOfShipmentCorr": false
+    }
+  },
+  "docItems": [
+    {
+      "fromPricat": false,
+      "id": 18415692,
+      "parentId": null,
+      "sequenceNumber": 1,
+      "ean": null,
+      "local": null,
+      "prdTo": "PA250000006430",
+      "prdDscr": ".В2912-6800220-00   Сиденье водителя # В2912-6800220-00",
+      "prd3": null,
+      "uom": "PCE",
+      "orderQty": 0,
+      "orderUom": null,
+      "orderPrice1": null,
+      "orderPrice2": null,
+      "totalDesAdvQty": 0,
+      "qty": null,
+      "itemsPerUnit": null,
+      "price1": null,
+      "vatPrc": null,
+      "price2": null,
+      "originCountry": null,
+      "custDeclar": null,
+      "priceType": null,
+      "options": [
+        {
+          "name": "Code_okv",
+          "value": ""
+        },
+        {
+          "name": "Prediction1",
+          "value": "650.0000"
+        },
+        {
+          "name": "Prediction2",
+          "value": "650.0000"
+        },
+        {
+          "name": "ShipmentDate1",
+          "value": "2024-02-01"
+        },
+        {
+          "name": "ShipmentDate2",
+          "value": "2024-01-01"
+        },
+        {
+          "name": "QuantityTo",
+          "value": "600.0000"
+        },
+        {
+          "name": "QuantityAfter",
+          "value": "0.0000"
+        },
+        {
+          "name": "DP_GLN",
+          "value": "45187_"
+        },
+        {
+          "name": "DP_NAME",
+          "value": "Павловский автобусный завод"
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-01"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-04"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-05"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-06"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-07"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-08"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-09"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-11"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-12"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-13"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-14"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-15"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-16"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-18"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-19"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-20"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-21"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-22"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-23"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-25"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-26"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-27"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-28"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "25.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-29"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "optionsCorrection": null,
+      "qtyAll": 600,
+      "qtyAllCorrection": null
+    },
+    {
+      "fromPricat": false,
+      "id": 18415693,
+      "parentId": null,
+      "sequenceNumber": 2,
+      "ean": null,
+      "local": null,
+      "prdTo": "PA250000006432",
+      "prdDscr": "В2912 6800224 31 Сиденье водителя   # В2912-6800224-31",
+      "prd3": null,
+      "uom": "PCE",
+      "orderQty": 0,
+      "orderUom": null,
+      "orderPrice1": null,
+      "orderPrice2": null,
+      "totalDesAdvQty": 0,
+      "qty": null,
+      "itemsPerUnit": null,
+      "price1": null,
+      "vatPrc": null,
+      "price2": null,
+      "originCountry": null,
+      "custDeclar": null,
+      "priceType": null,
+      "options": [
+        {
+          "name": "Code_okv",
+          "value": ""
+        },
+        {
+          "name": "Prediction1",
+          "value": "45.0000"
+        },
+        {
+          "name": "Prediction2",
+          "value": "45.0000"
+        },
+        {
+          "name": "ShipmentDate1",
+          "value": "2024-02-01"
+        },
+        {
+          "name": "ShipmentDate2",
+          "value": "2024-01-01"
+        },
+        {
+          "name": "QuantityTo",
+          "value": "30.0000"
+        },
+        {
+          "name": "QuantityAfter",
+          "value": "0.0000"
+        },
+        {
+          "name": "DP_GLN",
+          "value": "45187_"
+        },
+        {
+          "name": "DP_NAME",
+          "value": "Павловский автобусный завод"
+        },
+        {
+          "name": "QTYOption",
+          "value": null,
+          "options": [
+            {
+              "name": "QTY",
+              "value": "30.0000"
+            },
+            {
+              "name": "ShipmentDate",
+              "value": "2023-12-01"
+            },
+            {
+              "name": "ArrivalDate",
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "optionsCorrection": null,
+      "qtyAll": 30,
+      "qtyAllCorrection": null
+    }
+  ],
+  "catalogs": {
+    "uom": {
+      "-": "Килограмм пероксида водорода",
+      "10 ШТ.": "10 штук",
+      "CEN": "Сто штук",
+      "CMT": "СМ",
+      "CT": "КАРТ.КОР",
+      "KGM": "КГ",
+      "KPO": "Килограмм оксида калия",
+      "KSD": "Килограмм 90%-го сухого вещества",
+      "LEF": "ЛИСТ",
+      "LTR": "Л",
+      "MIL": "ТЫС ШТ",
+      "MLT": "МЛ",
+      "MTK": "М2",
+      "MTR": "М",
+      "NMP": "УПАК",
+      "NPL": "РУЛ",
+      "NPR": "ПАР",
+      "PCE": "Штука",
+      "PF": "ПАЛЛЕТ",
+      "POG": "ПОГ М",
+      "TNE": "Т",
+      "БЛОК": "БЛОК",
+      "КГ УСЛ ТОП/КГ": "Килограмм условного топлива на килограмм",
+      "КОМПЛ": "Комплект",
+      "КОР": "КОРОБКА",
+      "ПАЧ": "ПАЧКА",
+      "ШТ/1000 ШТ": "Штук на 1000 штук"
+    },
+    "taxes": {},
+    "country": {
+      "keyNull": " ",
+      "AD": "Андорра",
+      "AE": "Объединенные Арабские Эмираты",
+      "AF": "Афганистан",
+      "AG": "Антигуа и Барбуда",
+      "AI": "Ангилья о. (GB)",
+      "AL": "Албания",
+      "AM": "Армения",
+      "AN": "Антильские о-ва (NL)",
+      "AO": "Ангола",
+      "AQ": "Антарктика",
+      "AR": "Аргентина",
+      "AS": "Восточное Самоа (US)",
+      "AT": "Австрия",
+      "AU": "Австралия",
+      "AW": "Аруба",
+      "AZ": "Азербайджан",
+      "BA": "Босния и Герцеговина",
+      "BB": "Барбадос",
+      "BD": "Бангладеш",
+      "BE": "Бельгия",
+      "BF": "Буркина-Фасо",
+      "BG": "Болгария",
+      "BH": "Бахрейн",
+      "BI": "Бурунди",
+      "BJ": "Бенин",
+      "BM": "Бермуды",
+      "BN": "Бруней Дарассалам",
+      "BO": "Боливия",
+      "BR": "Бразилия",
+      "BS": "Багамы",
+      "BT": "Бутан",
+      "BV": "Бове о. (NO)",
+      "BW": "Ботсвана",
+      "BY": "Беларусь",
+      "BZ": "Белиз",
+      "CA": "Канада",
+      "CC": "Кокосовые (Киилинг) о-ва (AU)",
+      "CD": "Демократическая Республика Конго",
+      "CF": "Центрально-африканская Республика",
+      "CG": "Конго",
+      "CH": "Швейцария",
+      "CI": "Кот-д'Ивуар",
+      "CK": "Кука о-ва (NZ)",
+      "CL": "Чили",
+      "CM": "Камерун",
+      "CN": "Китай",
+      "CO": "Колумбия",
+      "CR": "Коста-Рика",
+      "CU": "Куба",
+      "CV": "Кабо-Верде",
+      "CX": "Рождества о. (AU)",
+      "CY": "Кипр",
+      "CZ": "Чехия",
+      "DE": "Германия",
+      "DJ": "Джибути",
+      "DK": "Дания",
+      "DM": "Доминика",
+      "DO": "Доминиканская Республика",
+      "DZ": "Алжир",
+      "EC": "Эквадор",
+      "EE": "Эстония",
+      "EG": "Египет",
+      "EH": "Западная Сахара",
+      "ER": "Эритрия",
+      "ES": "Испания",
+      "ET": "Эфиопия",
+      "FI": "Финляндия",
+      "FJ": "Фиджи",
+      "FK": "Фолклендские (Мальвинские) о-ва (GB/AR)",
+      "FM": "Микронезия (US)",
+      "FO": "Фарерские о-ва (DK)",
+      "FR": "Франция",
+      "GA": "Габон",
+      "GB": "Великобритания",
+      "GD": "Гренада",
+      "GE": "Грузия",
+      "GF": "Французская Гвиана (FR)",
+      "GH": "Гана",
+      "GI": "Гибралтар",
+      "GL": "Гренландия (DK)",
+      "GM": "Гамбия",
+      "GN": "Гвинея",
+      "GP": "Гваделупа",
+      "GQ": "Экваториальная Гвинея",
+      "GR": "Греция",
+      "GS": "Южная Георгия и Южные Сандвичевы о-ва",
+      "GT": "Гватемала",
+      "GU": "Гуам",
+      "GW": "Гвинея-Бисау",
+      "GY": "Гайана",
+      "HK": "Гонконг (CN)",
+      "HM": "Херд и Макдональд о-ва (AU)",
+      "HN": "Гондурас",
+      "HR": "Хорватия",
+      "HT": "Гаити",
+      "HU": "Венгрия",
+      "ID": "Индонезия",
+      "IE": "Ирландия",
+      "IL": "Израиль",
+      "IN": "Индия",
+      "IQ": "Ирак",
+      "IR": "Иран",
+      "IS": "Исландия",
+      "IT": "Италия",
+      "JM": "Ямайка",
+      "JO": "Иордания",
+      "JP": "Япония",
+      "KE": "Кения",
+      "KG": "Киргизстан",
+      "KH": "Камбоджа",
+      "KI": "Кирибати",
+      "KM": "Коморские о-ва",
+      "KN": "Сент-Кристофер и Невис",
+      "KP": "Северная Корея (КНДР)",
+      "KR": "Южная Корея (Республика Корея)",
+      "KW": "Кувейт",
+      "KY": "Каймановы о-ва (GB)",
+      "KZ": "Казахстан",
+      "LA": "Лаос",
+      "LB": "Ливан",
+      "LC": "Сент-Люсия",
+      "LI": "Лихтенштейн",
+      "LK": "Шри-Ланка",
+      "LR": "Либерия",
+      "LS": "Лесото",
+      "LT": "Литва",
+      "LU": "Люксембург",
+      "LV": "Латвия",
+      "LY": "Ливия",
+      "MA": "Марокко",
+      "MC": "Монако",
+      "MD": "Молдова",
+      "MG": "Мадагаскар",
+      "MH": "Маршалловы о-ва",
+      "MK": "Македония",
+      "ML": "Мали",
+      "MM": "Мьянма",
+      "MN": "Монголия",
+      "MO": "Макао (PT)",
+      "MP": "Северные Марианские о-ва (US)",
+      "MQ": "Мартиника",
+      "MR": "Мавритания",
+      "MS": "Монсеррат о. (GB)",
+      "MT": "Мальта",
+      "MU": "Маврикий",
+      "MV": "Мальдивы",
+      "MW": "Малави",
+      "MX": "Мексика",
+      "MY": "Малайзия",
+      "MZ": "Мозамбик",
+      "NA": "Намибия",
+      "NC": "Новая Каледония о. (FR)",
+      "NE": "Нигер",
+      "NF": "Норфолк о. (AU)",
+      "NG": "Нигерия",
+      "NI": "Никарагуа",
+      "NL": "Нидерланды",
+      "NO": "Норвегия",
+      "NP": "Непал",
+      "NR": "Науру",
+      "NU": "Ниуэ о. (NZ)",
+      "NZ": "Новая Зеландия",
+      "OM": "Оман",
+      "PA": "Панама",
+      "PE": "Перу",
+      "PF": "Французская Полинезия",
+      "PG": "Папуа-Новая Гвинея",
+      "PH": "Филиппины",
+      "PK": "Пакистан",
+      "PL": "Польша",
+      "PM": "Сен-Пьер и Микелон (FR)",
+      "PN": "Питкэрн о-ва (GB)",
+      "PR": "Пуэрто-Рико (US)",
+      "PS": "Палестинская автономия",
+      "PT": "Португалия",
+      "PW": "Палау (US)",
+      "PY": "Парагвай",
+      "QA": "Катар",
+      "RE": "Реюньон о. (FR)",
+      "RO": "Румыния",
+      "RS": "Сербия",
+      "RU": "Россия",
+      "RW": "Руанда",
+      "SA": "Саудовская Аравия",
+      "SB": "Соломоновы о-ва",
+      "SC": "Сейшелы",
+      "SD": "Судан",
+      "SE": "Швеция",
+      "SG": "Сингапур",
+      "SH": "Святой Елены о. (GB)",
+      "SI": "Словения",
+      "SJ": "Свалбард и Ян Мейен о-ва (NO)",
+      "SK": "Словакия",
+      "SL": "Сьерра-Леоне",
+      "SM": "Сан Марино",
+      "SN": "Сенегал",
+      "SO": "Сомали",
+      "SR": "Суринам",
+      "ST": "Сан-Томе и Принсипи",
+      "SV": "Сальвадор",
+      "SY": "Сирия",
+      "SZ": "Свазиленд",
+      "TC": "Теркс и Кайкос о-ва (GB)",
+      "TD": "Чад",
+      "TG": "Того",
+      "TH": "Таиланд",
+      "TJ": "Таджикистан",
+      "TK": "Токелау о-ва (NZ)",
+      "TM": "Туркменистан",
+      "TN": "Тунис",
+      "TO": "Тонга",
+      "TP": "Восточный Тимор",
+      "TR": "Турция",
+      "TT": "Тринидад и Тобаго",
+      "TV": "Тувалу",
+      "TW": "Тайвань",
+      "TZ": "Танзания",
+      "UA": "Украина",
+      "UG": "Уганда",
+      "US": "Соединенные Штаты Америки",
+      "UY": "Уругвай",
+      "UZ": "Узбекистан",
+      "VA": "Ватикан",
+      "VC": "Сен-Винсент и Гренадины",
+      "VE": "Венесуэла",
+      "VG": "Виргинские о-ва (GB)",
+      "VI": "Виргинские о-ва (US)",
+      "VN": "Вьетнам",
+      "VU": "Вануату",
+      "WF": "Уоллис и Футуна о-ва (FR)",
+      "WS": "Самоа",
+      "YE": "Йемен",
+      "YT": "Майотта о. (KM)",
+      "YU": "Югославия",
+      "ZA": "Южная Африка",
+      "ZM": "Замбия",
+      "ZW": "Зимбабве"
+    }
+  }
+}

@@ -1,0 +1,963 @@
+{
+  "metaData": {
+    "title": {
+      "name": "title",
+      "label": "НАКЛАДНАЯ (Оригинал)",
+      "dataType": "section",
+      "attributes": {
+        "class": "title"
+      },
+      "style": {
+        "justifySelf": "start",
+        "textAlign": "center",
+        "display": "flex"
+      }
+    },
+    "tabServiceInfo": {
+      "name": "tabServiceInfo",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "tabServiceInfo"
+      },
+      "items": {
+        "tabServiceInfoRow2": {
+          "name": "tabServiceInfoRow2",
+          "label": "",
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "docNumber": {
+              "name": "docNumber",
+              "label": "Номер накладной:",
+              "dataType": "string",
+              "isEditable": true,
+              "required": true,
+              "rules": [
+                {
+                  "name": "require"
+                }
+              ]
+            },
+            "orderNumber": {
+              "name": "orderNumber",
+              "label": "Номер заказа:",
+              "dataType": "string",
+              "isEditable": false
+            },
+            "orderDelivDate": {
+              "name": "orderDelivDate",
+              "label": "Дата доставки из заказа:",
+              "dataType": "date",
+              "isEditable": false
+            },
+            "delivDate": {
+              "name": "delivDate",
+              "label": "Дата доставки:",
+              "dataType": "date",
+              "isEditable": false,
+              "required": true,
+              "rules": [
+                {
+                  "name": "require"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "serviceTools": {
+      "name": "serviceTools",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "serviceTools"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "selectVat": {
+          "name": "selectVat",
+          "label": "",
+          "dataType": "select",
+          "isEditable": true,
+          "catalog": "taxes"
+        },
+        "setVatButton": {
+          "name": "setVatButton",
+          "label": "Выставить НДС",
+          "dataType": "button",
+          "isEditable": true,
+          "rules": [
+            {
+              "name": "applyValueToColumn",
+              "params": {
+                "selectBlockName": "selectVat",
+                "tableBlockName": "docItems",
+                "columnBlockName": "vatPrc"
+              }
+            }
+          ]
+        },
+        "selectCountry": {
+          "name": "selectCountry",
+          "label": "",
+          "dataType": "select",
+          "isEditable": true,
+          "catalog": "country"
+        },
+        "setCountryButton": {
+          "name": "setCountryButton",
+          "label": "Выставить страну",
+          "dataType": "button",
+          "isEditable": true,
+          "rules": [
+            {
+              "name": "applyValueToColumn",
+              "params": {
+                "selectBlockName": "selectCountry",
+                "tableBlockName": "docItems",
+                "columnBlockName": "originCountry"
+              }
+            }
+          ]
+        },
+        "loadFromFileButton": {
+          "name": "loadFromFileButton",
+          "label": "Загрузить из файла",
+          "dataType": "button"
+        },
+        "saveDraftButton": {
+          "name": "saveDraftButton",
+          "label": "Сохранить черновик",
+          "dataType": "button",
+          "isEditable": true,
+          "rules": [
+            {
+              "name": "saveDraft"
+            }
+          ]
+        },
+        "sendButton": {
+          "name": "sendButton",
+          "label": "Отправить",
+          "dataType": "button",
+          "isEditable": true,
+          "rules": [
+            {
+              "name": "send"
+            }
+          ]
+        }
+      },
+      "rules": [
+        {
+          "name": "loadFromFile"
+        }
+      ]
+    },
+    "docSscc": {
+      "name": "docSscc",
+      "label": "Таблица палет",
+      "dataType": "array",
+      "items": {
+        "Num": {
+          "name": "Num",
+          "label": "№",
+          "dataType": "number",
+          "style": {
+            "minWidth": "63px",
+            "width": "63px",
+            "maxWidth": "63px",
+            "textAlign": "center"
+          }
+        },
+        "Code": {
+          "name": "Code",
+          "label": "Код(SSCC)",
+          "isEditable": true,
+          "dataType": "number",
+          "required": true,
+          "attributes": {
+            "importNewFileColumn": "1"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        },
+        "PackageType": {
+          "name": "PackageType",
+          "label": "Тип",
+          "dataType": "select",
+          "isEditable": true,
+          "catalog": "sscc_type",
+          "attributes": {
+            "importNewFileColumn": "2"
+          },
+          "style": {
+            "width": "100px"
+          }
+        },
+        "NetWeight": {
+          "name": "NetWeight",
+          "label": "Вес палетты (кг)",
+          "isEditable": true,
+          "dataType": "number",
+          "attributes": {
+            "importNewFileColumn": "3"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "1"
+              }
+            }
+          ]
+        },
+        "Length": {
+          "name": "Length",
+          "label": "Длина упаковки",
+          "isEditable": true,
+          "dataType": "number",
+          "attributes": {
+            "importNewFileColumn": "4"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "1"
+              }
+            }
+          ]
+        },
+        "LengthUom": {
+          "name": "LengthUom",
+          "label": "Единица измерения",
+          "isEditable": true,
+          "catalog": "uom",
+          "dataType": "select",
+          "attributes": {
+            "importNewFileColumn": "5"
+          }
+        },
+        "Width": {
+          "name": "Width",
+          "label": "Ширина упаковки",
+          "isEditable": true,
+          "dataType": "number",
+          "attributes": {
+            "importNewFileColumn": "6"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "1"
+              }
+            }
+          ]
+        },
+        "WidthUom": {
+          "name": "WidthUom",
+          "label": "Единица измерения",
+          "isEditable": true,
+          "catalog": "uom",
+          "dataType": "select",
+          "attributes": {
+            "importNewFileColumn": "7"
+          }
+        },
+        "Height": {
+          "name": "Height",
+          "label": "Высота упаковки",
+          "isEditable": true,
+          "dataType": "number",
+          "attributes": {
+            "importNewFileColumn": "8"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "1"
+              }
+            }
+          ]
+        },
+        "HeightUom": {
+          "name": "HeightUom",
+          "label": "Единица измерения",
+          "isEditable": true,
+          "catalog": "uom",
+          "dataType": "select",
+          "attributes": {
+            "importNewFileColumn": "9"
+          }
+        },
+
+        "packRestButton": {
+          "name": "packRestButton",
+          "label": "Упаковать оставшиеся",
+          "dataType": "icon"
+        },
+        "packAllButton": {
+          "name": "packAllButton",
+          "label": "Упаковать все",
+          "dataType": "icon"
+        },
+        "addNewLineButton": {
+          "name": "addNewLineButton",
+          "label": "Добавление пустой строки",
+          "dataType": "button"
+        }
+      },
+      "rules": [
+        {
+          "name": "getData",
+          "params": {
+            "dataName": "options__Container"
+          }
+        }
+      ],
+      "style": {
+        "width": "563px"
+      }
+    },
+    "docItems": {
+      "name": "docItems",
+      "label": "",
+      "dataType": "array",
+      "attributes": {
+        "class": "tabBlock"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "sequenceNumber": {
+          "name": "sequenceNumber",
+          "label": "№",
+          "dataType": "number",
+          "isEditable": false,
+          "style": {
+            "minWidth": "53px",
+            "width": "53px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        },
+        "ean": {
+          "name": "ean",
+          "label": "EAN",
+          "dataType": "string",
+          "isEditable": false,
+          "attributes": {
+            "importFileSearchColumn": "true"
+          },
+          "style": {
+            "minWidth": "133px",
+            "width": "133px"
+          }
+        },
+        "prdTo": {
+          "name": "prdTo",
+          "label": "Артикул в Ашан",
+          "dataType": "string",
+          "isEditable": false,
+          "attributes": {
+            "importFileSearchColumn": "true"
+          },
+          "style": {
+            "minWidth": "133px",
+            "width": "133px"
+          }
+        },
+        "local": {
+          "name": "local",
+          "label": "Артикул в системе контрагента",
+          "dataType": "string",
+          "isEditable": false,
+          "attributes": {
+            "importFileSearchColumn": "true"
+          },
+          "style": {
+            "minWidth": "133px",
+            "width": "133px"
+          }
+        },
+        "prdDscr": {
+          "name": "prdDscr",
+          "label": "Наименование артикула в система контрагента",
+          "dataType": "string",
+          "isEditable": false,
+          "style": {
+            "minWidth": "404px",
+            "width": "404px"
+          }
+        },
+        "orderQty": {
+          "name": "orderQty",
+          "label": "Количество (заказано)",
+          "dataType": "number",
+          "isEditable": false,
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "smartFormat",
+              "params": {
+                "precisionForKGM": "3"
+              }
+            }
+          ]
+        },
+        "orderUom": {
+          "name": "orderUom",
+          "label": "Единица измерения заказано",
+          "dataType": "select"
+        },
+        "qty": {
+          "name": "qty",
+          "label": "Количество к поставке",
+          "dataType": "number",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "2"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "smartFormat",
+              "params": {
+                "precisionForKGM": "3"
+              }
+            }
+          ]
+        },
+        "uom": {
+          "name": "uom",
+          "label": "Единица измерения",
+          "dataType": "select",
+          "isEditable": true,
+          "style": {
+            "minWidth": "70px",
+            "width": "70px"
+          },
+          "catalog": "uom"
+        },
+
+        "vatPrc": {
+          "name": "vatPrc",
+          "label": "Ставка НДС",
+          "dataType": "select",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "4"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ],
+          "catalog": "taxes"
+        },
+        "price1": {
+          "name": "price1",
+          "label": "Цена без НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "price2": {
+          "name": "price2",
+          "label": "Цена с НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__NetAmount": {
+          "name": "options__NetAmount",
+          "label": "Сумма без НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "5"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__TaxAmount": {
+          "name": "options__TaxAmount",
+          "label": "Сумма НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "6"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__GrossAmount": {
+          "name": "options__GrossAmount",
+          "label": "Сумма с НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "7"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "custDeclar": {
+          "name": "custDeclar",
+          "label": "Номер ГТД",
+          "dataType": "string",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "8"
+          },
+          "style": {
+            "minWidth": "192px"
+          },
+          "rules": [
+            {
+              "name": "checkCustDeclar",
+              "params": {
+                "country": "RU;BY;KZ;AM;KG"
+              }
+            }
+          ]
+        },
+        "options__Container": {
+          "name": "options__Container",
+          "label": "Код упаковки (SSCC)",
+          "dataType": "array",
+          "isEditable": true,
+          "style": {
+            "minWidth": "140px"
+          },
+          "rules": [
+            {
+              "name": "validateByParentValue",
+              "params": {
+                "compareTo": "qty",
+                "diffValues": "="
+              }
+            }
+          ]
+        },
+        "copyLineButton": {
+          "name": "copyLineButton",
+          "label": "Копировать",
+          "dataType": "button"
+        }
+      }
+    },
+    "toolsExt": {
+      "name": "toolsExt",
+      "label": "",
+      "dataType": "section"
+    },
+    "docSums": {
+      "name": "docSums",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "docSums"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "flexEnd",
+        "display": "flex"
+      },
+      "items": {
+        "itemsCount": {
+          "name": "itemsCount",
+          "label": "Количество строк:",
+          "dataType": "number",
+          "isEditable": false,
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        },
+        "totalQty": {
+          "name": "totalQty",
+          "label": "Количество по накладной:",
+          "dataType": "number",
+          "isEditable": false,
+          "rules": [
+            {
+              "name": "smartFormat",
+              "params": {
+                "precisionForKGM": "3"
+              }
+            }
+          ]
+        },
+        "options__NetAmount": {
+          "name": "options__NetAmount",
+          "label": "Общая сумма без НДС:",
+          "dataType": "number",
+          "isEditable": false,
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__TaxAmount": {
+          "name": "options__TaxAmount",
+          "label": "Общая сумма НДС:",
+          "dataType": "number",
+          "isEditable": false,
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__GrossAmount": {
+          "name": "options__GrossAmount",
+          "label": "Общая сумма с НДС:",
+          "dataType": "number",
+          "isEditable": false,
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "data": {
+    "id": "1245320",
+    "status": "4",
+    "docType": "DESADV",
+    "locationCode": "709",
+    "parentDocType": "ORDERS",
+    "buyerToken": "Auchan",
+    "docNumber": "daz-fix-upd-palete-240207-1230",
+    "docDate": "2024-01-07T00:00:00",
+    "delivDate": "2024-01-30T00:00:00",
+    "logo": "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",
+    "orderNumber": "004",
+    "orderDate": "2024-01-16T15:26:00",
+    "orderDelivDate": "2024-01-30T00:00:00",
+    "senderInn": null,
+    "senderKpp": null,
+    "receiverInn": "7703270067",
+    "receiverKpp": "508901001",
+    "locationDscr": "ООО \"АШАН\", Каширская",
+    "locationAddr": "115563, г Москва, Каширское ш, 61Г",
+    "locationGln": "4607043109194",
+    "locationInn": null,
+    "locationKpp": null,
+    "supplierName": "SupplierAuchan",
+    "supplierYurAddr": "141036, г.Мытищи, Осташковское шоссе",
+    "supplierGln": "4607805779993",
+    "supplierCode": "4607805779993",
+    "buyerName": "Ашан ООО",
+    "buyerYurAddr": "141031, Россия, Московская область, г.Мытищи, Осташковское шоссе, д.1",
+    "buyerGln": "4607043109996",
+    "itemsCount": "1",
+    "totalQty": "12.0000",
+    "location": "2129",
+    "senderCode": "4607805779993",
+    "options__Container": [
+      {
+        "Num": "1",
+        "PackageType": "201",
+        "Code": null,
+        "NetWeight": "6",
+        "Length": "6",
+        "LengthUom": "CMT",
+        "Width": "6",
+        "WidthUom": "CMT",
+        "Height": "6",
+        "HeightUom": "CMT",
+        "_id_": "1"
+      },
+      {
+        "Num": "2",
+        "PackageType": "202",
+        "Code": "123456789111110099",
+        "NetWeight": "4",
+        "Length": "4",
+        "LengthUom": "MMT",
+        "Width": "4",
+        "WidthUom": "MMT",
+        "Height": "4",
+        "HeightUom": "MMT",
+        "_id_": "2"
+      }
+    ],
+    "options__OrderType": "898",
+    "options__ShopOrderNumber": "01049593",
+    "options__IsPromo": "True",
+    "options__DeliveryCondition": "7",
+    "options__UltimateDP": "4607043106629",
+    "options__ShopCode": "00014383",
+    "options__Location": null,
+    "options__Location__Name": "ООО \"АШАН\", Каширская",
+    "options__Location__Address": "115563, г Москва, Каширское ш, 61Г",
+    "options__NetAmount": "698.40",
+    "options__TaxAmount": "220.56",
+    "options__GrossAmount": "918.96",
+    "options__DesadvType": "9",
+    "options__ShipperName": null,
+    "options__ShipperGln": null,
+    "options__ShipperInn": null,
+    "options__ShipperKpp": null,
+    "options__DeliveryNoteNumber": null,
+    "options__DeliveryNoteDate": null,
+    "options__ContractNumber": null,
+    "options__TtnNumber": null,
+    "options__TtnFixNumber": null,
+    "options__TtnFixDate": null,
+    "options__SupplierChiefName": null,
+    "options__SupplierPhone": null,
+    "options__SupplierFaxNumber": null,
+    "options__SupplierEmail": null,
+    "options__BookkeeperName": null,
+    "options__ContactPersonForOrder": null,
+    "options__FaxContactPersonForOrder": null,
+    "options__SideDespatch": null,
+    "options__SendingDate": null,
+    "options__ShipperCountry": null,
+    "options__ShipperIndex": null,
+    "options__ShipperRegionCode": null,
+    "options__ShipperArea": null,
+    "options__ShipperCity": null,
+    "options__ShipperStreet": null,
+    "staticField": "4607043109996"
+  },
+  "docItems": [
+    {
+      "options__Container": [
+        {
+          "Num": "1",
+          "Qty": "10"
+        },
+        {
+          "Num": "2",
+          "Qty": "2"
+        }
+      ],
+      "id": "18161941",
+      "sequenceNumber": "1",
+      "ean": "4610004878107",
+      "local": null,
+      "prdTo": "482210",
+      "prdDscr": "Смеситель",
+      "uom": "PCE",
+      "orderQty": "12.0000",
+      "orderUom": "ШТ",
+      "qty": "12.0000",
+      "itemsPerUnit": "6.000",
+      "price1": "58.20",
+      "vatPrc": "18",
+      "price2": "76.58",
+      "originCountry": null,
+      "custDeclar": null,
+      "options__Boxes": "3",
+      "options__NetAmount": "698.40",
+      "options__TaxAmount": "220.56",
+      "options__GrossAmount": "918.96",
+      "options__ItemsPerUnitUom": "CS",
+      "orderPrice1": "58.20",
+      "orderPrice2": "76.58",
+      "options__ProductBatchNumber": null,
+      "options__LineNumberInSupplierSystem": null,
+      "options__VeterinaryCertificateMercuryId": null
+    },
+    {
+      "options__Container": [
+        {
+          "Num": "1",
+          "Qty": "3"
+        },
+        {
+          "Num": "2",
+          "Qty": "2"
+        }
+      ],
+      "id": "18161941",
+      "sequenceNumber": "2",
+      "ean": "4610004878108",
+      "local": "1235",
+      "prdTo": "482210",
+      "prdDscr": "Смеситель",
+      "uom": "PCE",
+      "orderQty": "12.0000",
+      "orderUom": "ШТ",
+      "qty": "12.0000",
+      "itemsPerUnit": "6.000",
+      "price1": "58.20",
+      "vatPrc": "18",
+      "price2": "76.58",
+      "originCountry": null,
+      "custDeclar": null,
+      "options__Boxes": "3",
+      "options__NetAmount": "698.40",
+      "options__TaxAmount": "220.56",
+      "options__GrossAmount": "918.96",
+      "options__ItemsPerUnitUom": "CS",
+      "orderPrice1": "58.20",
+      "orderPrice2": "76.58",
+      "options__ProductBatchNumber": null,
+      "options__LineNumberInSupplierSystem": null,
+      "options__VeterinaryCertificateMercuryId": null
+    }
+  ],
+  "catalogs": {
+    "taxes": {
+      "0": "0%",
+      "10": "10%",
+      "18": "18%",
+      "20": "20%",
+      "keyNull": " "
+    },
+    "country": {
+      "keyNull": " ",
+      "AD": "Андорра",
+      "AE": "Объединенные Арабские Эмираты",
+      "AF": "Афганистан",
+      "AG": "Антигуа и Барбуда",
+      "AI": "Ангилья о. (GB)",
+      "AL": "Албания",
+      "ZW": "Зимбабве"
+    },
+    "sidedespatch": {
+      "keyNull": " ",
+      "NO": "Нет",
+      "YES": "Да"
+    },
+    "uom": {
+      "keyNull": " ",
+      "CMT": "СМ",
+      "CS": "КОР",
+      "CT": "КАРТ.КОР.",
+      "KGM": "КГ",
+      "MMT": "ММ",
+      "PA": "КОР",
+      "PCE": "ШТ",
+      "PF": "ПАЛЛЕТ",
+      "PSC": "УПАК"
+    },
+    "region": {
+      "1": "Республика Адыгея",
+      "2": "Республика Башкортостан",
+      "86": "Ханты-Мансийский автономный округ Югра",
+      "87": "Чукотский автономный округ",
+      "89": "Ямало-Ненецкий автономный округ",
+      "94": "Байконур",
+      "95": "Чеченская республика",
+      "keyNull": " "
+    },
+    "sscc_type": {
+      "201": "евро-палета",
+      "202": "стандарт"
+    }
+  },
+  "multipleOptions": null
+}

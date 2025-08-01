@@ -1,0 +1,412 @@
+{
+  "metaData": {
+    "header": {
+      "name": "header",
+      "label": "",
+      "dataType": "section"
+    },
+    "title": {
+      "name": "title",
+      "label": "ГРАФИК ПОСТАВКИ",
+      "dataType": "section",
+      "attributes": {
+        "class": "title"
+      },
+      "style": {
+        "justifySelf": "start",
+        "textAlign": "center",
+        "display": "flex"
+      }
+    },
+    "tabInfo": {
+      "name": "tabInfo",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "tabInfo"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "buyer": {
+          "name": "buyer",
+          "label": "Покупатель",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "buyerName": {
+              "name": "buyerName",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "buyerYurAddr": {
+              "name": "buyerYurAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "buyerGln": {
+              "name": "buyerGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        },
+        "supplier": {
+          "name": "supplier",
+          "label": "Поставщик",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "supplierName": {
+              "name": "supplierName",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "supplierYurAddr": {
+              "name": "supplierYurAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "supplierGln": {
+              "name": "supplierGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        },
+        "location": {
+          "name": "location",
+          "label": "Точка доставки",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "locationDscr": {
+              "name": "locationDscr",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "locationAddr": {
+              "name": "locationAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "locationGln": {
+              "name": "locationGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        }
+      }
+    },
+    "tabServiceInfo": {
+      "name": "tabServiceInfo",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "tabServiceInfo"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex",
+        "flexDirection": "column"
+      },
+      "items": {
+        "tabServiceInfoRow1": {
+          "name": "tabServiceInfoRow1",
+          "label": "",
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "docNumber": {
+              "name": "docNumber",
+              "label": "Номер графика:",
+              "dataType": "string"
+            },
+            "docDate": {
+              "name": "docDate",
+              "label": "Дата графика:",
+              "dataType": "date"
+            },
+            "options__ContractNumber": {
+              "name": "options__ContractNumber",
+              "label": "Номер договора:",
+              "dataType": "string"
+            },
+            "recvCode": {
+              "name": "recvCode",
+              "label": "Код поставщика:",
+              "dataType": "string"
+            }
+          }
+        },
+        "tabServiceInfoRow2": {
+          "name": "tabServiceInfoRow2",
+          "label": "",
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "options__DN_Number": {
+              "name": "options__DN_Number",
+              "label": "Номер накладной последнего поступления:",
+              "dataType": "string"
+            },
+            "options__DN_Date": {
+              "name": "options__DN_Date",
+              "label": "Дата накладной последнего поступления:",
+              "dataType": "date"
+            }
+          }
+        },
+        "tabServiceInfoRow3": {
+          "name": "tabServiceInfoRow3",
+          "label": null,
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "options__DispatchQuantity": {
+              "name": "options__DispatchQuantity",
+              "label": "Количество из последней накладной:",
+              "dataType": "number"
+            },
+            "options__ReceivedQuantity": {
+              "name": "options__ReceivedQuantity",
+              "label": "Текущее кумулятивное количество поступившего материала:",
+              "dataType": "number"
+            }
+          }
+        },
+        "tabServiceInfoRow4": {
+          "name": "tabServiceInfoRow4",
+          "label": null,
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "options__DP_GLN": {
+              "name": "options__DP_GLN",
+              "label": "Грузополучатель (склад клиента):",
+              "dataType": "string"
+            },
+            "options__DateOfManufactureEnd": {
+              "name": "options__DateOfManufactureEnd",
+              "label": "Конец срока производства:",
+              "dataType": "date"
+            }
+          }
+        }
+      }
+    },
+    "docItems": {
+      "name": "docItems",
+      "label": "",
+      "dataType": "array",
+      "attributes": {
+        "class": "tabBlock"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "sequenceNumber": {
+          "name": "sequenceNumber",
+          "label": "№",
+          "dataType": "number",
+          "style": {
+            "minWidth": "53px",
+            "width": "53px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        },
+        "prdTo": {
+          "name": "prdTo",
+          "label": "Код поставщика\\заказчика",
+          "dataType": "string"
+        },
+        "prdDscr": {
+          "name": "prdDscr",
+          "label": "Наименование",
+          "dataType": "string",
+          "style": {
+            "minWidth": "404px",
+            "width": "404px"
+          }
+        },
+        "qty": {
+          "name": "qty",
+          "label": "Количество",
+          "dataType": "number",
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "4"
+              }
+            }
+          ]
+        },
+        "uom": {
+          "name": "uom",
+          "label": "Ед. изм.",
+          "dataType": "select",
+          "style": {
+            "minWidth": "70px",
+            "width": "70px"
+          }
+        },
+        "itemsPerUnit": {
+          "name": "itemsPerUnit",
+          "label": "Вложение",
+          "dataType": "number"
+        },
+        "options__PackageType": {
+          "name": "options__PackageType",
+          "label": "Номер единицы отгрузки клиента",
+          "dataType": "string"
+        },
+        "options__Delivery__PartyType": {
+          "name": "options__Delivery__PartyType",
+          "label": "Вид партии поставки EDI",
+          "dataType": "string"
+        },
+        "options__Delivery__DeliveryDateFrom": {
+          "name": "options__Delivery__DeliveryDateFrom",
+          "label": "Дата поставки партии c",
+          "dataType": "date"
+        },
+        "options__Delivery__DeliveryDateTo": {
+          "name": "options__Delivery__DeliveryDateTo",
+          "label": "Дата поставки партии по",
+          "dataType": "date"
+        },
+        "options__Delivery__DeliveryQuantity": {
+          "name": "options__Delivery__DeliveryQuantity",
+          "label": "Ожидается к поставке",
+          "dataType": "number"
+        }
+      }
+    },
+    "docSums": {
+      "name": "docSums",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "docSums"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "flex-end",
+        "display": "flex"
+      },
+      "items": {
+        "itemsCount": {
+          "name": "itemsCount",
+          "label": "Количество строк:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "data": {
+    "id": "1248922",
+    "status": "35",
+    "docType": "DELFOR",
+    "locationCode": null,
+    "buyerToken": "Access",
+    "recvCode": "0001000860",
+    "docNumber": "0000000005846310",
+    "docDate": "2025-01-24T00:00:00",
+    "locationDscr": "точка Аксесс",
+    "locationAddr": "607684, Нижегородская область, Кстовский р-н, д. Ржавка, ул. Промзона, строение 1",
+    "locationGln": "5250057665111",
+    "supplierName": "Тестовый поставщик Аксесс Механизм",
+    "supplierYurAddr": null,
+    "supplierGln": "1111111111199",
+    "buyerName": "ООО \"АКСЕСС МЕХАНИЗМ\"",
+    "buyerYurAddr": "607684, Нижегородская обл., Кстовский р-н, д. Ржавка, Промзона, Строение 1.",
+    "buyerGln": "5250057665",
+    "itemsCount": "1",
+    "delivDate": null,
+    "location": "167960",
+    "senderCode": null,
+    "options__ContractNumber": "5500002863",
+    "options__DN_Number": "USR-2411S01",
+    "options__DN_Date": "20250120",
+    "options__DispatchQuantity": "2400.000",
+    "options__ReceivedQuantity": "2400.000",
+    "options__DP_GLN": "LPRD",
+    "options__DateOfManufactureEnd": "20250510"
+  },
+  "docItems": [
+    {
+      "id": "18401125",
+      "sequenceNumber": "1",
+      "prdTo": "000000000026775078",
+      "prdDscr": "CABLE COI LADA XJO FRONT",
+      "uom": "шт",
+      "qty": "190050.0000",
+      "itemsPerUnit": "250.000",
+      "options__DP_GLN": "LPRD",
+      "options__DN_Number": "USR-2411S01",
+      "options__DN_Date": "20250120",
+      "options__DispatchQuantity": "2400.000",
+      "options__ReceivedQuantity": "2400.000",
+      "options__DateOfManufactureEnd": "20250510",
+      "options__PackageType": "CN1051718",
+      "options__Delivery": null,
+      "options__Delivery__PartyType": "1\n1\n1\n4\n4\n4\n4\n4\n4\n4\n4",
+      "options__Delivery__DeliveryDateFrom": "20241217\n20250130\n20250311\n20250421\n20250530\n20250714\n20250825\n20251003\n20251106\n20251203\n20260203",
+      "options__Delivery__DeliveryDateTo": "20241217\n20250130\n20250311\n20250421\n20250606\n20250721\n20250901\n20251105\n20251203\n20251231\n20260304",
+      "options__Delivery__DeliveryQuantity": "9600\n4800\n20250\n15750\n20250\n24750\n22500\n22500\n24750\n20250\n2250",
+      "originCountry": null,
+      "custDeclar": null,
+      "orderPrice1": null,
+      "orderPrice2": null
+    }
+  ],
+  "catalogs": {},
+  "multipleOptions": {
+    "options__Delivery": 11
+  }
+}

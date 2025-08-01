@@ -1,0 +1,616 @@
+{
+  "metaData": {
+    "header": {
+      "name": "header",
+      "label": "",
+      "dataType": "section"
+    },
+    "title": {
+      "name": "title",
+      "label": "ЗАКАЗ (Фреш)",
+      "dataType": "section",
+      "attributes": {
+        "class": "title"
+      },
+      "style": {
+        "justifySelf": "start",
+        "textAlign": "center",
+        "display": "flex"
+      }
+    },
+    "title2": {
+      "name": "title2",
+      "label": "Оригинал",
+      "dataType": "section"
+    },
+    "tabInfo": {
+      "name": "tabInfo",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "tabInfo"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "location": {
+          "name": "location",
+          "label": "Точка доставки",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "locationDscr": {
+              "name": "locationDscr",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "locationAddr": {
+              "name": "locationAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "locationGln": {
+              "name": "locationGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        },
+        "supplier": {
+          "name": "supplier",
+          "label": "Поставщик",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "supplierName": {
+              "name": "supplierName",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "supplierYurAddr": {
+              "name": "supplierYurAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "supplierGln": {
+              "name": "supplierGln",
+              "label": "GLN:",
+              "dataType": "string"
+            },
+            "recvCode": {
+              "name": "recvCode",
+              "label": "Код поставщика",
+              "dataType": "string"
+            }
+          }
+        },
+        "buyer": {
+          "name": "buyer",
+          "label": "Покупатель",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "buyerName": {
+              "name": "buyerName",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "buyerYurAddr": {
+              "name": "buyerYurAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "buyerGln": {
+              "name": "buyerGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        },
+        "logo": {
+          "name": "logo",
+          "label": "",
+          "dataType": "image"
+        }
+      }
+    },
+    "tabServiceInfo": {
+      "name": "tabServiceInfo",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "tabServiceInfo"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex",
+        "flexDirection": "column"
+      },
+      "items": {
+        "tabServiceInfoRow1": {
+          "name": "tabServiceInfoRow1",
+          "label": "",
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "docNumber": {
+              "name": "docNumber",
+              "label": "Заказ:",
+              "dataType": "string"
+            },
+            "delivDate": {
+              "name": "delivDate",
+              "label": "Дата доставки",
+              "dataType": "date"
+            },
+            "options__ORDERS__TYPE": {
+              "name": "options__ORDERS__TYPE",
+              "label": "Тип заказа",
+              "dataType": "select",
+              "catalog": "ordertype"
+            },
+            "options__ORDERS__ChangesNumber": {
+              "name": "options__ORDERS__ChangesNumber",
+              "label": "Номер исправления",
+              "dataType": "number"
+            },
+            "options__ORDERS__RecipientGln": {
+              "name": "options__ORDERS__RecipientGln",
+              "label": "GLN получателя счета",
+              "dataType": "string"
+            }
+          }
+        },
+        "tabServiceInfoRow2": {
+          "name": "tabServiceInfoRow2",
+          "label": "",
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "docDate": {
+              "name": "docDate",
+              "label": "Дата заказа",
+              "dataType": "date"
+            },
+            "options__ShipmentDate": {
+              "name": "options__ShipmentDate",
+              "label": "Дата отгрузки",
+              "dataType": "date"
+            },
+            "curr": {
+              "name": "curr",
+              "label": "Валюта",
+              "dataType": "string",
+              "catalog": "currency"
+            },
+            "options__ORDERS__ContractNumber": {
+              "name": "options__ORDERS__ContractNumber",
+              "label": "Номер контракта",
+              "dataType": "string"
+            }
+          }
+        }
+      }
+    },
+    "docItems": {
+      "name": "docItems",
+      "label": "",
+      "dataType": "array",
+      "attributes": {
+        "class": "tabBlock"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "sequenceNumber": {
+          "name": "sequenceNumber",
+          "label": "№",
+          "dataType": "number",
+          "style": {
+            "minWidth": "53px",
+            "width": "53px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        },
+        "ean": {
+          "name": "ean",
+          "label": "Штрихкод",
+          "dataType": "string",
+          "style": {
+            "minWidth": "133px",
+            "width": "133px"
+          }
+        },
+        "local": {
+          "name": "local",
+          "label": "Код заказчика",
+          "dataType": "string",
+          "style": {
+            "minWidth": "133px",
+            "width": "133px"
+          }
+        },
+        "prdDscr": {
+          "name": "prdDscr",
+          "label": "Наименование",
+          "dataType": "string",
+          "style": {
+            "minWidth": "404px",
+            "width": "404px"
+          }
+        },
+        "uom": {
+          "name": "uom",
+          "label": "Ед. изм.",
+          "dataType": "select",
+          "style": {
+            "minWidth": "70px",
+            "width": "70px"
+          }
+        },
+        "qty": {
+          "name": "qty",
+          "label": "Количество",
+          "dataType": "number",
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "4"
+              }
+            },
+            {
+              "name": "smartFormat",
+              "params": {
+                "precisionForKGM": "4"
+              }
+            }
+          ]
+        },
+        "itemsPerUnit": {
+          "name": "itemsPerUnit",
+          "label": "Количество в коробке",
+          "dataType": "number"
+        },
+        "options__PRE_PACKING_FRESH__PRE_PACKING__QTY_IN_PACKING": {
+          "name": "options__PRE_PACKING_FRESH__PRE_PACKING__QTY_IN_PACKING",
+          "label": "Фасовка. Количество",
+          "dataType": "number"
+        },
+        "options__PRE_PACKING_FRESH__PRE_PACKING__PRE_PACKING_UOM": {
+          "name": "options__PRE_PACKING_FRESH__PRE_PACKING__PRE_PACKING_UOM",
+          "label": "Фасовка. Ед. изм. фасовки",
+          "dataType": "select"
+        },
+        "options__PRE_PACKING_FRESH__PRE_PACKING__PACKING_UOM": {
+          "name": "options__PRE_PACKING_FRESH__PRE_PACKING__PACKING_UOM",
+          "label": "Фасовка. Ед. изм.",
+          "dataType": "select"
+        },
+        "price1": {
+          "name": "price1",
+          "label": "Цена без НДС",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__NetAmount": {
+          "name": "options__NetAmount",
+          "label": "Сумма без НДС",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "vatPrc": {
+          "name": "vatPrc",
+          "label": "НДС",
+          "dataType": "select"
+        },
+        "price2": {
+          "name": "price2",
+          "label": "Цена с НДС",
+          "dataType": "number",
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__GrossAmount": {
+          "name": "options__GrossAmount",
+          "label": "Сумма с НДС",
+          "dataType": "number",
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "originCountry": {
+          "name": "originCountry",
+          "label": "Страна производитель",
+          "dataType": "select"
+        },
+        "options__Caliber": {
+          "name": "options__Caliber",
+          "label": "Калибр",
+          "dataType": "string"
+        }
+      }
+    },
+    "toolsExt": {
+      "name": "toolsExt",
+      "label": "",
+      "dataType": "section",
+      "items": {
+        "createDesAdvButton": {
+          "name": "createDesAdvButton",
+          "label": "Создать накладную",
+          "dataType": "button",
+          "attributes": {
+            "class": "btn-primary"
+          },
+          "rules": [
+            {
+              "name": "createDesadv"
+            }
+          ]
+        },
+        "viewOrdRspButton": {
+          "name": "viewOrdRspButton",
+          "label": "Посмотреть ответы на заказ",
+          "dataType": "button",
+          "rules": [
+            {
+              "name": "viewOrdrsp"
+            }
+          ]
+        },
+        "createOrdRspButton": {
+          "name": "createOrdRspButton",
+          "label": "Создать ответ на заказ",
+          "dataType": "button",
+          "rules": [
+            {
+              "name": "createOrdrsp"
+            }
+          ]
+        },
+        "createUpdButton": {
+          "name": "createUpdButton",
+          "label": "Создать УПД",
+          "dataType": "button"
+        }
+      }
+    },
+    "docSums": {
+      "name": "docSums",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "docSums"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "flex-end",
+        "display": "flex"
+      },
+      "items": {
+        "itemsCount": {
+          "name": "itemsCount",
+          "label": "Количество позиций:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        },
+        "totalQty": {
+          "name": "totalQty",
+          "label": "Общее количество по заказу:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "smartFormat",
+              "params": {
+                "precisionForKGM": "3"
+              }
+            }
+          ]
+        },
+        "options__NetAmount": {
+          "name": "options__NetAmount",
+          "label": "Сумма заказа, без НДС:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__TaxAmount": {
+          "name": "options__TaxAmount",
+          "label": "Сумма заказа, НДС:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__GrossAmount": {
+          "name": "options__GrossAmount",
+          "label": "Сумма заказа, с НДС:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "data": {
+    "id": "1245513",
+    "status": "196642",
+    "docType": "ORDERS",
+    "locationCode": "522000",
+    "buyerToken": "Tander",
+    "recvCode": "ГК/31609/21",
+    "docNumber": "23000Y7208622",
+    "docDate": "2024-03-26T00:00:00",
+    "delivDate": "2024-04-04T00:00:00",
+    "curr": "RUB",
+    "logo": "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",
+    "locationDscr": "РЦ Дзержинск",
+    "locationAddr": "606000, Нижегородская обл, Дзержинск г, Речное ш, дом № 50, корпус 1",
+    "locationGln": "4607164990121",
+    "supplierName": "ООО \"Поставщик Тандер\" (exite)",
+    "supplierYurAddr": "адрес поставщик Тандер",
+    "supplierGln": "4607190919910",
+    "buyerName": "Тандер ЗАО",
+    "buyerYurAddr": "350002 г.Краснодар, ул. Леваневского, 185",
+    "buyerGln": "4607164999995",
+    "itemsCount": "1",
+    "totalQty": "20000.0000",
+    "location": "3730",
+    "senderCode": null,
+    "options__ISFRESH": "true",
+    "options__ORDERS": null,
+    "options__ORDERS__TYPE": "9",
+    "options__ORDERS__RecipientGln": "4607164999995",
+    "options__ShipmentDate": "2024-04-01",
+    "options__Transport1": null,
+    "options__Transport1__Key": "27E",
+    "options__Transport1__Name": "Термос",
+    "options__Transport2": null,
+    "options__Transport2__Key": "28",
+    "options__Transport2__Name": "Реф",
+    "options__Transport3": null,
+    "options__Transport3__Key": "35",
+    "options__Transport3__Name": "Тент",
+    "options__CollectedByCustomer": "True",
+    "options__ShippingPoints": null,
+    "options__ShippingPoints__Item": null,
+    "options__ShippingPoints__Item__Name": "64EB8D66824E49BF80AC630596D635DA",
+    "options__ShippingPoints__Item__Addr": "Тульская область, Новомосковский район, с.Спасское,ул.Центральная,д.1,склад №2",
+    "options__ShippingPoints__Item__City": "Спасское",
+    "options__DocLinkUpdUrl": "https://pdoc.doclink.ru/updNew/Modify?docid=1656208",
+    "options__NetAmount": "254600.00",
+    "options__TaxAmount": "0.00",
+    "options__GrossAmount": "280000.00",
+    "options__ORDERS__ChangesNumber": null,
+    "options__ORDERS__ContractNumber": null
+  },
+  "docItems": [
+    {
+      "id": "18181176",
+      "sequenceNumber": "1",
+      "ean": "2340597",
+      "local": "1445100062",
+      "prdDscr": "КАРТОФЕЛЬ фасованный цена за 1кг",
+      "uom": "КГ",
+      "qty": "20000.0000",
+      "itemsPerUnit": null,
+      "price1": "12.73",
+      "vatPrc": "10",
+      "price2": "14.0",
+      "originCountry": "Россия",
+      "options__Caliber": ".",
+      "options__PRE_PACKING_FRESH": null,
+      "options__PRE_PACKING_FRESH__PRE_PACKING": null,
+      "options__PRE_PACKING_FRESH__PRE_PACKING__PRE_PACKING_UOM": "KGM",
+      "options__PRE_PACKING_FRESH__PRE_PACKING__QTY_IN_PACKING": "25.0",
+      "options__PRE_PACKING_FRESH__PRE_PACKING__PACKING_UOM": "КГ",
+      "options__IsPromo": "False",
+      "custDeclar": null,
+      "orderPrice1": null,
+      "orderPrice2": null,
+      "options__NetAmount": "254600.00",
+      "options__GrossAmount": "280000.00"
+    }
+  ],
+  "catalogs": {
+    "ordertype": {
+      "1": "Отмена",
+      "5": "Изменение",
+      "9": "Оригинал",
+      "31": "Копия"
+    },
+    "currency": {
+      "RUB": "РУБ"
+    }
+  },
+  "multipleOptions": null
+}
