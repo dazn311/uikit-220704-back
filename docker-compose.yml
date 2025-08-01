@@ -17,7 +17,6 @@ services:
     networks:
       - uikit_network
   php:
-#    image: php:8.2-fpm
     build:
       context: ./
       dockerfile: ./php/Dockerfile
@@ -25,38 +24,12 @@ services:
     working_dir: /var/www/html/uikit
     container_name: php-uikit
     environment:
-      PHP_IDE_CONFIG: serverName=homesstaging.ru
+      PHP_IDE_CONFIG: serverName=uikit.ru
     volumes:
       - ./:/var/www/html/uikit
-#    command:
-#      - php /bin/test_run.php
-#      - php /var/www/html/homes_staging/bin/test_run.php
-#      - php /bin/registration.php
     networks:
       - uikit_network
 
 networks:
   uikit_network:
     driver: bridge
-
-#  php:
-#    image: php:8.2-fpm
-#    container_name: php-hst
-#    working_dir: /var/www/html/homes_staging
-#    volumes:
-#      - .:/var/www/html/homes_staging
-#    environment:
-#     PHP_IDE_CONFIG: serverName=homesstaging
-#    networks:
-#      - app_network
-
-#  app:
-#    build:
-#      context: ./
-#    tty: true
-#    working_dir: /app
-#    container_name: php-hs
-#    volumes:
-#      - ./:/app
-#    networks:
-#      - app_network
