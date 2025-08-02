@@ -43,7 +43,7 @@ class Articles
           $path = dirname($_SERVER['DOCUMENT_ROOT']) . baseApiUrl . $endpoint;
    
           $result = file_get_contents($path);
-
+          $result = htmlspecialchars_decode($result);
           $client->setex($cacheKey, 600, $result);
           $result = json_decode($result, true, 512, JSON_THROW_ON_ERROR);
         } catch (\JsonException $e) {
@@ -64,7 +64,7 @@ class Articles
         if (empty($result)) {
             return [];
         }
-
+        // $result = htmlspecialchars_decode($result);
         return $result;
     }
 }

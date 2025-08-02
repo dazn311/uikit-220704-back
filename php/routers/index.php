@@ -22,6 +22,11 @@ $router->add("/info", function() {
     echo "$root_path2/php/index.php";
 });
 
+$router->add("/api/user/info", function() {
+    global $root_path2;
+    require "$root_path2/pages/user-info.php";
+});
+
 //var_dump($path);
 //echo '$root_path2: ' . $root_path2;
 //echo '<div>'. '$path: ' . $path . '</div>';

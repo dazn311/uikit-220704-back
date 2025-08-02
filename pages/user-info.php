@@ -1,6 +1,6 @@
 <?php
 use Utils\Articles;
-global $root_path2;
+
 // $id = session_id();
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
