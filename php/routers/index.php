@@ -24,7 +24,7 @@ $router->add("/info", function() {
 
 $router->add("/api/user/info", function() {
     global $root_path2;
-    require "$root_path2/pages/user-info.php";
+    require "$root_path2/pages/controller-user-info.php";
 });
 
 //var_dump($path);

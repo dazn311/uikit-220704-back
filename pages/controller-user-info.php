@@ -18,7 +18,7 @@ if (session_status() === PHP_SESSION_ACTIVE) {
     // echo "Идентификатор сессии: " . $sessionId;
 }
 
-$knowledgeCode = "desadv1248304-edit-modify-250709-krampsup";
+$knowledgeCode = "user-info";
 
 $currentKnowledge = Articles::getArticle($knowledgeCode);
 

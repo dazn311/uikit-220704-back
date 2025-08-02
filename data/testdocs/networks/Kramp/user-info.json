@@ -1,0 +1,67 @@
+{
+    "settingId": 10875,
+    "name": "krampsup",
+    "password": "krampsup",
+    "companyName": "Тестовый поставщик Крамп",
+    "companyId": 11805,
+    "token": null,
+    "partyId": 11193,
+    "roleId": 3,
+    "roleName": "Поставщик",
+    "lastLoginTime": "2025-08-02T10:06:04.13",
+    "tariffPlanName": null,
+    "options": {
+        "settingsOptions": [
+            {
+                "name": "English",
+                "value": "False"
+            }
+        ]
+    },
+    "docTypes": [
+        {
+            "id": 4,
+            "code": "ORDERS",
+            "title": "Заказы",
+            "titleEn": "Orders"
+        },
+        {
+            "id": 28,
+            "code": "DESADV",
+            "title": "Накладные",
+            "titleEn": "Despatch Advices"
+        },
+        {
+            "id": 43,
+            "code": "ORDRSP",
+            "title": "Ответы на заказы",
+            "titleEn": "Order Responses"
+        },
+        {
+            "id": 111,
+            "code": "RECADV",
+            "title": "Акты приёмки",
+            "titleEn": "Receiving Advices"
+        },
+        {
+            "id": 120,
+            "code": "INVOIC",
+            "title": "Счет-фактуры",
+            "titleEn": "Invoices"
+        },
+        {
+            "id": 128,
+            "code": "INVRPT",
+            "title": "Отчеты об инвентаризации",
+            "titleEn": "Inventory Reports"
+        },
+        {
+            "id": 130,
+            "code": "PRICAT",
+            "title": "Прайс-листы",
+            "titleEn": "Price Lists"
+        }
+    ],
+    "isAnyAnnounce": false,
+    "isEnglish": false
+}
