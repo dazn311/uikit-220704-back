@@ -27,6 +27,11 @@ $router->add("/api/user/info", function() {
     require "$root_path2/pages/controller-user-info.php";
 });
 
+$router->add("/api/document/1249523", function() {
+    global $root_path2;
+    require "$root_path2/pages/controller-docs.php";
+});
+
 //var_dump($path);
 //echo '$root_path2: ' . $root_path2;
 //echo '<div>'. '$path: ' . $path . '</div>';

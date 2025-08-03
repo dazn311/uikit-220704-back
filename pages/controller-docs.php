@@ -1,22 +1,15 @@
 <?php
 use Utils\Articles;
 global $root_path2;
+require $root_path2 . '/pages/response-header.php';
 // $id = session_id();
 
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type, Authorization");
-        exit;
-    }
-
-if (session_status() === PHP_SESSION_ACTIVE) {
-    $sessionId = session_id();
-    if (!$sessionId) {
-      die("Идентификатор сессии: " . $sessionId);
-    }
-    // echo "Идентификатор сессии: " . $sessionId;
-}
+// if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+//     header("Access-Control-Allow-Origin: *");
+//     header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+//     header("Access-Control-Allow-Headers: Content-Type, Authorization");
+//     exit;
+// }
 
 $knowledgeCode = "desadv1248304-edit-modify-250709-krampsup";
 
@@ -24,10 +17,9 @@ $currentKnowledge = Articles::getArticle($knowledgeCode);
 
 if (empty($currentKnowledge)) {
     // TODO: Нерабочая логика. Заколовки к этому моменту отправлены. Они неизменяемы
-    header('HTTP/1.0 404 not found');
-    die();
+    echo json_encode($currentKnowledge);
 }
 
-require $root_path2 . '/pages/response-header.php';
 
+// header("Content-Type: application/json");
 echo json_encode($currentKnowledge);

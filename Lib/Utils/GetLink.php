@@ -18,7 +18,7 @@ class GetLink
 //        echo "<br>";
 //        echo 'request: ' . $request;
 //        echo "<br>";
-        print_info('[Lib\Utils] htmlUrl: ' . (new GetLink)->htmlUrl($linkName));
+        // print_info('[Lib\Utils] htmlUrl: ' . (new GetLink)->htmlUrl($linkName));
 //        echo 'Lib\Utils htmlUrl: ' . self::htmlUrl($linkName);
 //        echo "<br>";
         if (empty((new GetLink)->htmlUrl($linkName))) {
