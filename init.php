@@ -2,6 +2,7 @@
 // ini_set("session.cookie_secure", 1);
 // $cookieParams = session_get_cookie_params();
 session_start();
+// header('Cookie: PHPSESSID= ' . session_id() . '; SameSite=None; Secure');
 header('Set-Cookie: PHPSESSID= ' . session_id() . '; SameSite=None; Secure');
 require_once 'vendor/autoload.php';
 

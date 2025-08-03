@@ -5,15 +5,7 @@ namespace Utils;
 use Predis\Client;
  
 const cachePrefix = 'uikit-article_';
-// const apiDomain = 'https://taxcom.ru';
-const baseApiUrl = '/data/testdocs/networks';
-const apiEndpoints = [
-    'articles' => '',
-    'Kramp' => '/Kramp',
-    'sections' => '/section',
-    'tags' => '/tag'
-];
-// $root_path3 = dirname($_SERVER['DOCUMENT_ROOT']);
+
 class Articles
 {
     /**
@@ -23,7 +15,6 @@ class Articles
      */
     private static function getData(string $cacheKey, string $endpoint): array
     {
-      // $options    = ['cluster' => 'redis'];
       $client = new Client([
             'scheme' => 'tcp',
             'host' => $_ENV['REDIS_HOST']
@@ -40,25 +31,25 @@ class Articles
         }
 
         try {
-          $path = dirname($_SERVER['DOCUMENT_ROOT']) . $_ENV['BASEAPIURL'] . $endpoint;
+          $path = dirname($_SERVER['DOCUMENT_ROOT']) . $_ENV['BASE_API_URL'] . $endpoint;
    
           $result = file_get_contents($path);
           $result = htmlspecialchars_decode($result);
           $client->setex($cacheKey, 600, $result);
           $result = json_decode($result, true, 512, JSON_THROW_ON_ERROR);
         } catch (\JsonException $e) {
-          return ["error"=> $e];
+          return ["error" => $e];
         }
 
         return $result;
     }
 
-    public static function getArticle(string $fileName): array
+    public static function getArticle(string $ts,string $fileName): array
     {
 
         $articleCacheKey = cachePrefix . $fileName;
 
-        $path = apiEndpoints['Kramp'] . '/' . $fileName . '.json';
+        $path = '/' . $ts . '/' . $fileName;// . '.json';
         $result = self::getData($articleCacheKey, $path);
 
         if (empty($result)) {

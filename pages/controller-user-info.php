@@ -1,9 +1,10 @@
 <?php
 use Utils\Articles;
 
-$knowledgeCode = "user-info";
+$knowledgeCode = "user-info.json";
 
-$currentKnowledge = Articles::getArticle($knowledgeCode);
+$ts='Kramp';
+$currentKnowledge = Articles::getArticle($ts, $knowledgeCode);
 
 header("Content-Type: application/json");
 echo json_encode($currentKnowledge);

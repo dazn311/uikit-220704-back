@@ -16,10 +16,10 @@ class Router
     {
         if (array_key_exists($path,$this->routes)) {
             $handler = $this->routes[$path];
-
             call_user_func($handler);
         } else {
-            echo "Page not found: $path";
+            global $root_path2;
+            require $root_path2 . '/pages/not-found-pags.php';
         }
     }
 }
