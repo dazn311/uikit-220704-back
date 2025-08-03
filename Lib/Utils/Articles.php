@@ -3,7 +3,7 @@
 namespace Utils;
 
 use Predis\Client;
-
+ 
 const cachePrefix = 'uikit-article_';
 // const apiDomain = 'https://taxcom.ru';
 const baseApiUrl = '/data/testdocs/networks';
@@ -40,7 +40,7 @@ class Articles
         }
 
         try {
-          $path = dirname($_SERVER['DOCUMENT_ROOT']) . baseApiUrl . $endpoint;
+          $path = dirname($_SERVER['DOCUMENT_ROOT']) . $_ENV['BASEAPIURL'] . $endpoint;
    
           $result = file_get_contents($path);
           $result = htmlspecialchars_decode($result);

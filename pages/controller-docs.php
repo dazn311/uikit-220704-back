@@ -2,14 +2,7 @@
 use Utils\Articles;
 global $root_path2;
 require $root_path2 . '/pages/response-header.php';
-// $id = session_id();
-
-// if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-//     header("Access-Control-Allow-Origin: *");
-//     header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-//     header("Access-Control-Allow-Headers: Content-Type, Authorization");
-//     exit;
-// }
+// require $root_path2 . '/Lib/Utils/getFileNameFromDir.php';
 
 $knowledgeCode = "desadv1248304-edit-modify-250709-krampsup";
 
@@ -22,4 +15,6 @@ if (empty($currentKnowledge)) {
 
 
 // header("Content-Type: application/json");
+// getFileNameFromDir();
+
 echo json_encode($currentKnowledge);
