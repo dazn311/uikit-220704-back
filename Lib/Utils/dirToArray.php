@@ -19,7 +19,7 @@ function dirToArray($dir, $ts, $idDoc,$currentInit) {
           }
           
         } else {
-          if (strpos($value, '1248304') !== false) { // Проверяем, что это файл и ищем по имени
+          if (strpos($value, $idDoc) !== false) { // Проверяем, что это файл и ищем по имени
             $current[] = [
               'name' => $ts,
               'value' => $value
