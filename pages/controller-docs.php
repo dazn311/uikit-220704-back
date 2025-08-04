@@ -21,13 +21,8 @@ foreach ($result as $keyTS => $valueTs) {
 $currentKnowledge = Articles::getArticle($ts, $knowledgeCode);
 
 if (empty($currentKnowledge)) {
-  header("Content-Type: application/json");
-  // header("Access-Control-Allow-Origin: *");
     // TODO: Нерабочая логика. Заколовки к этому моменту отправлены. Они неизменяемы
     echo json_encode($currentKnowledge);
 }
 
-
-header("Content-Type: application/json");
-// header("Access-Control-Allow-Origin: *");
 echo json_encode($currentKnowledge);

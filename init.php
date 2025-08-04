@@ -3,7 +3,7 @@
 // $cookieParams = session_get_cookie_params();
 session_start();
 // header('Cookie: PHPSESSID= ' . session_id() . '; SameSite=None; Secure');
-header('Set-Cookie: PHPSESSID= ' . session_id() . '; SameSite=None; Secure');
+header('Set-Cookie: PHPSESSID=' . session_id() . '; SameSite=None; Secure');
 require_once 'vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
