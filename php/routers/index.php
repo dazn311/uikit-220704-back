@@ -4,6 +4,8 @@ use php\routers\Router;
 
 $request = htmlspecialchars(explode("?", $_SERVER['REQUEST_URI'])[0], ENT_QUOTES);
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+//read mode;
+//https://localhost:3000/tools/docmeta/?id=1248304&type=desadv&mode=edit
 $queryPath = $_SERVER["REQUEST_URI"];//  /api/document/1248304?isEditMode=true
 $queryPathArr = explode('?', $queryPath);
 
@@ -19,14 +21,14 @@ if (isset($queryPathArr[0]) && strpos($queryPath, '/api/document/') !== false) {
   if (!empty($id)) {
     $router->add("/api/document/$id", function() {
         global $root_path2;
-        require "$root_path2/pages/controller-docs.php";
+        require "$root_path2/shared/controller-docs.php";
     });
   }
 }
 
 $router->add("/", function() {
     global $root_path2;
-    require "$root_path2/pages/controller-docs.php";
+    require "$root_path2/shared/controller-docs.php";
 });
 
 $router->add("/info", function() {
@@ -36,24 +38,8 @@ $router->add("/info", function() {
 
 $router->add("/api/user/info", function() {
     global $root_path2;
-    require "$root_path2/pages/controller-user-info.php";
+    require "$root_path2/shared/controller-user-info.php";
 });
 
 $router->dispatch($path);
 
-
-//print_r($path);
-// die(var_dump($_SERVER));
-
-//die($_SERVER["REQUEST_URI"]);
-
-
-
-// $router->add("/api/document/1248304", function() {
-//     global $root_path2;
-//     require "$root_path2/pages/controller-docs.php";
-// });
-
-//var_dump($path);
-//echo '$root_path2: ' . $root_path2;
-//echo '<div>'. '$path: ' . $path . '</div>';

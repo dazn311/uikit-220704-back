@@ -1,6 +1,6 @@
 <?php
 use Utils\Articles;
-require $root_path2 . '/pages/response-header.php';
+require $root_path2 . '/shared/response-header.php';
 $knowledgeCode = "user-info.json";
 
 $ts='Kramp';

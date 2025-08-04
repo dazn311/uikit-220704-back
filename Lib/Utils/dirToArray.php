@@ -1,6 +1,6 @@
 <?php
 
-function dirToArray($dir, $ts, $idDoc,$currentInit) {
+function dirToArray($dir, $ts, $idDoc,$isEditMode,$currentInit) {
    $result = array();
    $current = $currentInit;
    $cdir = scandir($dir);
@@ -10,7 +10,7 @@ function dirToArray($dir, $ts, $idDoc,$currentInit) {
         $pathName = $dir . DIRECTORY_SEPARATOR . $value;
         
         if (is_dir($pathName)) {
-          $sub_res = dirToArray($pathName,$value, $idDoc,$current);
+          $sub_res = dirToArray($pathName,$value, $idDoc,$isEditMode,$current);
           if (in_array('data',$sub_res)) {
            
             $result = $sub_res;
@@ -19,7 +19,8 @@ function dirToArray($dir, $ts, $idDoc,$currentInit) {
           }
           
         } else {
-          if (strpos($value, $idDoc) !== false) { // Проверяем, что это файл и ищем по имени
+          $isEditModeStr = $isEditMode ? 'isEditMode=true' : 'read';
+          if (strpos($value, $idDoc) !== false && strpos($value, $isEditModeStr) !== false) { // Проверяем, что это файл и ищем по имени
             $current[] = [
               'name' => $ts,
               'value' => $value

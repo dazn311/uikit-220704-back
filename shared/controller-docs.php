@@ -2,14 +2,31 @@
 use Utils\Articles;
 global $root_path2;
 global $id;//1248304
-require $root_path2 . '/pages/response-header.php';
+require $root_path2 . '/shared/response-header.php';
 require $root_path2 . '/Lib/Utils/dirToArray.php';
+
+$mode = 'read';
+$type = 'desadv';
+$isEditMode = false;
+
+if (isset($_GET['type'])) {
+  $type = $_GET['type'];
+}
+
+if (isset($_GET['mode'])) {
+  $mode = $_GET['mode'];
+}
+
+if (isset($_GET['isEditMode'])) {
+  $isEditMode = $_GET['isEditMode'];
+}
+
 // die(var_dump($id));
 $ts='Kramp';
-$knowledgeCode = "desadv$id-edit-modify-250709-krampsup.json";
+$knowledgeCode = "desadv1248304-edit-modify-250709-krampsup.json";
 
 $dir = $root_path2 . $_ENV['BASE_API_URL']; // Замените на нужный вам путь
-$result = dirToArray($dir,'',$id,array());
+$result = dirToArray($dir,'',$id,$isEditMode,array());
 
 foreach ($result as $keyTS => $valueTs) {
   if (!empty($valueTs['name'])) {      
