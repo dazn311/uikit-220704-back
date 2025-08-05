@@ -1,8 +1,8 @@
 <?php
 use Utils\Articles;
-global $root_path2;
-global $id;//1248304
-require $root_path2 . '/shared/response-header.php';
+global $root_path2, $id;
+// global $id;//1248304
+require $root_path2 . '/pages/controllers/response-header.php';
 require $root_path2 . '/Lib/Utils/dirToArray.php';
 
 $mode = 'read';

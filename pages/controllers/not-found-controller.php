@@ -1,6 +1,6 @@
 <?php
 /**
-* not-found-pags
+* not-found-controller
 */
 // header("Content-Type: application/json");
 global $root_path2;

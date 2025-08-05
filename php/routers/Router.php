@@ -19,7 +19,7 @@ class Router
             call_user_func($handler);
         } else {
             global $root_path2;
-            require $root_path2 . '/pages/not-found-pags.php';
+            require $root_path2 . '/pages/not-found-controller.php';
         }
     }
 }

@@ -21,14 +21,14 @@ if (isset($queryPathArr[0]) && strpos($queryPath, '/api/document/') !== false) {
   if (!empty($id)) {
     $router->add("/api/document/$id", function() {
         global $root_path2;
-        require "$root_path2/shared/controller-docs.php";
+        require "$root_path2/pages/controllers/docs-controller.php";
     });
   }
 }
 
 $router->add("/", function() {
     global $root_path2;
-    require "$root_path2/shared/controller-docs.php";
+    require "$root_path2/pages/controllers/docs-controller.php";
 });
 
 $router->add("/info", function() {
@@ -38,7 +38,7 @@ $router->add("/info", function() {
 
 $router->add("/api/user/info", function() {
     global $root_path2;
-    require "$root_path2/shared/controller-user-info.php";
+    require "$root_path2/pages/controllers/user-info-controller.php";
 });
 
 $router->dispatch($path);
