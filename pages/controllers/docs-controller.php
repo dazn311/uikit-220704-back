@@ -4,6 +4,7 @@ global $root_path2, $id;
 // global $id;//1248304
 require $root_path2 . '/pages/controllers/response-header.php';
 require $root_path2 . '/Lib/Utils/dirToArray.php';
+// require $root_path2 . '/shared/createCookies.php';
 
 $mode = 'read';
 $type = 'desadv';

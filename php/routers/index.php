@@ -28,12 +28,12 @@ if (isset($queryPathArr[0]) && strpos($queryPath, '/api/document/') !== false) {
 
 $router->add("/", function() {
     global $root_path2;
-    require "$root_path2/pages/controllers/docs-controller.php";
+    require "$root_path2/pages/controllers/home-controller.php";
 });
 
 $router->add("/info", function() {
     global $root_path2;
-    echo "$root_path2/php/index.php";
+    require "$root_path2/php/index.php";
 });
 
 $router->add("/api/user/info", function() {
