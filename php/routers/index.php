@@ -26,6 +26,21 @@ if (isset($queryPathArr[0]) && strpos($queryPath, '/api/document/') !== false) {
   }
 }
 
+//api/filters/orders
+if (isset($queryPathArr[0]) && strpos($queryPath, '/api/filters/') !== false) { // Проверяем, что это файл и ищем по имени
+  $queryPath1 = explode('/', $queryPathArr[0]);
+  $docType = end($queryPath1);//orders
+  $suffNameFile = "filter-list-$docType";
+  
+  if (!empty($docType)) {
+    $router->add("/api/filters/$docType", function() {
+        global $root_path2, $suffNameFile;
+
+        require "$root_path2/pages/controllers/filter-list-controller.php";
+    });
+  }
+}
+
 $router->add("/", function() {
     global $root_path2;
     require "$root_path2/pages/controllers/home-controller.php";

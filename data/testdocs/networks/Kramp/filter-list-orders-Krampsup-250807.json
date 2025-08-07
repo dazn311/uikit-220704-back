@@ -1,0 +1,87 @@
+{
+    "token": [
+        {
+            "value": "Kramp",
+            "name": "Крамп"
+        }
+    ],
+    "senderId": [
+        {
+            "token": "Kramp",
+            "value": 11192,
+            "name": "ООО «Крамп»"
+        }
+    ],
+    "receiverId": [
+        {
+            "token": null,
+            "value": 11193,
+            "name": "Тестовый поставщик Крамп"
+        }
+    ],
+    "buyerId": [
+        {
+            "token": "Kramp",
+            "value": 11192,
+            "name": "ООО «Крамп»"
+        }
+    ],
+    "supplierId": [
+        {
+            "value": 11193,
+            "name": "Тестовый поставщик Крамп",
+            "useOldSiteLinks": true
+        }
+    ],
+    "status": [
+        {
+            "value": 0,
+            "name": "окончательный"
+        },
+        {
+            "value": 512,
+            "name": "предварительный"
+        },
+        {
+            "value": 64,
+            "name": "плановый"
+        }
+    ],
+    "docStatus": [
+        {
+            "value": 0,
+            "name": "Новое сообщение"
+        },
+        {
+            "value": 65536,
+            "name": "Сообщение просмотрено"
+        },
+        {
+            "value": 131072,
+            "name": "Сообщение выгружено"
+        }
+    ],
+    "blockedParties": [],
+    "typeOfPlan": null,
+    "docType": null,
+    "typeOfTransport": null,
+    "locationId": null,
+    "locationId2": null,
+    "message": null,
+    "filterKeys": [
+        "docDateFrom",
+        "docDateTo",
+        "docNumber",
+        "token",
+        "buyerId",
+        "locationId",
+        "delivDateFrom",
+        "delivDateTo",
+        "status",
+        "locationId2",
+        "docStatus",
+        "responceDocWeb",
+        "isFavourite",
+        "limit"
+    ]
+}
