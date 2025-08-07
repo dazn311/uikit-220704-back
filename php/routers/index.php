@@ -36,6 +36,11 @@ $router->add("/info", function() {
     require "$root_path2/php/index.php";
 });
 
+$router->add("/login", function() {
+    global $root_path2;
+    require "$root_path2/pages/controllers/login-controller.php";
+});
+
 $router->add("/api/user/info", function() {
     global $root_path2;
     require "$root_path2/pages/controllers/user-info-controller.php";
