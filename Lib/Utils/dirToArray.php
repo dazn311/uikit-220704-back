@@ -19,7 +19,7 @@ function dirToArray($dir, $ts, $idDoc,$isEditMode,$currentInit) {
           }
           
         } else {
-          $isEditModeStr = $isEditMode ? 'isEditMode=true' : 'read';
+          $isEditModeStr = $isEditMode ? 'edit' : 'read';
           if (strpos($value, $idDoc) !== false && strpos($value, $isEditModeStr) !== false) { // Проверяем, что это файл и ищем по имени
             $current[] = [
               'name' => $ts,

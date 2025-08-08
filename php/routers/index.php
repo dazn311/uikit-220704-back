@@ -17,13 +17,44 @@ $router = new Router();
 if (isset($queryPathArr[0]) && strpos($queryPath, '/api/document/') !== false) { // Проверяем, что это файл и ищем по имени
   $queryPath1 = explode('/', $queryPathArr[0]);
   $id = end($queryPath1);
+  // var_dump($queryPath);
+  // var_dump(is_numeric($id));
+  // var_dump(is_int($id));
+  // var_dump($queryPath);
+  // var_dump($id);
   
-  if (!empty($id)) {
-    $router->add("/api/document/$id", function() {
-        global $root_path2;
+  // if (isset($_GET['isEditMode'])) {
+  //   $isEditMode = $_GET['isEditMode'];
+  // }
+  switch (true) {
+    case strpos($queryPath, '/api/document/new/') == 0:
+      // var_dump($queryPath);// /api/document/new/invrpt?receiverPartyId=11192
+      $type = $id;
+      $id = 'new';
+      $isEditMode = true;
+      $router->add("/api/document/new/$type", function() {
+        global $root_path2, $id;
+        $isEditMode = 'true';
+        // var_dump($isEditMode);
         require "$root_path2/pages/controllers/docs-controller.php";
-    });
-  }
+      });
+      break;
+    case !empty($id) && is_numeric($id):
+      $type = 'desadv';
+      $isEditMode = false;
+      if (isset($_GET['isEditMode'])) {
+        $isEditMode = $_GET['isEditMode'];
+      }
+      $router->add("/api/document/$id", function() {
+        global $root_path2, $isEditMode;
+        require "$root_path2/pages/controllers/docs-controller.php";
+      });
+      break;
+    // ... more cases
+    default:
+        // Code to execute if no case matches the expression
+        break;
+}
 }
 
 //api/filters/orders
