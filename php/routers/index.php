@@ -92,5 +92,13 @@ $router->add("/api/user/info", function() {
     require "$root_path2/pages/controllers/user-info-controller.php";
 });
 
+// $router->get2method("userInfo",'pages/controllers/user-info-controller.php');
+
+// $router->get2method("filters",'pages/controllers/filter-list-controller.php');
+
+// $router->get2method("document",'pages/controllers/docs-controller.php');
+
+// $router->post2method("user",'pages/controllers/user-controller.php');
+
 $router->dispatch($path);
 
