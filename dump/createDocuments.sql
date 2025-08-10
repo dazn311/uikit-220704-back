@@ -16,7 +16,7 @@ VALUES (
      'new',
      'edit',
      NOW(),
-     '0',
+     '1',
      'invrpt-new-edit-Krampsup-250807.json'),
     (
      null,
@@ -24,7 +24,7 @@ VALUES (
      '1248923',
      'edit',
      NOW(),
-     '0',
+     '1',
      'invrpt1248923-edit-Krampsup-250213.json'),
        (
      null,
@@ -32,5 +32,5 @@ VALUES (
      '1248304',
      'edit',
      NOW(),
-     '0' ,
+     '1' ,
      'desadv1248304-edit-Krampsup-250804.json');

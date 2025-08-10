@@ -11,6 +11,6 @@ CREATE TABLE users (
 
 INSERT INTO
     users (`id`, `email`, `name`, `password`,`createDate`,`remember_me`, `avatar`, `role`)
-VALUES (null,'Krampsup@gmail.com','Krampsup','12345',NOW(),'1','/uploads/avatar.png' ,0),
+VALUES (null,'Krampsup@gmail.com','Kramp','12345',NOW(),'1','/uploads/avatar.png' ,0),
        (null,'daz@gmail.com','Dazn311','12345',NOW(),'1','/uploads/avatar.png' ,1),
        (null,'alex2505@bk.ru','Alex','$2y$10$mKa0eFlj229qrIRURXznj.m6fjQC5w.HZu.HRjmB5Q5m/t1xDWLhK',NOW(),'1','/uploads/avatar.png' ,1);

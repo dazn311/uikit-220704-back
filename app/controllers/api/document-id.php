@@ -3,23 +3,23 @@ use Utils\Articles;
 use Utils\App;
 use Utils\Db;
 use Utils\Router;
-//echo 'document-id';
+
 require SHARED . '/createCookies.php';
 require SHARED . '/response-header-api.php';
 
 $db = App::get(Db::class);
-$idDoc = Router::$route_params['id'];
+$idDoc = Router::$route_params['id'];// '1248303'
+$idDocInt = (int) $idDoc;//1248303
 
+$documents = $db->query("SELECT `fileName`, `userId` FROM documents WHERE idDoc = ?",[$idDocInt])->find();//false | object;
+$user = $db->query("SELECT `name` FROM users WHERE id = ?", [$documents['userId']])->find();
 
-$documents = $db->query("SELECT `fileName` FROM documents WHERE idDoc = ?",[$idDoc])->find();//false | object;
+//SELECT * FROM documents d  WHERE idDoc = ? JOIN users u ON d.userId = u.id;
+//SELECT * FROM users u JOIN documents d ON u.id = d.userId;
+//$user3 = $db->query("SELECT * FROM documents d  WHERE idDoc = $idDocInt JOIN users u ON d.userId = u.id;");//->find();
 
-//var_dump($documents['fileName']);//desadv1248304-edit-Krampsup-250804.json
-
-$knowledgeCode = isset($documents['fileName']) ? $documents['fileName']:  "desadv1248304-edit-Krampsup-250804.json";
-//var_dump($knowledgeCode);
-//die();
-$ts='Kramp';
-
+$ts = $user['name'] ?? 'Kramp';
+$knowledgeCode = $documents['fileName'] ?? "desadv1248304-edit-Krampsup-250804.json";
 $currentKnowledge = Articles::getArticle($ts, $knowledgeCode);
 
 echo json_encode($currentKnowledge);
