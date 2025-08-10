@@ -8,11 +8,18 @@ const MIDDLEWARE = [
 ];
 
 // Posts
-$router->get('', 'posts/index.php');
+//$router->get('', 'posts/index.php');
 $router->get('posts', 'posts/show.php');
 $router->get('posts/create', 'posts/create.php')->only('auth');
 $router->post('posts', 'posts/store.php');
 $router->delete('posts', 'posts/destroy.php');
+
+// Documents
+$router->get('', 'documents/index.php');
+$router->get('', 'documents/show.php');
+$router->get('documents/create', 'documents/create.php')->only('auth');
+$router->post('documents', 'documents/store.php');
+$router->delete('documents', 'documents/destroy.php');
 
 // Pages
 $router->get('about', 'about.php');
