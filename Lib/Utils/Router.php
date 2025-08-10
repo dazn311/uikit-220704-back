@@ -7,9 +7,10 @@ namespace Utils;
 class Router
 {
 
-    protected $routes = [];
-    protected $uri;
-    protected $method;
+    protected array $routes = [];
+    protected string $uri;
+    protected mixed $method;
+    public static array $route_params = [];
 
     public function __construct()
     {
@@ -17,12 +18,14 @@ class Router
         $this->method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
     }
 
-    public function match()
+    /**
+     * @throws \Exception
+     */
+    public function match(): void
     {
-        $matches = false;
+        $isMatches = false;
         foreach ($this->routes as $route) {
-            if (($route['uri'] === $this->uri) && (in_array($this->method, $route['method']))) {
-
+            if ((preg_match("#^{$route['uri']}$#", $this->uri, $matches)) && (in_array($this->method, $route['method']))) {
                 if ($route['middleware']) {
                     $middleware = MIDDLEWARE[$route['middleware']] ?? false;
                     if (!$middleware) {
@@ -30,24 +33,29 @@ class Router
                     }
                     (new $middleware)->handle();
                 }
+                foreach ($matches as $key => $match) {
+                    if (is_string($key)) {
+                        self::$route_params[$key] = $match;
+                    }
+                }
 
                 require CONTROLLERS . "/{$route['controller']}";
-                $matches = true;
+                $isMatches = true;
                 break;
             }
         }
-        if (!$matches) {
+        if (!$isMatches) {
             abort();
         }
     }
 
-    public function only($middleware)
+    public function only($middleware): static
     {
         $this->routes[array_key_last($this->routes)]['middleware'] = $middleware;
         return $this;
     }
 
-    public function add($uri, $controller, $method)
+    public function add($uri, $controller, $method): static
     {
         if (is_array($method)) {
             $method = array_map('strtoupper', $method);
@@ -63,17 +71,17 @@ class Router
         return $this;
     }
 
-    public function get($uri, $controller)
+    public function get($uri, $controller): static
     {
         return $this->add($uri, $controller, 'GET');
     }
 
-    public function post($uri, $controller)
+    public function post($uri, $controller): static
     {
         return $this->add($uri, $controller, 'POST');
     }
 
-    public function delete($uri, $controller)
+    public function delete($uri, $controller): static
     {
         return $this->add($uri, $controller, 'DELETE');
     }

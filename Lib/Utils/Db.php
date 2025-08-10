@@ -11,7 +11,7 @@ final class Db
 
     private $connection;
     private PDOStatement $stmt;
-    private static $instance = null;
+    private static ?Db $instance = null;
 
     private function __construct()
     {
@@ -25,7 +25,7 @@ final class Db
     {
     }
 
-    public static function getInstance()
+    public static function getInstance(): ?Db
     {
         if (self::$instance === null) {
             self::$instance = new self();
@@ -47,7 +47,7 @@ final class Db
         }
     }
 
-    public function query($query, $params = [])
+    public function query($query, $params = []): false|Db
     {
         try {
             $this->stmt = $this->connection->prepare($query);
@@ -58,7 +58,7 @@ final class Db
         return $this;
     }
 
-    public function findAll()
+    public function findAll(): false|array
     {
         return $this->stmt->fetchAll();
     }
@@ -77,7 +77,7 @@ final class Db
         return $res;
     }
 
-    public function rowCount()
+    public function rowCount(): int
     {
         return $this->stmt->rowCount();
     }

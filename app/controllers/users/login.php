@@ -7,7 +7,7 @@ use Utils\Validator;
 $title = "My Blog :: Login";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    /** @var \myfrm\Db $db */
+    /** @var Db $db */
     $db = App::get(Db::class);
 
     $data = load(['email', 'password']);

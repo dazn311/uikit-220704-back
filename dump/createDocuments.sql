@@ -18,6 +18,14 @@ VALUES (
      NOW(),
      '0',
      'invrpt-new-edit-Krampsup-250807.json'),
+    (
+     null,
+     'invrpt',
+     '1248923',
+     'edit',
+     NOW(),
+     '0',
+     'invrpt1248923-edit-Krampsup-250213.json'),
        (
      null,
      'desadv',
