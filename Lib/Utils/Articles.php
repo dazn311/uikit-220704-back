@@ -17,7 +17,7 @@ class Articles
     {
       $client = new Client([
             'scheme' => 'tcp',
-            'host' => $_ENV['REDIS_HOST']
+            'host' => REDIS_HOST
         ]);
 
         $result = $client->get($cacheKey);
@@ -31,7 +31,8 @@ class Articles
         }
 
         try {
-          $path = dirname($_SERVER['DOCUMENT_ROOT']) . $_ENV['BASE_API_URL'] . $endpoint;
+          $path = dirname($_SERVER['DOCUMENT_ROOT']) . BASE_API_URL . $endpoint;
+
           if (file_exists($path)) {
             $result = file_get_contents($path);
             $result = htmlspecialchars_decode($result);

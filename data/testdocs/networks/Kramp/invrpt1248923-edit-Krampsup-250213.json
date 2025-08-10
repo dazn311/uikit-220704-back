@@ -1,0 +1,336 @@
+{
+  "metaData": {
+    "header": {
+      "name": "header",
+      "label": "",
+      "dataType": "section"
+    },
+    "title": {
+      "name": "title",
+      "label": "ОСТАТОК ТОВАРА",
+      "dataType": "section",
+      "attributes": {
+        "class": "title"
+      },
+      "style": {
+        "justifySelf": "start",
+        "textAlign": "center",
+        "display": "flex"
+      }
+    },
+    "tabInfo": {
+      "name": "tabInfo",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "tabInfo"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "supplier": {
+          "name": "supplier",
+          "label": "Отправитель",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "supplierName": {
+              "name": "supplierName",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "supplierYurAddr": {
+              "name": "supplierYurAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "supplierGln": {
+              "name": "supplierGln",
+              "label": "GLN:",
+              "dataType": "string"
+            },
+            "senderCode": {
+              "name": "senderCode",
+              "label": "Код поставщика:",
+              "dataType": "string",
+              "isEditable": true,
+              "required": true
+            }
+          }
+        },
+        "buyer": {
+          "name": "buyer",
+          "label": "Получатель",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "buyerName": {
+              "name": "buyerName",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "buyerYurAddr": {
+              "name": "buyerYurAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "buyerGln": {
+              "name": "buyerGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        },
+        "logo": {
+          "name": "logo",
+          "label": "",
+          "dataType": "image"
+        }
+      }
+    },
+    "tabServiceInfo": {
+      "name": "tabServiceInfo",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "tabServiceInfo"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex",
+        "flexDirection": "column"
+      },
+      "items": {
+        "tabServiceInfoRow1": {
+          "name": "tabServiceInfoRow1",
+          "label": "",
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "docNumber": {
+              "name": "docNumber",
+              "label": "Номер документа:",
+              "dataType": "string",
+              "isEditable": true,
+              "required": true,
+              "rules": [
+                {
+                  "name": "require"
+                }
+              ]
+            },
+            "docDate": {
+              "name": "docDate",
+              "label": "Дата документа:",
+              "dataType": "date",
+              "isEditable": true,
+              "required": true,
+              "rules": [
+                {
+                  "name": "require"
+                }
+              ]
+            },
+            "options__IdStorage": {
+              "name": "options__IdStorage",
+              "label": "Код склада поставщика:",
+              "dataType": "number",
+              "isEditable": true,
+              "required": true,
+              "rules": [
+                {
+                  "name": "checkStringLength",
+                  "params": {
+                    "min": "1",
+                    "max": "3"
+                  }
+                },
+                {
+                  "name": "checkDigitOnly"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "serviceTools": {
+      "name": "serviceTools",
+      "label": "",
+      "dataType": "section",
+      "items": {
+        "loadFromFileButton": {
+          "name": "loadFromFileButton",
+          "label": "Загрузить из файла",
+          "dataType": "button"
+        },
+        "saveDraftButton": {
+          "name": "saveDraftButton",
+          "label": "Сохранить черновик",
+          "dataType": "button",
+          "rules": [
+            {
+              "name": "saveDraft"
+            }
+          ]
+        },
+        "sendButton": {
+          "name": "sendButton",
+          "label": "Отправить",
+          "dataType": "button",
+          "rules": [
+            {
+              "name": "send"
+            }
+          ]
+        }
+      }
+    },
+    "docItems": {
+      "name": "docItems",
+      "label": "",
+      "dataType": "array",
+      "items": {
+        "sequenceNumber": {
+          "name": "sequenceNumber",
+          "label": "№",
+          "dataType": "number",
+          "style": {
+            "width": "56px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        },
+        "options__SupplierCode": {
+          "name": "options__SupplierCode",
+          "label": "Код товара поставщика",
+          "dataType": "string",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importNewFileColumn": "1"
+          }
+        },
+        "prdDscr": {
+          "name": "prdDscr",
+          "label": "Наименование",
+          "dataType": "string",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "2",
+            "importNewFileColumn": "2"
+          },
+          "style": {
+            "minWidth": "404px",
+            "width": "404px"
+          }
+        },
+        "uom": {
+          "name": "uom",
+          "label": "Ед. изм.",
+          "dataType": "select",
+          "isEditable": true,
+          "required": false,
+          "attributes": {
+            "importFileColumn": "3",
+            "importNewFileColumn": "3"
+          },
+          "catalog": "uom"
+        },
+        "qty": {
+          "name": "qty",
+          "label": "Остаток товара",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "4",
+            "importNewFileColumn": "4"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "4"
+              }
+            }
+          ]
+        },
+        "addNewLineButton": {
+          "name": "addNewLineButton",
+          "label": "Добавление пустой строки",
+          "dataType": "button"
+        }
+      },
+      "catalog": "uom"
+    },
+    "toolsExt": {
+      "name": "toolsExt",
+      "label": "",
+      "dataType": "section"
+    }
+  },
+  "data": {
+    "id": "1248923",
+    "status": "4",
+    "docType": "INVRPT",
+    "locationCode": null,
+    "buyerToken": "Kramp",
+    "senderCode": "555",
+    "docNumber": "555",
+    "docDate": "2025-02-03T00:00:00",
+    "logo": "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",
+    "supplierName": "Тестовый поставщик Крамп",
+    "supplierYurAddr": null,
+    "supplierGln": "3610032001997",
+    "buyerName": "ООО «Крамп»",
+    "buyerYurAddr": "142324, Московская область, город Чехов,  деревня Люторецкое, территория промзона Люторецкое, владение 6, строение 1,     помещение 101 ",
+    "buyerGln": "4610032001997",
+    "delivDate": null,
+    "location": null,
+    "itemsCount": "1",
+    "options__IdStorage": "9"
+  },
+  "docItems": [
+    {
+      "id": "18401126",
+      "sequenceNumber": "1",
+      "prdDscr": "6",
+      "uom": "KGM",
+      "qty": "666.0000",
+      "options__SupplierCode": "666",
+      "originCountry": null,
+      "custDeclar": null,
+      "orderPrice1": null,
+      "orderPrice2": null
+    }
+  ],
+  "catalogs": {
+    "uom": {
+      "keyNull": " ",
+      "KGM": "кг",
+      "MTR": "метр",
+      "NMP": "упак.",
+      "PCE": "шт"
+    }
+  },
+  "multipleOptions": null
+}
