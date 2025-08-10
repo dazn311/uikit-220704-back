@@ -1,33 +1,37 @@
 <?php
 
-function dump($data)
+use JetBrains\PhpStorm\NoReturn;
+use \Utils\Router;
+use Utils\Db;
+use Utils\App;
+function dump($data): void
 {
     echo "<pre>";
     var_dump($data);
     echo "</pre>";
 }
 
-function print_arr($data)
+function print_arr($data): void
 {
     echo "<pre>";
     print_r($data);
     echo "</pre>";
 }
 
-function dd($data)
+#[NoReturn] function dd($data): void
 {
     dump($data);
     die;
 }
 
-function abort($code = 404, $title = '404 - Not found')
+#[NoReturn] function abort($code = 404, $title = '404 - Not found'): void
 {
     http_response_code($code);
     require VIEWS . "/errors/{$code}.tpl.php";
     die;
 }
 
-function load($fillable = [], $isPost = true)
+function load($fillable = [], $isPost = true): array
 {
   $loadData = $isPost ? $_POST : $_GET;
 
@@ -44,28 +48,28 @@ function load($fillable = [], $isPost = true)
   return $data;
 }
 
-function old($fieldname)
+function old($fieldName): string
 {
-    return isset($_POST[$fieldname]) ? h($_POST[$fieldname]) : '';
+    return isset($_POST[$fieldName]) ? h($_POST[$fieldName]) : '';
 }
 
-function h($str)
+function h($str): string
 {
     return htmlspecialchars($str, ENT_QUOTES);
 }
 
-function redirect($url = '')
+#[NoReturn] function redirect($url = ''): void
 {
     if ($url) {
         $redirect = $url;
     } else {
-        $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : PATH;
+        $redirect = $_SERVER['HTTP_REFERER'] ?? PATH;
     }
     header("Location: {$redirect}");
     die;
 }
 
-function get_alerts()
+function get_alerts(): void
 {
     if (!empty($_SESSION['success'])) {
         require_once VIEWS . '/incs/alert_success.php';
@@ -77,18 +81,27 @@ function get_alerts()
     }
 }
 
-function db(): \Utils\Db
+function db(): Db
 {
-    return \Utils\App::get(\Utils\Db::class);
+    return App::get(Db::class);
 }
 
-function check_auth()
+function check_auth(): bool
 {
     return isset($_SESSION['user']);
 }
 
-function get_file_ext($file_name)
+function get_file_ext($file_name): false|string
 {
     $file_ext = explode('.', $file_name);
     return end($file_ext);
+}
+
+function route_params(): array
+{
+    return Router::$route_params;
+}
+function route_param(string $key, $default = null): string|null
+{
+    return Router::$route_params[$key] ?? $default;
 }

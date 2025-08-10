@@ -2,16 +2,15 @@
 use Utils\Articles;
 use Utils\App;
 use Utils\Db;
-use Utils\Router;
 
 require SHARED . '/createCookies.php';
 require SHARED . '/response-header-api.php';
 
 $db = App::get(Db::class);
-$idDoc = Router::$route_params['id'];// '1248303'
-$idDocInt = (int) $idDoc;//1248303
 
-$documents = $db->query("SELECT `fileName`, `userId` FROM documents WHERE idDoc = ?",[$idDocInt])->find();//false | object;
+$idDoc = route_param('id','1248303');// '1248303'
+
+$documents = $db->query("SELECT `fileName`, `userId` FROM documents WHERE idDoc = ?",[$idDoc])->find();//false | object;
 $user = $db->query("SELECT `name` FROM users WHERE id = ?", [$documents['userId']])->find();
 
 //SELECT * FROM documents d  WHERE idDoc = ? JOIN users u ON d.userId = u.id;

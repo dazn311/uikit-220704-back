@@ -38,9 +38,8 @@ class Router
                         self::$route_params[$key] = $match;
                     }
                 }
-
-                require CONTROLLERS . "/{$route['controller']}";
                 $isMatches = true;
+                require CONTROLLERS . "/{$route['controller']}";
                 break;
             }
         }
