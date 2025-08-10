@@ -26,12 +26,16 @@ services:
     working_dir: /var/www/html/uikit
     container_name: php-uikit
     environment:
-      PHP_IDE_CONFIG: serverName=uikit
+      PHP_IDE_CONFIG_OLD: serverName=uikit
+      PHP_UPLOAD_MAX_FILESIZE: 64M
+      PHP_POST_MAX_SIZE: 64M
+      PHP_IDE_CONFIG: 64M
     volumes:
       - ./:/var/www/html/uikit
     networks:
       - uikit_network
     depends_on:
+      - mysql
       - redis
 
   redis:
@@ -43,7 +47,18 @@ services:
       - uikit_network
     environment:
       PHP_IDE_CONFIG: serverName=uikit
-
+  mysql:
+    image: mysql:8
+    container_name: mysql-uikit
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_DATABASE: cislinkdb
+      MYSQL_ROOT_PASSWORD: 12345
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d
+    networks:
+      - uikit_network
 
 networks:
   uikit_network:

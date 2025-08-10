@@ -9,6 +9,10 @@ ENV PHP_IDE_CONFIG: 512M
 
 RUN apt-get -y update \
     && apt-get install -y libpq-dev \
+    && pecl install xdebug \
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-enable xdebug \
+    && docker-php-ext-enable pdo_mysql \
     && apt-get clean
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
