@@ -8,8 +8,10 @@ const MIDDLEWARE = [
     'guest' => Guest::class,
 ];
 
+///uploads/avatars/2025/08/11/avatar-5.png
+$router->get('uploads/avatars/\d+/\d+/\d+/avatar-\d+.png', 'api/uploads.php');
+
 // Posts
-//$router->get('', 'posts/index.php');
 $router->get('posts', 'posts/show.php');
 $router->get('posts/create', 'posts/create.php')->only('auth');
 $router->post('posts', 'posts/store.php');

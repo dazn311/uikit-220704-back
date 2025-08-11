@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $file_ext = get_file_ext($data['avatar']['name']);
             $dir = '/avatars/' . date('Y') . '/' . date('m') . '/' . date('d');
             if (!is_dir(UPLOADS . $dir)) {
-              mkdir(UPLOADS . $dir, 0755, true);
+              mkdir(UPLOADS . $dir, 0777, true);
             }
             $filePath = UPLOADS . "{$dir}/avatar-{$id}.{$file_ext}";
             $fileUrl = "/uploads{$dir}/avatar-{$id}.{$file_ext}";

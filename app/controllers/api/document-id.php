@@ -2,7 +2,7 @@
 /**
 document-id.php
  */
-require 'helpers.php';
+require_once __DIR__ . '/helpers.php';
 require SHARED . '/createCookies.php';
 require SHARED . '/response-header-api.php';
 

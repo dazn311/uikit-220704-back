@@ -43,6 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['success'] = 'Successful login';
         redirect(PATH);
     }
+} else {
+    $_SESSION['oldData'] = ['email'=> '', 'password'=> ''];
 }
 
 require_once VIEWS . '/users/login.tpl.php';

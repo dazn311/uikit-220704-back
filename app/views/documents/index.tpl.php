@@ -17,7 +17,7 @@
                             <h6 class="card-title">
                                 <div class="name">
                                     Buyer:
-                                    <img src="<?= h($document['avatar']) ?>" class="avatar" alt="">
+                                    <img src="<?= h($document['avatar']) ?>" class="avatar" style="width: 30px;height: 30px;" alt="">
                                     <?= h($document['name']) ?></div>
                             </h6>
                             <p class="card-text">createDate: <?= h($document['createDate']) ?></p>
