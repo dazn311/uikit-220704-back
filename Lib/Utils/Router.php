@@ -1,12 +1,9 @@
 <?php
 
-
 namespace Utils;
-
 
 class Router
 {
-
     protected array $routes = [];
     protected string $uri;
     protected mixed $method;
@@ -31,7 +28,7 @@ class Router
                     if (!$middleware) {
                         throw new \Exception("Incorrect middleware {$route['middleware']}");
                     }
-                    (new $middleware)->handle();
+                    (new $middleware)->handle(); //IUser;
                 }
                 foreach ($matches as $key => $match) {
                     if (is_string($key)) {
@@ -48,13 +45,13 @@ class Router
         }
     }
 
-    public function only($middleware): static
+    public function only(string $middleware = 'auth|guest'): static
     {
         $this->routes[array_key_last($this->routes)]['middleware'] = $middleware;
         return $this;
     }
 
-    public function add($uri, $controller, $method): static
+    public function add(string $uri, string $controller, mixed $method): static
     {
         if (is_array($method)) {
             $method = array_map('strtoupper', $method);
@@ -70,17 +67,17 @@ class Router
         return $this;
     }
 
-    public function get($uri, $controller): static
+    public function get(string $uri,string $controller): static
     {
         return $this->add($uri, $controller, 'GET');
     }
 
-    public function post($uri, $controller): static
+    public function post(string $uri, string $controller): static
     {
         return $this->add($uri, $controller, 'POST');
     }
 
-    public function delete($uri, $controller): static
+    public function delete(string $uri, string $controller): static
     {
         return $this->add($uri, $controller, 'DELETE');
     }

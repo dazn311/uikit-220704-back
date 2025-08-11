@@ -37,7 +37,7 @@ function load($fillable = [], $isPost = true): array
 
   $data = [];
   foreach ($fillable as $key) {
-    $value = $loadData[$key];
+    $value = $loadData[$key] ?? null;
     if (isset($value)) {
       $data[$key] = is_array($value) ? $value : trim($value);
     } else {
@@ -51,6 +51,14 @@ function load($fillable = [], $isPost = true): array
 function old($fieldName): string
 {
     return isset($_POST[$fieldName]) ? h($_POST[$fieldName]) : '';
+}
+
+function oldCheck($fieldName): string
+{
+    if (isset($_POST[$fieldName])) {
+       return $_POST[$fieldName] == 'on' ? 'checked' : '';
+    }
+    return '';
 }
 
 function h($str): string

@@ -10,7 +10,7 @@ $documents = $db->query("
 SELECT * FROM documents 
     LEFT JOIN users 
         ON documents.userId = users.id 
-         WHERE documents.mode = 'edit';");
+         WHERE documents.mode = 'edit' OR documents.mode = 'read';");
 
 if ($documents) {
     $documents = $documents->findAll();
@@ -20,21 +20,7 @@ if ($documents) {
 } else {
     $documents = [];
 }
-//      'id' => int 1
-//      'type' => string 'invrpt' (length=6)
-//      'idDoc' => string 'new' (length=3)
-//      'mode' => string 'edit' (length=4)
-//      'createDate' => string '2025-08-10 21:22:10' (length=19)
-//      'userId' => int 1
-//      'fileName' => string 'invrpt-new-edit-Krampsup-250807.json' (length=36)
-//      'email' => string 'kramp@gmail.com' (length=15)
-//      'name' => string 'Kramp' (length=5)
-//      'password' => string '12345' (length=5)
-//      'remember_me' => string '1' (length=1)
-//      'avatar' => string '/uploads/avatar.png' (length=19)
-//      'role' => int 0
-//}
-//dd($documents);
+
 
 $posts[] = [
     'id'=> 1,

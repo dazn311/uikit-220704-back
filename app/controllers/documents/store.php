@@ -1,51 +1,89 @@
 <?php
-
+/**
+for create document;
+ */
+use Utils\Db;
+use Utils\App;
 use Utils\Validator;
 
 
-// $db = \Utils\App::get(\Utils\Db::class);
+$db = App::get(Db::class);
 
-$fillable = ['title', 'content', 'excerpt'];
-$data = load($fillable);
+$fillable = ['fileName','idDoc', 'typeDoc', 'userName','readMode', 'isNewDoc'];
+$data = load($fillable, true);
 
-// validation
+if (isset($_FILES['docFile']) && $_FILES['docFile']['error'] === 0) {
+    $data['docFile'] = $_FILES['docFile'];
+} else {
+    $data['docFile'] = null;
+}
+
+if (isset($data['isNewDoc'])) {
+    $data['mode'] = $data['isNewDoc'] === '' ? 'read' : 'edit';
+} else {
+    $data['mode'] = 'read';
+}
+
 $validator = new Validator();
 
 $validation = $validator->validate($data, [
-    'title' => [
+    'fileName' => [
         'required' => true,
         'min' => 5,
         'max' => 190,
     ],
-    'excerpt' => [
+    'idDoc' => [
         'required' => true,
-        'min' => 10,
-        'max' => 190,
+        'min' => 3,
+        'max' => 10,
     ],
-    'content' => [
-        'required' => true,
-        'min' => 10,
-    ],
-    'email' => [
-        'email' => true,
-    ],
-    'password' => [
+    'typeDoc' => [
         'required' => true,
         'min' => 6,
+        'max' => 6,
     ],
-    'repassword' => [
-        'match' => 'password',
+    'userName' => [
+        'required' => true,
+        'min' => 3,
+        'max' => 10,
+    ],
+    'docFile' => [
+        'required' => true,
+        // 'ext' => 'jpg|jpeg|png',
+        'size' => 1_048_576,
     ],
 ]);
 
 if (!$validation->hasErrors()) {
-    // if ($db->query("INSERT INTO posts (`title`, `content`, `excerpt`) VALUES (:title, :content, :excerpt)", $data)) {
-    //     $_SESSION['success'] = 'OK';
-    // } else {
-    //     $_SESSION['error'] = 'DB Error';
-    // }
+    $userId = $db->query("SELECT `id` FROM users WHERE users.name = ?;", [$data['userName']])->find();
+    $data['userId'] =  $userId['id'] ?? 0;
+    $data['userId'] =  (string) $data['userId'];
+    $request = [$data['typeDoc'], $data['idDoc'], $data['mode'],date("Y-m-d H:i:s"), $data['userId'], $data['fileName'] . 'json'];
+    $res = $db->query("INSERT INTO documents (`type`, `idDoc`, `mode`,`createDate`,`userId`,`fileName`) VALUES (?,?,?,?,?,?)", $request);
+
+     if ($data['userId'] && $res) {
+         if (!empty($data['docFile']['name'])) {
+             $id = $db->getInsertId();
+             $file_ext = get_file_ext($data['docFile']['name']);
+             $dir = '/' . $data['userName'];// HoffSup;
+
+             if (!is_dir(TC_DATA . $dir)) {
+                 mkdir(TC_DATA . $dir, 0755, true);
+             }
+             $filePath = TC_DATA . "{$dir}/{$data['fileName']}.{$file_ext}";
+             if (move_uploaded_file($data['docFile']['tmp_name'], $filePath)) {
+                 $_SESSION['filePath'] = $filePath;
+//                 $db->query("UPDATE documents SET `fileName` = ? WHERE `id` = ?", [$data['fileName'],$id]);
+             } else {
+                 error_log("[" . date('Y-m-d H:i') . "] Error upload avatar" . PHP_EOL, 3);
+             }
+         }
+         $_SESSION['success'] = 'OK';
+     } else {
+         $_SESSION['error'] =  $_SESSION['error'] ?? 'DB Error';
+     }
     redirect('/');
 } else {
-    require VIEWS . '/posts/create.tpl.php';
+    require VIEWS . '/documents/create.tpl.php';
 }
 

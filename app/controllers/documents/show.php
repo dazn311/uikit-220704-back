@@ -1,18 +1,25 @@
 <?php
+use Utils\App;
+use Utils\Db;
 
-// $db = \Utils\App::get(\Utils\Db::class);
+$title = 'My Blog :: Home';
 
-$id = $_GET['id'] ?? 0;
+$db = App::get(Db::class);
+$idDoc = route_param('id','1248303');// '1248303'
 
-// $post = $db->query("SELECT * FROM posts WHERE id = ? LIMIT 1", [$id])->findOrFail();
-/* if (!$post) {
-    abort();
-} */
-$post = [
-  'id'=> 2,
-  'title'=> 'title 2',
-  'excerpt'=> 'excerpt 2',
-  'content'=> 'content 2',
-];
-$title = "My Blog :: {$post['title']}";
-require_once VIEWS . '/posts/show.tpl.php';
+$document = $db->query("
+    SELECT * FROM documents 
+    LEFT JOIN users 
+        ON documents.userId = users.id 
+         WHERE documents.id = ?;",[$idDoc]);
+
+if ($document) {
+    $document = $document->find();
+    if (!$document) {
+        $document = [];
+    }
+} else {
+    $document = [];
+}
+
+require_once VIEWS . '/documents/show.tpl.php';

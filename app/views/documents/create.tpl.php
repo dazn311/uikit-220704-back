@@ -1,9 +1,13 @@
 <?php
+
+use Utils\Validator;
+
 require VIEWS . '/incs/header.php';
 
 /**
- * @var \myfrm\Validator $validation
+ * @var Validator $validation
  */
+
 ?>
 
 <main class="main py-3">
@@ -12,30 +16,48 @@ require VIEWS . '/incs/header.php';
         <div class="row">
             <div class="col-md-12">
 
-                <h1>New post</h1>
+                <h1>New document</h1>
 
-                <form action="/posts" method="post">
-
+                <form action="/documents" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="title" class="form-label">Post title</label>
-                        <input name="title" type="text" class="form-control" id="title" placeholder="Post title" value='<?= old('title') ?>'>
-                        <?= isset($validation) ? $validation->listErrors('title') : ''  ?>
+                        <label for="fileName" class="form-label">Document name</label>
+                        <input id="fileName" name="fileName" type="text" class="form-control" placeholder="invrpt-new-edit-Krampsup-250807" value='<?= old('fileName') ?>'>
+                        <?= isset($validation) ? $validation->listErrors('fileName') : ''  ?>
                     </div>
 
                     <div class="mb-3">
-                        <label for="excerpt" class="form-label">Excerpt</label>
-                        <textarea name="excerpt" class="form-control" id="excerpt" rows="2" placeholder="Post exceprt"><?= old('excerpt') ?></textarea>
-                        <?= isset($validation) ? $validation->listErrors('excerpt') : ''  ?>
+                        <label for="idDoc" class="form-label">Id</label>
+                        <input id="idDoc" name="idDoc" type="text" class="form-control" placeholder="1250807" value='<?= old('idDoc') ?>'>
+                        <?= isset($validation) ? $validation->listErrors('idDoc') : ''  ?>
                     </div>
 
                     <div class="mb-3">
-                        <label for="content" class="form-label">Content</label>
-                        <textarea name="content" class="form-control" id="content" rows="5" placeholder="Post content"><?= old('content') ?></textarea>
-                        <?= isset($validation) ? $validation->listErrors('content') : ''  ?>
+                        <label for="typeDoc" class="form-label">Тип документ</label>
+                        <input id="typeDoc" name="typeDoc" type="text"  class="form-control"  placeholder="invrpt|desadv" value="<?= old('typeDoc') ?>" ><?= old('typeDoc') ?>
+                        <?= isset($validation) ? $validation->listErrors('typeDoc') : ''  ?>
                     </div>
 
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <label for="userName" class="form-label">Имя заказчика</label>
+                        <input name="userName" type="text" class="form-control" id="userName"  placeholder="Kramp" value="<?= old('userName') ?>" >
+                        <?= isset($validation) ? $validation->listErrors('userName') : ''  ?>
+                    </div>
+                    <div class="mb-3">
+                        <label for="docFile" class="form-label">Файл</label>
+                        <input name="docFile" class="form-control" type="file" id="docFile" accept=".json, application/json" >
+                        <?= isset($validation) ? $validation->listErrors('docFile') : ''  ?>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input  id="readMode" name="readMode" class="form-check-input" type="checkbox" <?=oldCheck('readMode') ?> >
+                            <label class="form-check-label" for="readMode">
+                                файл для редактирования : <?=oldCheck('readMode') ?>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Create Document</button>
                     </div>
 
                 </form>
@@ -45,5 +67,36 @@ require VIEWS . '/incs/header.php';
     </div>
 
 </main>
+<script type="text/javascript" >
+    document.addEventListener('DOMContentLoaded', function() {
+        // Your JavaScript code to manipulate the DOM goes here
+        console.log('DOM is fully loaded and parsed!');
+        // let placeholder="invrpt-new-edit-Krampsup-250807";
+        function getValue(type,newDoc,mode,userName) {
+            const date = new Date(Date.now());
+            const y = String(date.getFullYear());
+            const m = String(date.getMonth() + 1);
+            const mm = m.length === 1 ? `0${m}` : m;
+            const d = String(date.getDate());
+            const dd = d.length === 1 ? `0${d}` : d;
+            return `${type}${newDoc}-${mode}-${userName}-${y.slice(2)}${mm}${dd}`;
+        }
 
+        const fileName = document.getElementById('fileName');
+        const typeDoc = document.getElementById('typeDoc');
+        const userName = document.getElementById('userName');
+        const idDoc = document.getElementById('idDoc');
+        const readMode = document.getElementById('readMode');
+
+        typeDoc?.addEventListener('change', (event) => {
+            console.log('event:',event);
+            console.log('fileName:',fileName);
+            const newDoc = idDoc.value === 'new' ? '-new' : idDoc.value;
+            const mode = !readMode.checked || idDoc.value === 'new' ? 'edit' : 'read';
+            fileName.value = getValue(event.target.value,newDoc,mode,userName?.value);
+        });
+
+    });
+
+</script>
 <?php require VIEWS . '/incs/footer.php' ?>

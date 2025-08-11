@@ -31,16 +31,18 @@
                                 <a class="nav-link" href="about">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="posts/create">New Post</a>
+                                <a class="nav-link" href="documents/create">New document</a>
                             </li>
                         </ul>
 
                         <ul class="d-flex text-white align-items-center list-unstyled m-0 gap-3">
                             <?php if (check_auth()): ?>
                                 <li>
-                                  
-                                  <img style="width: 70px;height:auto;" src="<?= $_SESSION['user']['avatar']; ?>"/>
-                                  <?= $_SESSION['user']['name']; ?>
+                                    <div class="nav-item">
+                                        <img src="<?= $_SESSION['user']['avatar'] ?>" width="30" height="24" class="d-inline-block align-text-top" alt="a"/>
+                                        <?= $_SESSION['user']['name']; ?>
+                                    </div>
+
                                 </li>
                                 <li><a class="nav-link" href="logout">Logout</a></li>
                             <?php else: ?>

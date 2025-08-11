@@ -1,10 +1,11 @@
 <?php
-
+use Utils\middleware\Auth;
+use Utils\middleware\Guest;
 /** @var $router */
 
 const MIDDLEWARE = [
-    'auth' => \Utils\middleware\Auth::class,
-    'guest' => \Utils\middleware\Guest::class,
+    'auth' => Auth::class,
+    'guest' => Guest::class,
 ];
 
 // Posts
@@ -16,7 +17,7 @@ $router->delete('posts', 'posts/destroy.php');
 
 // Documents
 $router->get('', 'documents/index.php');
-$router->get('', 'documents/show.php');
+$router->get('document/(?<id>\d+)', 'documents/show.php');
 $router->get('documents/create', 'documents/create.php')->only('auth');
 $router->post('documents', 'documents/store.php');
 $router->delete('documents', 'documents/destroy.php');
