@@ -18,5 +18,5 @@ if (!$users) {
     $users = [];
 }
 //dd($users);
-$title = "My Blog :: New document";
+$title = "Cislink :: New document";
 require_once VIEWS . '/documents/create.tpl.php';

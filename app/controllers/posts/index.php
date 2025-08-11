@@ -1,6 +1,6 @@
 <?php
 
-$title = 'My Blog :: Home';
+$title = 'Cislink :: Home';
 
 $db = \Utils\App::get(\Utils\Db::class);
 

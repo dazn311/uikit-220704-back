@@ -60,12 +60,20 @@ final class Db
 
     public function findAll(): false|array
     {
-        return $this->stmt->fetchAll();
+        try {
+            return $this->stmt->fetchAll();
+        } catch (PDOException $e) {
+            return false;
+        }
     }
 
     public function find()
     {
-        return $this->stmt->fetch();
+        try {
+            return $this->stmt->fetch();
+        } catch (PDOException $e) {
+            return false;
+        }
     }
 
     public function findOrFail()

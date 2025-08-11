@@ -6,13 +6,20 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
 
-                <h3>Login page</h3>
+                <h3>Авторизация</h3>
 
                 <form action="" method="post">
 
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+                        <input
+                                name="email"
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                placeholder="Email"
+                                value="<?=$_SESSION['oldData']['email']?>"
+                                required>
                         <?= isset($validation) ? $validation->listErrors('email') : ''  ?>
                     </div>
 

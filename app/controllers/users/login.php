@@ -4,13 +4,15 @@ use Utils\App;
 use Utils\Db;
 use Utils\Validator;
 
-$title = "My Blog :: Login";
+$title = "Cislink :: Login";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     /** @var Db $db */
     $db = App::get(Db::class);
 
     $data = load(['email', 'password']);
+    $_SESSION['oldData'] = $data;
+
     $validator = new Validator();
     $validation = $validator->validate($data, [
         'email' => [

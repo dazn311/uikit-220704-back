@@ -2,6 +2,9 @@
 /**
 for create document;
  */
+if (!check_auth()) {
+    redirect('/');
+}
 use Utils\Db;
 use Utils\App;
 use Utils\Validator;
@@ -85,6 +88,6 @@ if (!$validation->hasErrors()) {
     redirect('/');
 } else {
     redirect('/documents/create');
-    require VIEWS . '/documents/create.tpl.php';
+//    require VIEWS . '/documents/create.tpl.php';
 }
 

@@ -1,28 +1,23 @@
 <?php
-use Utils\Articles;
-use Utils\App;
-use Utils\Db;
-
+/**
+document-type.php
+ */
+require 'helpers.php';
 require SHARED . '/createCookies.php';
 require SHARED . '/response-header-api.php';
 
-$db = App::get(Db::class);
-
 $type = route_param('type','desadv');
 
-$documents = $db->query("
-    SELECT *
-    FROM  documents
-    LEFT JOIN  users ON documents.userId = users.id
-    WHERE documents.type = ? AND documents.idDoc = ?",[$type,'new']);
+try {
+    $query = "SELECT * FROM  documents LEFT JOIN  users ON documents.userId = users.id WHERE documents.type = ? AND documents.idDoc = ?";
+    $currentKnowledge = gerDataForArticles($query,[$type,'new']);
 
-$ts = 'Kramp';
-if ($documents) {
-    $documents = $documents->find();
-    $ts = $documents['name'] ?? 'Kramp';
+    if ($currentKnowledge) {
+        echo json_encode($currentKnowledge);
+    } else {
+        header("HTTP/1.0 404 Not Found");
+        echo json_encode(["error"=>true, "message"=>"Document not found"]);
+    }
+} catch (PDOException $e) {
+    echo json_encode(["error"=>true, "message"=>$e->getMessage()]);
 }
-
-$knowledgeCode = $documents['fileName'] ?? "invrpt-new-edit-Krampsup-250807.json";
-$currentKnowledge = Articles::getArticle($ts, $knowledgeCode);
-
-echo json_encode($currentKnowledge);

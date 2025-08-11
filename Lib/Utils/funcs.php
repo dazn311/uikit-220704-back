@@ -30,7 +30,9 @@ function print_arr($data): void
     require VIEWS . "/errors/{$code}.tpl.php";
     die;
 }
-
+/**
+load fillable from $_POST , $_GET;
+ */
 function load($fillable = [], $isPost = true): array
 {
   $loadData = $isPost ? $_POST : $_GET;
