@@ -30,7 +30,7 @@ $validation = $validator->validate($data, [
     'fileName' => [
         'required' => true,
         'min' => 5,
-        'max' => 190,
+        'max' => 100,
     ],
     'idDoc' => [
         'required' => true,
@@ -40,12 +40,12 @@ $validation = $validator->validate($data, [
     'typeDoc' => [
         'required' => true,
         'min' => 6,
-        'max' => 6,
+        'max' => 10,
     ],
     'userName' => [
         'required' => true,
         'min' => 3,
-        'max' => 10,
+        'max' => 100,
     ],
     'docFile' => [
         'required' => true,
@@ -84,6 +84,7 @@ if (!$validation->hasErrors()) {
      }
     redirect('/');
 } else {
+    redirect('/documents/create');
     require VIEWS . '/documents/create.tpl.php';
 }
 

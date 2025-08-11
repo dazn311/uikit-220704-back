@@ -39,7 +39,12 @@ require VIEWS . '/incs/header.php';
 
                     <div class="mb-3">
                         <label for="userName" class="form-label">Имя заказчика</label>
-                        <input name="userName" type="text" class="form-control" id="userName"  placeholder="Kramp" value="<?= old('userName') ?>" >
+                        <select name="userName" id="userName"  class="form-control" >
+                            <option value="">--Please choose an option--</option>
+                            <?php foreach ($users as $user) : ?>
+                                <option value="<?= $user['name'] ?>"  selected="<?= $user['name'] == old('userName') ? 'selected' : ''  ?>"><?= $user['name'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
                         <?= isset($validation) ? $validation->listErrors('userName') : ''  ?>
                     </div>
                     <div class="mb-3">
