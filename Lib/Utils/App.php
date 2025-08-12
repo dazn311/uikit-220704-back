@@ -1,12 +1,9 @@
 <?php
 
-
 namespace Utils;
-
 
 class App
 {
-
     protected static $container;
 
     public static function setContainer($container): void

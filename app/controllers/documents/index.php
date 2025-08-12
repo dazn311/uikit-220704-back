@@ -1,4 +1,5 @@
 <?php
+
 use Utils\{App, Db};
 
 $title = 'Cislink :: Home';
