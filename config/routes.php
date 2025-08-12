@@ -1,6 +1,7 @@
 <?php
-use Utils\middleware\Auth;
-use Utils\middleware\Guest;
+
+use Utils\middleware\{Auth, Guest};
+
 /** @var $router */
 
 const MIDDLEWARE = [

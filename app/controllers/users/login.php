@@ -1,8 +1,6 @@
 <?php
 
-use Utils\App;
-use Utils\Db;
-use Utils\Validator;
+use Utils\{App, Db, Validator};
 
 $title = "Cislink :: Login";
 

@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 use Utils\Router;
 
 require_once __DIR__ . '/../vendor/autoload.php';

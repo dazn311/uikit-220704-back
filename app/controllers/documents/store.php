@@ -5,10 +5,7 @@ for create document;
 if (!check_auth()) {
     redirect('/');
 }
-use Utils\Db;
-use Utils\App;
-use Utils\Validator;
-
+use Utils\{App, Db, Validator};
 
 $db = App::get(Db::class);
 

@@ -4,8 +4,7 @@ if (!check_auth()) {
     redirect('/');
 }
 
-use Utils\App;
-use Utils\Db;
+use Utils\{App, Db};
 
 $db = App::get(Db::class);
 

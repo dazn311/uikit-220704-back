@@ -1,7 +1,6 @@
 <?php
-use Utils\Articles;
-use Utils\App;
-use Utils\Db;
+
+use Utils\{App, Db, Articles};
 
 function gerDataForArticles($query,$params): array|bool
 {

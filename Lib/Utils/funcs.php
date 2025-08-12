@@ -1,9 +1,8 @@
 <?php
 
 use JetBrains\PhpStorm\NoReturn;
-use \Utils\Router;
-use Utils\Db;
-use Utils\App;
+use Utils\{App, Db, Router};
+
 function dump($data): void
 {
     echo "<pre>";

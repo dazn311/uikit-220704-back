@@ -1,6 +1,8 @@
 <?php
 
- $db = \Utils\App::get(\Utils\Db::class);
+use Utils\{App, Db};
+
+$db = App::get(Db::class);
 
 $api_data = json_decode(file_get_contents('php://input'), 1);
 

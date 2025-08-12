@@ -1,5 +1,7 @@
 <?php
+
 use Utils\Articles;
+
 global $root_path2, $docType, $suffNameFile;
 // filter-list-controller
 require $root_path2 . '/pages/controllers/response-header.php';

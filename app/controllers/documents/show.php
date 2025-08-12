@@ -1,6 +1,6 @@
 <?php
-use Utils\App;
-use Utils\Db;
+
+use Utils\{App, Db};
 
 $title = 'Cislink :: Home';
 
