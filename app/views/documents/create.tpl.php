@@ -77,28 +77,67 @@ require VIEWS . '/incs/header.php';
         // Your JavaScript code to manipulate the DOM goes here
         console.log('DOM is fully loaded and parsed!');
         // let placeholder="invrpt-new-edit-Krampsup-250807";
-        function getValue(type,newDoc,mode,userName) {
+        function getNow() {
             const date = new Date(Date.now());
             const y = String(date.getFullYear());
             const m = String(date.getMonth() + 1);
             const mm = m.length === 1 ? `0${m}` : m;
             const d = String(date.getDate());
             const dd = d.length === 1 ? `0${d}` : d;
-            return `${type}${newDoc}-${mode}-${userName}-${y.slice(2)}${mm}${dd}`;
+            return `${y.slice(2)}${mm}${dd}`;
+        }
+        function getValue(type,id,mode,userName,date) {
+            const dateValue = !!date ? date : getNow();
+            return `${type}${id}-${mode}-${userName}-${dateValue}`;
         }
 
-        const fileName = document.getElementById('fileName');
-        const typeDoc = document.getElementById('typeDoc');
-        const userName = document.getElementById('userName');
-        const idDoc = document.getElementById('idDoc');
-        const readMode = document.getElementById('readMode');
+        const $fileName = document.getElementById('fileName');
+        const $idDoc = document.getElementById('idDoc');
+        const $typeDoc = document.getElementById('typeDoc');
+        const $userName = document.getElementById('userName');
+        const $readMode = document.getElementById('readMode');
+        const $docFile = document.getElementById('docFile');
 
-        typeDoc?.addEventListener('change', (event) => {
+        $docFile?.addEventListener('change', (event) => {
+            console.log('98 event',event);
+            const filesArr = event.target.files;
+            console.log('98 filesArr',filesArr[0]);
+            if (!!filesArr[0]) {
+                const type = filesArr[0].type;//application/json
+                const name = filesArr[0].name;//desadv1252660-read-Kramp-250813_0324.json
+                if (/json$/i.test(type)) {
+                    console.log('98 name',name);
+                    console.log('98 type',type);
+                    if (/^\w{6}\d{7}-(read|edit)-\w+-\d{6}/i.test(name)) {
+                        //'desadv1252660-read-Kramp-250813_0324.json'
+                        const res = /^(\w{6})(\d{7})-(read|edit)-(\w+)-(\d{6})/i.exec('desadv1252660-read-Kramp-250813_0324.json');//Array|null
+                        if (Array.isArray(res)) {
+                            const [name,type,id,mode,buyer,date] = res;
+                            $fileName.value = name;//getValue(type,id,mode,buyer,date);
+                            $idDoc.value = id;
+                            $typeDoc.value = type;
+                            $userName.value = buyer;
+                            $readMode.value = mode;
+
+                        }
+                        //[
+                        //    "desadv1252660-read-Kramp-250813",
+                        //    "desadv",
+                        //    "1252660",
+                        //    "read",
+                        //    "Kramp",
+                        //    "250813"
+                        //]
+                    }
+                }
+            }
+
+        });
+        $typeDoc?.addEventListener('change', (event) => {
             console.log('event:',event);
-            console.log('fileName:',fileName);
-            const newDoc = idDoc.value === 'new' ? '-new' : idDoc.value;
-            const mode = !readMode.checked || idDoc.value === 'new' ? 'edit' : 'read';
-            fileName.value = getValue(event.target.value,newDoc,mode,userName?.value);
+            const newDoc = $idDoc.value === 'new' ? '-new' : $idDoc.value;
+            const mode = !$readMode.checked || $idDoc.value === 'new' ? 'edit' : 'read';
+            $fileName.value = getValue(event.target.value,newDoc,mode,$userName?.value);
         });
 
     });

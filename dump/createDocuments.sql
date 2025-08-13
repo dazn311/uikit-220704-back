@@ -20,36 +20,14 @@ CREATE TABLE documents (
                        FOREIGN KEY (userId) REFERENCES users(id)
 );
 
-INSERT INTO
-    users (`id`, `email`, `name`, `password`,`createDate`,`remember_me`, `avatar`, `role`)
-VALUES (null,'kramp@gmail.com','Kramp','12345',NOW(),'1','/uploads/avatars/2025/01/01/avatar-0.png' ,0),
-       (null,'daz@gmail.com','Dazn311','12345',NOW(),'1','/uploads/avatars/2025/01/01/avatar-0.png' ,1),
-       (null,'alex250555@bk.ru','Рыженков Александр','$2y$10$0tUwDA0PeoKDK2y.83XM3.68sCRxb8ACvfEjvZoJ3Wm9zmCKSxn9u',NOW(),'1','/uploads/avatars/2025/01/01/avatar-0.png' ,1),
-       (null,'alex2505@bk.ru','Alex','$2y$10$mKa0eFlj229qrIRURXznj.m6fjQC5w.HZu.HRjmB5Q5m/t1xDWLhK',NOW(),'1','/uploads/avatars/2025/01/01/avatar-0.png' ,1);
+INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (1, 'kramp@gmail.com', 'Kramp', '12345', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 0);
+INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (2, 'daz@gmail.com', 'Dazn311', '12345', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 1);
+INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (3, 'alex250555@bk.ru', 'Александр Рыженков', '$2y$10$0tUwDA0PeoKDK2y.83XM3.68sCRxb8ACvfEjvZoJ3Wm9zmCKSxn9u', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 1);
+INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (4, 'alex2505@bk.ru', 'Alexander', '$2y$10$mKa0eFlj229qrIRURXznj.m6fjQC5w.HZu.HRjmB5Q5m/t1xDWLhK', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 1);
 
-INSERT INTO
-    documents (`id`, `type`, `idDoc`, `mode`,`createDate`,`userId`,`fileName`)
-VALUES (
-     null,
-     'invrpt',
-     'new',
-     'edit',
-     NOW(),
-     '1',
-     'invrpt-new-Kramp-250807.json'),
-    (
-     null,
-     'invrpt',
-     '1248923',
-     'edit',
-     NOW(),
-     '1',
-     'invrpt1248923-edit-Kramp-250811.json'),
-       (
-     null,
-     'desadv',
-     '1248304',
-     'edit',
-     NOW(),
-     '1' ,
-     'desadv1248304-edit-Kramp-250804.json');
+INSERT INTO cislinkdb.documents (id, type, idDoc, mode, createDate, userId, fileName) VALUES (1, 'invrpt', 'new', 'edit', '2025-08-11 23:31:18', 1, 'invrpt-new-Kramp-250807.json');
+INSERT INTO cislinkdb.documents (id, type, idDoc, mode, createDate, userId, fileName) VALUES (2, 'invrpt', '1248923', 'edit', '2025-08-11 23:31:18', 1, 'invrpt1248923-edit-Kramp-250811.json');
+INSERT INTO cislinkdb.documents (id, type, idDoc, mode, createDate, userId, fileName) VALUES (3, 'desadv', '1248304', 'edit', '2025-08-11 23:31:18', 1, 'desadv1248304-edit-Kramp-250804.json');
+INSERT INTO cislinkdb.documents (id, type, idDoc, mode, createDate, userId, fileName) VALUES (4, 'desadv', '1248304', 'read', '2025-08-12 08:32:28', 1, 'desadv1248304-read-Kramp-250812json');
+INSERT INTO cislinkdb.documents (id, type, idDoc, mode, createDate, userId, fileName) VALUES (5, 'desadv', '1252660', 'read', '2025-08-13 01:24:06', 1, 'desadv1252660-read-Kramp-250813json');
+
