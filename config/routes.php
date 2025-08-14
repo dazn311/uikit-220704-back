@@ -11,7 +11,8 @@ const MIDDLEWARE = [
 
 ///uploads/avatars/2025/08/11/avatar-5.png
 $router->get('uploads/avatars/\d+/\d+/\d+/avatar-\d+.png', 'api/uploads.php');
-
+//chat;
+$router->get('chat', 'chat/index.php');
 // Posts
 $router->get('posts', 'posts/show.php');
 $router->get('posts/create', 'posts/create.php')->only('auth');
