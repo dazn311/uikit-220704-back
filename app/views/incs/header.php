@@ -8,7 +8,8 @@
     <title><?= $title ?? 'TITLE' ?></title>
     <base href="<?= PATH ?>/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/main.css?v=2">
+    <link rel="stylesheet" href="static/css/chat.css?v=2">
     <link rel="icon" href="img/favicon.ico">
 </head>
 
@@ -29,6 +30,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about">О нас</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="chat">Чат</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="documents/create">Новый документ</a>
