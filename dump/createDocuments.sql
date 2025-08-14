@@ -20,6 +20,13 @@ CREATE TABLE documents (
                        FOREIGN KEY (userId) REFERENCES users(id)
 );
 
+CREATE TABLE messages (
+                          id INT AUTO_INCREMENT PRIMARY KEY,
+                          username VARCHAR(255) NOT NULL,
+                          message TEXT NOT NULL,
+                          timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (1, 'kramp@gmail.com', 'Kramp', '12345', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 0);
 INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (2, 'daz@gmail.com', 'Dazn311', '12345', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 1);
 INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (3, 'alex250555@bk.ru', 'Александр Рыженков', '$2y$10$0tUwDA0PeoKDK2y.83XM3.68sCRxb8ACvfEjvZoJ3Wm9zmCKSxn9u', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 1);

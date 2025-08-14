@@ -18,6 +18,9 @@ docker-compose exec app php /app/bin/registration.php
 docker-compose exec php php /var/www/html/homes_staging/bin/mysql_create_tables.php
 docker-compose exec php php /var/www/html/homes_staging/bin/registration.php
 
+docker exec -it a98c02ccf8ac nginx -s reload
+docker exec -it nginx-uikit nginx -s reload
+
 ========================
 https://selectel.ru/blog/docker-compose/
 ==========================

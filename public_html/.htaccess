@@ -1,7 +1,0 @@
-AliasMatch "^/images/(.*)" "/var/www/html/images/$1"
-
-
-<Directory /Users/dazn311/Project/uikit-220704-back/public_html/uploads>
-    Order allow,deny
-    Allow from all
-</Directory>
