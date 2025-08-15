@@ -78,3 +78,15 @@ docker cp nginx-uikit:/cert.pem /Users/dazn311/Project/uikit-220704-back/nginx/c
 docker cp nginx-uikit:/csr.pem /Users/dazn311/Project/uikit-220704-back/nginx/certs
 docker cp nginx-uikit:/key.pem /Users/dazn311/Project/uikit-220704-back/nginx/certs
 
+
+SELECT
+    Orders.OrderID,
+    Customers.CustomerName,
+    Orders.OrderDate
+FROM
+    Orders
+INNER JOIN
+    Customers ON Orders.CustomerID = Customers.CustomerID
+WHERE
+    Customers.City = 'London'
+    AND Orders.OrderDate > '2024-01-01';

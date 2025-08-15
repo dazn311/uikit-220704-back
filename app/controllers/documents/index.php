@@ -42,20 +42,6 @@ $recent_posts[] = [
 require_once VIEWS . '/documents/index.tpl.php';
 
 /**
-SELECT
-    Orders.OrderID,
-    Customers.CustomerName,
-    Orders.OrderDate
-FROM
-    Orders
-INNER JOIN
-    Customers ON Orders.CustomerID = Customers.CustomerID
-WHERE
-    Customers.City = 'London'
-    AND Orders.OrderDate > '2024-01-01';
- */
-
-/**
  * $documents = $db->query("
  * SELECT
  * documents.fileName,
