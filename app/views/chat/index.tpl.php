@@ -326,10 +326,11 @@
 </style>
 <main class="main py-3">
     <div class="container">
+        <?php if (count($users) > 0): ?>
         <div class="chatbox">
             <div class="top-bar">
-                <div class="avatar"><p>Vlad</p></div>
-                <div class="name">Voldemort</div>
+                <div class="avatar"><p>V</p></div>
+                <div class="name"><?=$users[0]['name'] ?></div>
                 <div class="icons">
                     <i class="fas fa-phone"></i>
                     <i class="fas fa-video"></i>
@@ -364,17 +365,20 @@
                 </div>
             </div>
         </div>
+        <?php endif; ?>
         <div class="messages"></div>
         <div class="profile">
             <div class="avatar"><p>H</p></div>
             <div class="name2">Harry<p class="email">Harry@potter.com</p></div>
         </div>
         <ul class="people">
+            <?php foreach ($users as $user) : ?>
             <li class="person focus">
-                <span class="title">Voldemort </span>
+                <span class="title"><?=$user['name'] ?> </span>
                 <span class="time">2:50pm</span><br>
                 <span class="preview">What are you getting... Oh, oops...</span>
             </li>
+            <?php endforeach; ?>
             <li class="person">
                 <span class="title">Ron</span>
                 <span class="time">2:25pm</span><br>
