@@ -41,7 +41,7 @@
             <div class="bottom-bar">
                 <div class="chat">
                     <input type="text" placeholder="Type a message..." />
-                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    <button type="submit"><i class="fas fa-paper-plane"></i>send</button>
                 </div>
             </div>
         </div>

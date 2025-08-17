@@ -14,7 +14,7 @@ html {
 }
 body {
   display: grid;
-  background: linear-gradient(to bottom left, var(--primary-color) 40%, var(--white-color) 100%);
+  /*background: linear-gradient(to bottom left, var(--primary-color) 40%, var(--white-color) 100%);*/
   font-family: 'Lato', sans-serif;
 }
 .container {

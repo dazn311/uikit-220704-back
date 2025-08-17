@@ -43,7 +43,10 @@ $router->get('api/document/new/(?<type>\w{6})', 'api/document-type.php');
 
 ///api/user/sessionPing?lastStamp=0m
 $router->get('api/user/sessionPing', 'api/sessionPing.php');
-//dump($router->routes);
+
+$router->post('api/subscription', 'api/subscription.php');
+$router->get('api/subscription', 'api/subscription.php');
+
 
 // User
 $router->add('register', 'users/register.php', ['get', 'post'])->only('guest');

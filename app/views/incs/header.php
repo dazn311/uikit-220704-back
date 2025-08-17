@@ -8,9 +8,11 @@
     <title><?= $title ?? 'TITLE' ?></title>
     <base href="<?= PATH ?>/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/main.css?v=2">
-    <link rel="stylesheet" href="static/css/chat.css?v=2">
-    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="icon" href="static/images/favicon.ico">
+<!--    <link rel="stylesheet" href="static/css/chat.css?v=2">-->
+<!--    <script type="text/javascript" src="static/js/sw.js?v=2"></script>-->
+    <script type="text/javascript" src="registerSW.js?v=2"></script>
 </head>
 
 <body>

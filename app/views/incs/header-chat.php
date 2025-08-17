@@ -8,7 +8,7 @@
     <title><?= $title ?? 'TITLE' ?></title>
     <base href="<?= PATH ?>/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/chat.css">
+<!--    <link rel="stylesheet" href="static/css/chat.css">-->
     <link rel="icon" href="img/favicon.ico">
 </head>
 
