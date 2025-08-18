@@ -18,8 +18,8 @@ if (isset($_FILES['docFile']) && $_FILES['docFile']['error'] === 0) {
     $data['docFile'] = null;
 }
 
-if (isset($data['isNewDoc'])) {
-    $data['mode'] = $data['isNewDoc'] === '' ? 'read' : 'edit';
+if (isset($data['readMode'])) {
+    $data['mode'] = $data['readMode'] === 'on' ? 'edit' : 'read';
 } else {
     $data['mode'] = 'read';
 }

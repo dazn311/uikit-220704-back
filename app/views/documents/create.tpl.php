@@ -54,7 +54,7 @@ require VIEWS . '/incs/header.php';
                     </div>
                     <div class="col-12">
                         <div class="form-check">
-                            <input  id="readMode" name="readMode" class="form-check-input" type="checkbox" <?=oldCheck('readMode') ?> >
+                            <input  id="readMode" name="readMode" class="form-check-input" type="checkbox" checked <?=oldCheck('readMode') ?> >
                             <label class="form-check-label" for="readMode">
                                 файл для редактирования : <?=oldCheck('readMode') ?>
                             </label>
@@ -110,14 +110,15 @@ require VIEWS . '/incs/header.php';
                     console.log('98 type',type);
                     if (/^\w{6}\d{7}-(read|edit)-\w+-\d{6}/i.test(name)) {
                         //'desadv1252660-read-Kramp-250813_0324.json'
-                        const res = /^(\w{6})(\d{7})-(read|edit)-(\w+)-(\d{6})/i.exec('desadv1252660-read-Kramp-250813_0324.json');//Array|null
+                        const res = /^(\w{6})(\d{7})-(read|edit)-(\w+)-(\d{6})/i.exec(name);//Array|null
                         if (Array.isArray(res)) {
                             const [name,type,id,mode,buyer,date] = res;
                             $fileName.value = name;//getValue(type,id,mode,buyer,date);
                             $idDoc.value = id;
                             $typeDoc.value = type;
                             $userName.value = buyer;
-                            $readMode.value = mode;
+                            // overall.checked = true;
+                            $readMode.checked = /(edit|new)/.test(mode);
 
                         }
                         //[
@@ -132,6 +133,27 @@ require VIEWS . '/incs/header.php';
                 }
             }
 
+        });
+        $readMode?.addEventListener('change', (event) => {
+            console.log('137 event',event);
+            const checked = event.target.checked;
+            const fileName = $fileName.value;
+            console.log('140 checked',JSON.stringify(checked));
+
+            if (/^\w{6}\d{7}-(read|edit)-\w+-\d{6}/i.test(fileName)) {
+                //'desadv1252660-read-Kramp-250813_0324.json'
+                const res = /^(\w{6})(\d{7})-(read|edit)-(\w+)-(\d{6})/i.exec(fileName);//Array|null
+                if (Array.isArray(res)) {
+                    const [name,type,id,mode,buyer,date] = res;
+                    const replaceValue = checked ? 'edit':'read';
+                    $fileName.value = (name ?? '').replace(/(edit|read)/, replaceValue);//getValue(type,id,mode,buyer,date);
+                    // $idDoc.value = id;
+                    $typeDoc.value = replaceValue;
+                    $userName.value = buyer;
+                    $readMode.value = /(edit|new)/.test(mode);
+
+                }
+            }
         });
         $typeDoc?.addEventListener('change', (event) => {
             console.log('event:',event);

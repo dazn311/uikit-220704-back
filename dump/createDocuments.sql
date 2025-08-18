@@ -28,6 +28,7 @@ CREATE TABLE messages (
 );
 
 INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (1, 'kramp@gmail.com', 'Kramp', '12345', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 0);
+INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (1, 'allTools@gmail.com', 'allTools', '12345', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 0);
 INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (2, 'daz@gmail.com', 'Dazn311', '12345', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 1);
 INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (3, 'alex250555@bk.ru', 'Александр Рыженков', '$2y$10$0tUwDA0PeoKDK2y.83XM3.68sCRxb8ACvfEjvZoJ3Wm9zmCKSxn9u', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 1);
 INSERT INTO cislinkdb.users (id, email, name, password, createDate, remember_me, avatar, role) VALUES (4, 'alex2505@bk.ru', 'Alexander', '$2y$10$mKa0eFlj229qrIRURXznj.m6fjQC5w.HZu.HRjmB5Q5m/t1xDWLhK', '2025-08-13 01:30:12', '1', '/uploads/avatars/2025/01/01/avatar-0.png', 1);
@@ -37,4 +38,6 @@ INSERT INTO cislinkdb.documents (id, type, idDoc, mode, createDate, userId, file
 INSERT INTO cislinkdb.documents (id, type, idDoc, mode, createDate, userId, fileName) VALUES (3, 'desadv', '1248304', 'edit', '2025-08-11 23:31:18', 1, 'desadv1248304-edit-Kramp-250804.json');
 INSERT INTO cislinkdb.documents (id, type, idDoc, mode, createDate, userId, fileName) VALUES (4, 'desadv', '1248304', 'read', '2025-08-12 08:32:28', 1, 'desadv1248304-read-Kramp-250812json');
 INSERT INTO cislinkdb.documents (id, type, idDoc, mode, createDate, userId, fileName) VALUES (5, 'desadv', '1252660', 'read', '2025-08-13 01:24:06', 1, 'desadv1252660-read-Kramp-250813json');
+INSERT INTO cislinkdb.documents (id, type, idDoc, mode, createDate, userId, fileName) VALUES (6, 'pricat', '1252665', 'edit', '2025-08-18 09:47:51', 5, 'pricat1252665-edit-allTools-250818json');
+
 
