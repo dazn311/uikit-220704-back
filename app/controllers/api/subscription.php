@@ -14,6 +14,8 @@ $auth = [
 http_response_code(200);
 header("HTTP/1.1 200 OK");
 $json_data = file_get_contents('php://input');
+//echo json_encode(["token" => "0"]);
 
-sendPushMessage($json_data,$auth, '{"title":"Hi, Natusya","body":"how a you? ","url":"chat"}');
+//sleep(2);
+sendPushMessage($json_data,$auth, '{"title":"Hi, Natusya","body":"how a you? ","url":"chat?userId=2"}');
 
