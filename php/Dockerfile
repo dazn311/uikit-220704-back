@@ -8,8 +8,10 @@ ENV PHP_POST_MAX_SIZE: 512M
 ENV PHP_IDE_CONFIG: 512M
 
 RUN apt-get -y update \
+    && apt-get install -y libgmp-dev \
     && apt-get install -y libpq-dev \
     && pecl install xdebug \
+    && docker-php-ext-install gmp \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-enable xdebug \
     && docker-php-ext-enable pdo_mysql \

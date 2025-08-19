@@ -18,6 +18,9 @@ docker-compose exec app php /app/bin/registration.php
 docker-compose exec php php /var/www/html/homes_staging/bin/mysql_create_tables.php
 docker-compose exec php php /var/www/html/homes_staging/bin/registration.php
 
+docker exec -it a98c02ccf8ac nginx -s reload
+docker exec -it nginx-uikit nginx -s reload
+
 ========================
 https://selectel.ru/blog/docker-compose/
 ==========================
@@ -75,3 +78,15 @@ docker cp nginx-uikit:/cert.pem /Users/dazn311/Project/uikit-220704-back/nginx/c
 docker cp nginx-uikit:/csr.pem /Users/dazn311/Project/uikit-220704-back/nginx/certs
 docker cp nginx-uikit:/key.pem /Users/dazn311/Project/uikit-220704-back/nginx/certs
 
+
+SELECT
+    Orders.OrderID,
+    Customers.CustomerName,
+    Orders.OrderDate
+FROM
+    Orders
+INNER JOIN
+    Customers ON Orders.CustomerID = Customers.CustomerID
+WHERE
+    Customers.City = 'London'
+    AND Orders.OrderDate > '2024-01-01';

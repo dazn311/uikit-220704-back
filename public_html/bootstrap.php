@@ -1,9 +1,11 @@
 <?php
 
-$container = new \Utils\ServiceContainer();
-$container->setService(\Utils\Db::class, function () {
+use \Utils\{App, ServiceContainer, Db};
+
+$container = new ServiceContainer();
+$container->setService(Db::class, function () {
     $db_config = require CONFIG . '/db.php';
-    return (\Utils\Db::getInstance())->getConnection($db_config);
+    return (Db::getInstance())->getConnection($db_config);
 });
 
-\Utils\App::setContainer($container);
+App::setContainer($container);

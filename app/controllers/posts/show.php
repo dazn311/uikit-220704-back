@@ -14,5 +14,5 @@ $post = [
   'excerpt'=> 'excerpt 2',
   'content'=> 'content 2',
 ];
-$title = "My Blog :: {$post['title']}";
+$title = "Cislink :: {$post['title']}";
 require_once VIEWS . '/posts/show.tpl.php';

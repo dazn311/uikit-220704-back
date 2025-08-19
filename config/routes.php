@@ -1,18 +1,30 @@
 <?php
 
+use Utils\middleware\{Auth, Guest};
+
 /** @var $router */
 
 const MIDDLEWARE = [
-    'auth' => \Utils\middleware\Auth::class,
-    'guest' => \Utils\middleware\Guest::class,
+    'auth' => Auth::class,
+    'guest' => Guest::class,
 ];
 
+///uploads/avatars/2025/08/11/avatar-5.png
+$router->get('uploads/avatars/\d+/\d+/\d+/avatar-\d+.png', 'api/uploads.php');
+//chat;
+$router->get('chat', 'chat/index.php');
 // Posts
-$router->get('', 'posts/index.php');
 $router->get('posts', 'posts/show.php');
 $router->get('posts/create', 'posts/create.php')->only('auth');
 $router->post('posts', 'posts/store.php');
 $router->delete('posts', 'posts/destroy.php');
+
+// Documents
+$router->get('', 'documents/index.php');
+$router->get('document/(?<id>\d+)', 'documents/show.php');
+$router->get('documents/create', 'documents/create.php')->only('auth');
+$router->post('documents', 'documents/store.php');
+$router->delete('documents', 'documents/destroy.php');
 
 // Pages
 $router->get('about', 'about.php');
@@ -31,7 +43,10 @@ $router->get('api/document/new/(?<type>\w{6})', 'api/document-type.php');
 
 ///api/user/sessionPing?lastStamp=0m
 $router->get('api/user/sessionPing', 'api/sessionPing.php');
-//dump($router->routes);
+
+$router->post('api/subscription', 'api/subscription.php');
+$router->get('api/subscription', 'api/subscription.php');
+
 
 // User
 $router->add('register', 'users/register.php', ['get', 'post'])->only('guest');

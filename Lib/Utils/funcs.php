@@ -1,9 +1,8 @@
 <?php
 
 use JetBrains\PhpStorm\NoReturn;
-use \Utils\Router;
-use Utils\Db;
-use Utils\App;
+use Utils\{App, Db, Router};
+
 function dump($data): void
 {
     echo "<pre>";
@@ -30,14 +29,16 @@ function print_arr($data): void
     require VIEWS . "/errors/{$code}.tpl.php";
     die;
 }
-
+/**
+load fillable from $_POST , $_GET;
+ */
 function load($fillable = [], $isPost = true): array
 {
   $loadData = $isPost ? $_POST : $_GET;
 
   $data = [];
   foreach ($fillable as $key) {
-    $value = $loadData[$key];
+    $value = $loadData[$key] ?? null;
     if (isset($value)) {
       $data[$key] = is_array($value) ? $value : trim($value);
     } else {
@@ -51,6 +52,14 @@ function load($fillable = [], $isPost = true): array
 function old($fieldName): string
 {
     return isset($_POST[$fieldName]) ? h($_POST[$fieldName]) : '';
+}
+
+function oldCheck($fieldName): string
+{
+    if (isset($_POST[$fieldName])) {
+       return $_POST[$fieldName] == 'on' ? 'checked' : '';
+    }
+    return '';
 }
 
 function h($str): string

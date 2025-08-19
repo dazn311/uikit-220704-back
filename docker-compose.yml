@@ -55,6 +55,8 @@ services:
     environment:
       MYSQL_DATABASE: cislinkdb
       MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_CHARACTER_SET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_general_ci
     volumes:
       - ./dump:/docker-entrypoint-initdb.d
     networks:

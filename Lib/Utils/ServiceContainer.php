@@ -9,7 +9,7 @@ class ServiceContainer
 
     protected array $services = [];
 
-    public function setService($service, $func): void
+    public function setService(string $service, object $func): void
     {
         $this->services[$service] = $func;
     }

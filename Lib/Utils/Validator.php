@@ -5,10 +5,10 @@ namespace Utils;
 class Validator
 {
 
-    protected $errors = [];
-    protected $data_items;
-    protected $rules_list = ['required', 'min', 'max', 'email', 'match', 'unique', 'ext', 'size'];
-    protected $messages = [
+    protected array $errors = [];
+    protected array $data_items;
+    protected array $rules_list = ['required', 'min', 'max', 'email', 'match', 'unique', 'ext', 'size'];
+    protected array $messages = [
         'required' => 'The :fieldname: field is required',
         'min' => 'The :fieldname: field must be a minimun :rulevalue: characters',
         'max' => 'The :fieldname: field must be a maximum :rulevalue: characters',
@@ -34,7 +34,7 @@ class Validator
         return $this;
     }
 
-    protected function check($field)
+    protected function check($field): void
     {
         foreach ($field['rules'] as $ruleName => $rule_value) {
             if (in_array($ruleName, $this->rules_list)) {
@@ -52,22 +52,22 @@ class Validator
         }
     }
 
-    protected function addError($fieldname, $error)
+    protected function addError($fieldname, $error): void
     {
         $this->errors[$fieldname][] = $error;
     }
 
-    public function getErrors()
+    public function getErrors(): array
     {
         return $this->errors;
     }
 
-    public function hasErrors()
+    public function hasErrors(): bool
     {
         return !empty($this->errors);
     }
 
-    public function listErrors($fieldname)
+    public function listErrors($fieldname): string
     {
         $output = '';
         if (isset($this->errors[$fieldname])) {
@@ -80,17 +80,17 @@ class Validator
         return $output;
     }
 
-    protected function required($value, $rule_value)
+    protected function required($value, $rule_value): bool
     {
         return !empty($value);
     }
 
-    protected function min($value, $rule_value)
+    protected function min($value, $rule_value): bool
     {
         return mb_strlen($value, 'UTF-8') >= $rule_value;
     }
 
-    protected function max($value, $rule_value)
+    protected function max($value, $rule_value): bool
     {
         return mb_strlen($value, 'UTF-8') <= $rule_value;
     }
@@ -100,18 +100,18 @@ class Validator
         return filter_var($value, FILTER_VALIDATE_EMAIL);
     }
 
-    protected function match($value, $rule_value)
+    protected function match($value, $rule_value): bool
     {
         return $value === $this->data_items[$rule_value];
     }
 
-    protected function unique($value, $rule_value)
+    protected function unique($value, $rule_value): bool
     {
         $data = explode(':', $rule_value);
         return (!db()->query("SELECT {$data[1]} FROM {$data[0]} WHERE {$data[1]} = ?", [$value])->getColumn());
     }
 
-    protected function ext($value, $rule_value)
+    protected function ext($value, $rule_value): bool
     {
         if (empty($value['name'])) {
             return true;
@@ -121,7 +121,7 @@ class Validator
         return in_array($file_ext, $allowed_exts);
     }
 
-    protected function size($value, $rule_value)
+    protected function size($value, $rule_value): bool
     {
         if (empty($value['size'])) {
             return true;

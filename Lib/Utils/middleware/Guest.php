@@ -1,13 +1,11 @@
 <?php
 
-
 namespace Utils\middleware;
 
 
-class Guest
+class Guest implements IUser
 {
-
-    public function handle()
+    public function handle(): void
     {
         if (check_auth()) {
             redirect('/');

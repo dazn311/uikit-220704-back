@@ -1,16 +1,16 @@
 <?php
 
-use Utils\App;
-use Utils\Db;
-use Utils\Validator;
+use Utils\{App, Db, Validator};
 
-$title = "My Blog :: Login";
+$title = "Cislink :: Login";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     /** @var Db $db */
     $db = App::get(Db::class);
 
     $data = load(['email', 'password']);
+    $_SESSION['oldData'] = $data;
+
     $validator = new Validator();
     $validation = $validator->validate($data, [
         'email' => [
@@ -41,6 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['success'] = 'Successful login';
         redirect(PATH);
     }
+} else {
+    $_SESSION['oldData'] = ['email'=> '', 'password'=> ''];
 }
 
 require_once VIEWS . '/users/login.tpl.php';

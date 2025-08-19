@@ -4,13 +4,13 @@
 namespace Utils\middleware;
 
 
-class Auth
+class Auth implements IUser
 {
 
-    public function handle()
+    public function handle(): void
     {
         if (!check_auth()) {
-            redirect('/register');
+            redirect('/login');
         }
     }
 
