@@ -9,6 +9,7 @@
     <base href="<?= PATH ?>/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/main.css">
+<!--    <link rel="stylesheet" href="{{ asset('static/css/main.css', 'css') }}" />-->
     <link rel="icon" href="static/images/favicon.ico">
 <!--    <link rel="stylesheet" href="static/css/chat.css?v=2">-->
 <!--    <script type="text/javascript" src="static/js/sw.js?v=2"></script>-->

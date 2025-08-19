@@ -5,6 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
+                <h1>Контакты</h1>
 
                 <?= $post ?>
 

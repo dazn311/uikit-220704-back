@@ -17,5 +17,5 @@ if (!$users) {
     $users = [];
 }
 //dd($users);
-$title = "Cislink :: New document";
+$title = "Добавить документ :: Cislink";
 require_once VIEWS . '/documents/create.tpl.php';
