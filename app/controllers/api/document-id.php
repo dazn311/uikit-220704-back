@@ -2,6 +2,7 @@
 /**
 document-id.php
  */
+
 require_once __DIR__ . '/helpers.php';
 require SHARED . '/createCookies.php';
 require SHARED . '/response-header-api.php';
@@ -16,7 +17,6 @@ try {
         echo json_encode($currentKnowledge);
     } else {
         header("HTTP/1.0 404 Not Found");
-        echo json_encode(["error"=>true, "message"=>"Document not found"]);
     }
 } catch (PDOException $e) {
     echo json_encode(["error"=>true, "message"=>$e->getMessage()]);

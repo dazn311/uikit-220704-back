@@ -114,3 +114,34 @@ function route_param(string $key, $default = null): string|null
 {
     return Router::$route_params[$key] ?? $default;
 }
+function getHeader(): array
+{
+    $is401 = false;
+    $cookies = [];
+    $headers = [];
+    if (isset($http_response_header)) {
+        foreach ($http_response_header as $header) {
+            $headers[] = $header;
+            if (preg_match('/^Set-Cookie:\s*(.*?)$/i', $header, $matches)) {
+                var_dump($matches);
+                $rea125 = explode('=',$matches[1]);
+                setcookie($rea125[0], $rea125[1], time() + (86400 * 30), '/', 'localhost:8085', false, false);
+                $cookies[] = $matches[1];
+
+            }
+            //  HTTP/1.1 401 Unauthorized
+            if (preg_match('#^HTTP/1.1 (\d+) Unauthorized$#', $header, $matches)) {
+                if ($matches[1] === '401') {
+                    $is401 = true;
+                }
+            }
+//            var_dump($header);
+        }
+    }
+//    var_dump($cookies);
+    return [
+        'is401' => $is401,
+        'cookies' => $cookies,
+        'headers' => $headers,
+    ];
+}
