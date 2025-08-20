@@ -37,7 +37,7 @@ $router->get('contact', 'contact.php');
 $router->get('api/user/info', 'api/user-info.php');
 
 //api list;
-$router->get('api/filters', 'api/no-find-route.php');
+$router->get('api/filters/(?<type>\w{6})', 'api/no-find-route.php');
 $router->get('api/(?<type>\w{6})/list', 'api/no-find-route.php');
 
 // api/document/new/invrpt?isEditMode=true

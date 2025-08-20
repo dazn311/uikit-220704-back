@@ -9,5 +9,5 @@ $arr_cookie_options = array (
                 );
 setcookie('AuthSSO', '00777', $arr_cookie_options); 
 
-setcookie('daz', 'forLocal', time() + (86400 * 30), '/', 'localhost', false, false);
+setcookie('daz', 'forLocal', time() + (86400 * 30), '/', 'localhost:8085', false, false);
 setcookie('daz22', 'cislink', time() + (86400 * 30), '/', '.cislink.moscow', false, false);
