@@ -36,6 +36,10 @@ $router->get('contact', 'contact.php');
 // api/user/info
 $router->get('api/user/info', 'api/user-info.php');
 
+//api list;
+$router->get('api/filters', 'api/no-find-route.php');
+$router->get('api/(?<type>\w{6})/list', 'api/no-find-route.php');
+
 // api/document/new/invrpt?isEditMode=true
 // api/document/1248923?isEditMode=true
 $router->get('api/document/(?<id>\d+)', 'api/document-id.php');

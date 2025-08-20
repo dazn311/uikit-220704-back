@@ -41,6 +41,9 @@ class Router
             }
         }
         if (!$isMatches) {
+            if (preg_match("#^api/\w+#", $this->uri, $matches)) {
+                require CONTROLLERS . "/api/no-find-route.php";
+            }
             abort();
         }
     }
