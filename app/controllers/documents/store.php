@@ -58,7 +58,7 @@ if (!$validation->hasErrors()) {
     $userId = $db->query("SELECT `id` FROM users WHERE users.name = ?;", [$data['userName']])->find();
     $data['userId'] =  $userId['id'] ?? 0;
     $data['userId'] =  (string) $data['userId'];
-    $request = [$data['typeDoc'], $data['idDoc'], $data['mode'],date("Y-m-d H:i:s"), $data['userId'], $data['fileName'] . 'json'];
+    $request = [$data['typeDoc'], $data['idDoc'], $data['mode'],date("Y-m-d H:i:s"), $data['userId'], $data['fileName'] . '.json'];
     $res = $db->query("INSERT INTO documents (`type`, `idDoc`, `mode`,`createDate`,`userId`,`fileName`) VALUES (?,?,?,?,?,?)", $request);
 
      if ($data['userId'] && $res) {

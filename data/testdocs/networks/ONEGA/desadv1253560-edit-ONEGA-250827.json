@@ -1,0 +1,1069 @@
+{
+  "metaData": {
+    "header": {
+      "name": "header",
+      "label": "",
+      "dataType": "section"
+    },
+    "title": {
+      "name": "title",
+      "label": "НАКЛАДНАЯ",
+      "dataType": "section",
+      "attributes": {
+        "class": "title"
+      },
+      "style": {
+        "justifySelf": "start",
+        "textAlign": "center",
+        "display": "flex"
+      }
+    },
+    "tabInfo": {
+      "name": "tabInfo",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "tabInfo"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "location": {
+          "name": "location",
+          "label": "Точка доставки",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "locationDscr": {
+              "name": "locationDscr",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "locationAddr": {
+              "name": "locationAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "locationGln": {
+              "name": "locationGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        },
+        "supplier": {
+          "name": "supplier",
+          "label": "Поставщик",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "supplierName": {
+              "name": "supplierName",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "supplierYurAddr": {
+              "name": "supplierYurAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "supplierGln": {
+              "name": "supplierGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        },
+        "buyer": {
+          "name": "buyer",
+          "label": "Покупатель",
+          "dataType": "section",
+          "style": {
+            "flexDirection": "column",
+            "display": "flex"
+          },
+          "items": {
+            "buyerName": {
+              "name": "buyerName",
+              "label": "Название:",
+              "dataType": "string"
+            },
+            "buyerYurAddr": {
+              "name": "buyerYurAddr",
+              "label": "Адрес:",
+              "dataType": "string"
+            },
+            "buyerGln": {
+              "name": "buyerGln",
+              "label": "GLN:",
+              "dataType": "string"
+            }
+          }
+        },
+        "logo": {
+          "name": "logo",
+          "label": "",
+          "dataType": "image"
+        }
+      }
+    },
+    "tabServiceInfo": {
+      "name": "tabServiceInfo",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "tabServiceInfo"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex",
+        "flexDirection": "column"
+      },
+      "items": {
+        "tabServiceInfoRow1": {
+          "name": "tabServiceInfoRow1",
+          "label": "",
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "orderNumber": {
+              "name": "orderNumber",
+              "label": "Номер заказа:",
+              "dataType": "string"
+            },
+            "orderDate": {
+              "name": "orderDate",
+              "label": "Дата заказа:",
+              "dataType": "date"
+            },
+            "orderDelivDate": {
+              "name": "orderDelivDate",
+              "label": "Дата доставки из заказа:",
+              "dataType": "date"
+            }
+          }
+        },
+        "tabServiceInfoRow2": {
+          "name": "tabServiceInfoRow2",
+          "label": "",
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "docNumber": {
+              "name": "docNumber",
+              "label": "Номер накладной:",
+              "dataType": "string",
+              "isEditable": true,
+              "required": true,
+              "rules": [
+                {
+                  "name": "checkStringLength",
+                  "params": {
+                    "min": "1",
+                    "max": "35"
+                  }
+                }
+              ]
+            },
+            "docDate": {
+              "name": "docDate",
+              "label": "Дата накладной:",
+              "dataType": "date",
+              "isEditable": true,
+              "required": true
+            },
+            "delivDate": {
+              "name": "delivDate",
+              "label": "Дата доставки:",
+              "dataType": "date",
+              "isEditable": true,
+              "required": true
+            }
+          }
+        },
+        "tabServiceInfoRow3": {
+          "name": "tabServiceInfoRow3",
+          "label": null,
+          "dataType": "section",
+          "attributes": {
+            "class": "tabServiceInfoRow"
+          },
+          "items": {
+            "options__ConsignorInn": {
+              "name": "options__ConsignorInn",
+              "label": "ИНН грузоотправителя:",
+              "dataType": "number",
+              "isEditable": true,
+              "required": false
+            },
+            "options__ConsignorKpp": {
+              "name": "options__ConsignorKpp",
+              "label": "КПП грузоотправителя:",
+              "dataType": "number",
+              "isEditable": true,
+              "required": false
+            }
+          }
+        }
+      }
+    },
+    "serviceTools": {
+      "name": "serviceTools",
+      "label": "",
+      "dataType": "section",
+      "items": {
+        "selectVat": {
+          "name": "selectVat",
+          "label": "",
+          "dataType": "select",
+          "isEditable": true,
+          "catalog": "taxes"
+        },
+        "setVatButton": {
+          "name": "setVatButton",
+          "label": "Выставить НДС",
+          "dataType": "button",
+          "isEditable": true
+        },
+        "selectCountry": {
+          "name": "selectCountry",
+          "label": "",
+          "dataType": "select",
+          "isEditable": true,
+          "catalog": "country"
+        },
+        "setCountryButton": {
+          "name": "setCountryButton",
+          "label": "Выставить страну",
+          "dataType": "button",
+          "isEditable": true,
+          "rules": [
+            {
+              "name": "applyValueToColumn",
+              "params": {
+                "selectBlockName": "selectCountry",
+                "tableBlockName": "docItems",
+                "columnBlockName": "originCountry"
+              }
+            }
+          ]
+        },
+        "saveDraftButton": {
+          "name": "saveDraftButton",
+          "label": "Сохранить черновик",
+          "dataType": "button",
+          "isEditable": true,
+          "rules": [
+            {
+              "name": "saveDraft"
+            }
+          ]
+        },
+        "sendButton": {
+          "name": "sendButton",
+          "label": "Отправить",
+          "dataType": "button",
+          "isEditable": true,
+          "rules": [
+            {
+              "name": "send"
+            }
+          ]
+        },
+        "loadFromFileButton": {
+          "name": "loadFromFileButton",
+          "label": "Загрузить из файла",
+          "dataType": "button",
+          "isEditable": true
+        }
+      }
+    },
+    "docItems": {
+      "name": "docItems",
+      "label": "",
+      "dataType": "array",
+      "attributes": {
+        "class": "tabBlock"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "stretch",
+        "display": "flex"
+      },
+      "items": {
+        "sequenceNumber": {
+          "name": "sequenceNumber",
+          "label": "№",
+          "dataType": "number",
+          "style": {
+            "minWidth": "53px",
+            "width": "53px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        },
+        "ean": {
+          "name": "ean",
+          "label": "Штрихкод",
+          "dataType": "string",
+          "attributes": {
+            "importFileSearchColumn": "true"
+          },
+          "style": {
+            "minWidth": "133px",
+            "width": "133px"
+          }
+        },
+        "prdTo": {
+          "name": "prdTo",
+          "label": "Код заказчика",
+          "dataType": "string",
+          "attributes": {
+            "importFileSearchColumn": "true"
+          },
+          "style": {
+            "minWidth": "133px",
+            "width": "133px"
+          }
+        },
+        "local": {
+          "name": "local",
+          "label": "Код поставщика",
+          "dataType": "string",
+          "attributes": {
+            "importFileSearchColumn": "true"
+          },
+          "style": {
+            "minWidth": "133px",
+            "width": "133px"
+          }
+        },
+        "prdDscr": {
+          "name": "prdDscr",
+          "label": "Наименование",
+          "dataType": "string",
+          "style": {
+            "minWidth": "404px",
+            "width": "404px"
+          }
+        },
+        "orderQty": {
+          "name": "orderQty",
+          "label": "Заказанное кол-во",
+          "dataType": "number",
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "smartFormat",
+              "params": {
+                "precisionForKGM": "3"
+              }
+            }
+          ]
+        },
+        "qty": {
+          "name": "qty",
+          "label": "Кол-во к поставке",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "2"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "smartFormat",
+              "params": {
+                "precisionForKGM": "3"
+              }
+            },
+            {
+              "name": "validateByParentValue",
+              "params": {
+                "compareTo": "orderQty",
+                "plusPCE": "0",
+                "plusKGM": "0",
+                "minusPCE": "",
+                "minusKGM": "",
+                "diffValues": "",
+                "errorMessage": "Количество к поставке не должно превышать заказано!"
+              }
+            }
+          ]
+        },
+        "uom": {
+          "name": "uom",
+          "label": "Ед. изм.",
+          "dataType": "select",
+          "style": {
+            "minWidth": "70px",
+            "width": "70px"
+          },
+          "catalog": "uom"
+        },
+        "itemsPerUnit": {
+          "name": "itemsPerUnit",
+          "label": "Вложение в уп.",
+          "dataType": "number"
+        },
+        "vatPrc": {
+          "name": "vatPrc",
+          "label": "НДС",
+          "dataType": "select",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "3"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "catalog": "taxes"
+        },
+        "price1": {
+          "name": "price1",
+          "label": "Цена без НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "4"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "price2": {
+          "name": "price2",
+          "label": "Цена с НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "5"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__NetAmount": {
+          "name": "options__NetAmount",
+          "label": "Сумма без НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "6"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__TaxAmount": {
+          "name": "options__TaxAmount",
+          "label": "Сумма НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "7"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__GrossAmount": {
+          "name": "options__GrossAmount",
+          "label": "Сумма с НДС",
+          "dataType": "number",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "8"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "originCountry": {
+          "name": "originCountry",
+          "label": "Страна",
+          "dataType": "select",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "9"
+          },
+          "style": {
+            "minWidth": "90px",
+            "width": "90px"
+          },
+          "catalog": "country"
+        },
+        "custDeclar": {
+          "name": "custDeclar",
+          "label": "ГТД",
+          "dataType": "string",
+          "isEditable": true,
+          "required": false,
+          "attributes": {
+            "importFileColumn": "10"
+          },
+          "style": {
+            "minWidth": "192px"
+          },
+          "rules": [
+            {
+              "name": "checkCustDeclar",
+              "params": {
+                "country": "RU;BY;KZ;AM;KG",
+                "diff": "/^[0-9]{8}\\/[0-9]{6}\\/[0-9A-Za-zА-Яа-я]{7}\\/?[0-9A-ZА-Я]{0,3}$/i"
+              }
+            }
+          ]
+        },
+        "options__Inn": {
+          "name": "options__Inn",
+          "label": "ИНН производителя",
+          "dataType": "number",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "11"
+          }
+        },
+        "options__Kpp": {
+          "name": "options__Kpp",
+          "label": "КПП производителя",
+          "dataType": "number",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "12"
+          }
+        },
+        "options__Name": {
+          "name": "options__Name",
+          "label": "Наименование производителя/импортера",
+          "dataType": "string",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "13"
+          },
+          "rules": [
+            {
+              "name": "checkStringLength",
+              "params": {
+                "min": "1",
+                "max": "255"
+              }
+            }
+          ]
+        },
+        "options__DateOfManufactureStart": {
+          "name": "options__DateOfManufactureStart",
+          "label": "Дата производства",
+          "dataType": "date",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "14"
+          }
+        },
+        "options__BestBeforeEnd": {
+          "name": "options__BestBeforeEnd",
+          "label": "Срок годности (дата окончания)",
+          "dataType": "date",
+          "isEditable": true,
+          "required": true,
+          "attributes": {
+            "importFileColumn": "15"
+          }
+        },
+        "options__IdVsd": {
+          "name": "options__IdVsd",
+          "label": "GUID ЭВСД",
+          "dataType": "string",
+          "isEditable": true,
+          "attributes": {
+            "importFileColumn": "16"
+          }
+        },
+        "copyLineButton": {
+          "name": "copyLineButton",
+          "label": "Копировать",
+          "dataType": "button"
+        }
+      }
+    },
+    "docSums": {
+      "name": "docSums",
+      "label": "",
+      "dataType": "section",
+      "attributes": {
+        "class": "docSums"
+      },
+      "style": {
+        "justifySelf": "start",
+        "alignSelf": "flex-end",
+        "display": "flex"
+      },
+      "items": {
+        "itemsCount": {
+          "name": "itemsCount",
+          "label": "Количество строк:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "0"
+              }
+            }
+          ]
+        },
+        "totalQty": {
+          "name": "totalQty",
+          "label": "Общее количество по документу:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "3"
+              }
+            }
+          ]
+        },
+        "options__NetAmount": {
+          "name": "options__NetAmount",
+          "label": "Сумма без НДС:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__GrossAmount": {
+          "name": "options__GrossAmount",
+          "label": "Сумма с НДС:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        },
+        "options__TaxAmount": {
+          "name": "options__TaxAmount",
+          "label": "Сумма НДС:",
+          "dataType": "number",
+          "rules": [
+            {
+              "name": "format",
+              "params": {
+                "precision": "2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "data": {
+    "id": "1253560",
+    "status": "4",
+    "docType": "DESADV",
+    "locationCode": null,
+    "parentDocType": "ORDERS",
+    "buyerToken": "ONEGA",
+    "docNumber": "5",
+    "docDate": "2025-08-27T00:00:00",
+    "delivDate": "2022-10-17T00:00:00",
+    "logo": null,
+    "orderNumber": "1188170м",
+    "orderDate": "2022-10-17T00:00:00",
+    "orderDelivDate": "2022-10-17T00:00:00",
+    "locationDscr": "ООО Онега Склад",
+    "locationAddr": "111111, Московская область, г. Мытищи, ул. Олимпийский пр-т, д. 8",
+    "locationGln": "4607196401046",
+    "supplierName": "Тестовый поставщик ОНЕГА",
+    "supplierYurAddr": null,
+    "supplierGln": "4607196388999",
+    "buyerName": "ООО «ОНЕГА»",
+    "buyerYurAddr": "129343 город Москва, проезд Серебрякова, дом 14, строение 15, этаж 3, комн. 94 ",
+    "buyerGln": "4607196388910",
+    "itemsCount": "1",
+    "totalQty": "10.0000",
+    "location": "168060",
+    "senderCode": null,
+    "options__ORDERS": null,
+    "options__ORDERS__TYPE": "9",
+    "options__NetAmount": "721.20",
+    "options__GrossAmount": "793.30",
+    "options__TaxAmount": "72.10",
+    "options__ConsignorInn": null,
+    "options__ConsignorKpp": null
+  },
+  "docItems": [
+    {
+      "id": "18431684",
+      "sequenceNumber": "1",
+      "ean": "4607023730639",
+      "local": null,
+      "prdTo": "1040100026",
+      "prdDscr": "ПЛЮШКА ДОМАШНЯЯ В/С",
+      "uom": "PCE",
+      "orderQty": "10.0000",
+      "qty": "10.0000",
+      "itemsPerUnit": "1.000",
+      "price1": "72.12",
+      "vatPrc": "10",
+      "price2": "79.33",
+      "originCountry": "AE",
+      "custDeclar": null,
+      "options__PCE": "10",
+      "options__NetAmount": "721.20",
+      "options__TaxAmount": "72.10",
+      "options__GrossAmount": "793.30",
+      "options__Inn": "5555",
+      "options__Kpp": "5555",
+      "options__Name": "пп",
+      "options__DateOfManufactureStart": "2025-08-01T00:00:00",
+      "options__BestBeforeEnd": "2025-08-29T00:00:00",
+      "orderPrice1": "72.12",
+      "orderPrice2": null,
+      "options__IdVsd": null
+    }
+  ],
+  "catalogs": {
+    "taxes": {
+      "0": "0",
+      "10": "10",
+      "20": "20"
+    },
+    "country": {
+      "keyNull": " ",
+      "AD": "Андорра",
+      "AE": "Объединенные Арабские Эмираты",
+      "AF": "Афганистан",
+      "AG": "Антигуа и Барбуда",
+      "AI": "Ангилья о. (GB)",
+      "AL": "Албания",
+      "AM": "Армения",
+      "AN": "Антильские о-ва (NL)",
+      "AO": "Ангола",
+      "AQ": "Антарктика",
+      "AR": "Аргентина",
+      "AS": "Восточное Самоа (US)",
+      "AT": "Австрия",
+      "AU": "Австралия",
+      "AW": "Аруба",
+      "AZ": "Азербайджан",
+      "BA": "Босния и Герцеговина",
+      "BB": "Барбадос",
+      "BD": "Бангладеш",
+      "BE": "Бельгия",
+      "BF": "Буркина-Фасо",
+      "BG": "Болгария",
+      "BH": "Бахрейн",
+      "BI": "Бурунди",
+      "BJ": "Бенин",
+      "BM": "Бермуды",
+      "BN": "Бруней Дарассалам",
+      "BO": "Боливия",
+      "BR": "Бразилия",
+      "BS": "Багамы",
+      "BT": "Бутан",
+      "BV": "Бове о. (NO)",
+      "BW": "Ботсвана",
+      "BY": "Беларусь",
+      "BZ": "Белиз",
+      "CA": "Канада",
+      "CC": "Кокосовые (Киилинг) о-ва (AU)",
+      "CD": "Демократическая Республика Конго",
+      "CF": "Центрально-африканская Республика",
+      "CG": "Конго",
+      "CH": "Швейцария",
+      "CI": "Кот-д'Ивуар",
+      "CK": "Кука о-ва (NZ)",
+      "CL": "Чили",
+      "CM": "Камерун",
+      "CN": "Китай",
+      "CO": "Колумбия",
+      "CR": "Коста-Рика",
+      "CU": "Куба",
+      "CV": "Кабо-Верде",
+      "CX": "Рождества о. (AU)",
+      "CY": "Кипр",
+      "CZ": "Чехия",
+      "DE": "Германия",
+      "DJ": "Джибути",
+      "DK": "Дания",
+      "DM": "Доминика",
+      "DO": "Доминиканская Республика",
+      "DZ": "Алжир",
+      "EC": "Эквадор",
+      "EE": "Эстония",
+      "EG": "Египет",
+      "EH": "Западная Сахара",
+      "ER": "Эритрия",
+      "ES": "Испания",
+      "ET": "Эфиопия",
+      "FI": "Финляндия",
+      "FJ": "Фиджи",
+      "FK": "Фолклендские (Мальвинские) о-ва (GB/AR)",
+      "FM": "Микронезия (US)",
+      "FO": "Фарерские о-ва (DK)",
+      "FR": "Франция",
+      "GA": "Габон",
+      "GB": "Великобритания",
+      "GD": "Гренада",
+      "GE": "Грузия",
+      "GF": "Французская Гвиана (FR)",
+      "GH": "Гана",
+      "GI": "Гибралтар",
+      "GL": "Гренландия (DK)",
+      "GM": "Гамбия",
+      "GN": "Гвинея",
+      "GP": "Гваделупа",
+      "GQ": "Экваториальная Гвинея",
+      "GR": "Греция",
+      "GS": "Южная Георгия и Южные Сандвичевы о-ва",
+      "GT": "Гватемала",
+      "GU": "Гуам",
+      "GW": "Гвинея-Бисау",
+      "GY": "Гайана",
+      "HK": "Гонконг (CN)",
+      "HM": "Херд и Макдональд о-ва (AU)",
+      "HN": "Гондурас",
+      "HR": "Хорватия",
+      "HT": "Гаити",
+      "HU": "Венгрия",
+      "ID": "Индонезия",
+      "IE": "Ирландия",
+      "IL": "Израиль",
+      "IN": "Индия",
+      "IQ": "Ирак",
+      "IR": "Иран",
+      "IS": "Исландия",
+      "IT": "Италия",
+      "JM": "Ямайка",
+      "JO": "Иордания",
+      "JP": "Япония",
+      "KE": "Кения",
+      "KG": "Киргизстан",
+      "KH": "Камбоджа",
+      "KI": "Кирибати",
+      "KM": "Коморские о-ва",
+      "KN": "Сент-Кристофер и Невис",
+      "KP": "Северная Корея (КНДР)",
+      "KR": "Южная Корея (Республика Корея)",
+      "KW": "Кувейт",
+      "KY": "Каймановы о-ва (GB)",
+      "KZ": "Казахстан",
+      "LA": "Лаос",
+      "LB": "Ливан",
+      "LC": "Сент-Люсия",
+      "LI": "Лихтенштейн",
+      "LK": "Шри-Ланка",
+      "LR": "Либерия",
+      "LS": "Лесото",
+      "LT": "Литва",
+      "LU": "Люксембург",
+      "LV": "Латвия",
+      "LY": "Ливия",
+      "MA": "Марокко",
+      "MC": "Монако",
+      "MD": "Молдова",
+      "ME": "Черногория",
+      "MG": "Мадагаскар",
+      "MH": "Маршалловы о-ва",
+      "MK": "Македония",
+      "ML": "Мали",
+      "MM": "Мьянма",
+      "MN": "Монголия",
+      "MO": "Макао (PT)",
+      "MP": "Северные Марианские о-ва (US)",
+      "MQ": "Мартиника",
+      "MR": "Мавритания",
+      "MS": "Монсеррат о. (GB)",
+      "MT": "Мальта",
+      "MU": "Маврикий",
+      "MV": "Мальдивы",
+      "MW": "Малави",
+      "MX": "Мексика",
+      "MY": "Малайзия",
+      "MZ": "Мозамбик",
+      "NA": "Намибия",
+      "NC": "Новая Каледония о. (FR)",
+      "NE": "Нигер",
+      "NF": "Норфолк о. (AU)",
+      "NG": "Нигерия",
+      "NI": "Никарагуа",
+      "NL": "Нидерланды",
+      "NO": "Норвегия",
+      "NP": "Непал",
+      "NR": "Науру",
+      "NU": "Ниуэ о. (NZ)",
+      "NZ": "Новая Зеландия",
+      "OM": "Оман",
+      "PA": "Панама",
+      "PE": "Перу",
+      "PF": "Французская Полинезия",
+      "PG": "Папуа-Новая Гвинея",
+      "PH": "Филиппины",
+      "PK": "Пакистан",
+      "PL": "Польша",
+      "PM": "Сен-Пьер и Микелон (FR)",
+      "PN": "Питкэрн о-ва (GB)",
+      "PR": "Пуэрто-Рико (US)",
+      "PS": "Палестинская автономия",
+      "PT": "Португалия",
+      "PW": "Палау (US)",
+      "PY": "Парагвай",
+      "QA": "Катар",
+      "RE": "Реюньон о. (FR)",
+      "RO": "Румыния",
+      "RS": "Сербия",
+      "RU": "Россия",
+      "RW": "Руанда",
+      "SA": "Саудовская Аравия",
+      "SB": "Соломоновы о-ва",
+      "SC": "Сейшелы",
+      "SD": "Судан",
+      "SE": "Швеция",
+      "SG": "Сингапур",
+      "SH": "Святой Елены о. (GB)",
+      "SI": "Словения",
+      "SJ": "Свалбард и Ян Мейен о-ва (NO)",
+      "SK": "Словакия",
+      "SL": "Сьерра-Леоне",
+      "SM": "Сан Марино",
+      "SN": "Сенегал",
+      "SO": "Сомали",
+      "SR": "Суринам",
+      "ST": "Сан-Томе и Принсипи",
+      "SV": "Сальвадор",
+      "SY": "Сирия",
+      "SZ": "Свазиленд",
+      "TC": "Теркс и Кайкос о-ва (GB)",
+      "TD": "Чад",
+      "TG": "Того",
+      "TH": "Таиланд",
+      "TJ": "Таджикистан",
+      "TK": "Токелау о-ва (NZ)",
+      "TM": "Туркменистан",
+      "TN": "Тунис",
+      "TO": "Тонга",
+      "TP": "Восточный Тимор",
+      "TR": "Турция",
+      "TT": "Тринидад и Тобаго",
+      "TV": "Тувалу",
+      "TW": "Тайвань",
+      "TZ": "Танзания",
+      "UA": "Украина",
+      "UG": "Уганда",
+      "US": "Соединенные Штаты Америки",
+      "UY": "Уругвай",
+      "UZ": "Узбекистан",
+      "VA": "Ватикан",
+      "VC": "Сен-Винсент и Гренадины",
+      "VE": "Венесуэла",
+      "VG": "Виргинские о-ва (GB)",
+      "VI": "Виргинские о-ва (US)",
+      "VN": "Вьетнам",
+      "VU": "Вануату",
+      "WF": "Уоллис и Футуна о-ва (FR)",
+      "WS": "Самоа",
+      "YE": "Йемен",
+      "YT": "Майотта о. (KM)",
+      "YU": "Югославия",
+      "ZA": "Южная Африка",
+      "ZM": "Замбия",
+      "ZW": "Зимбабве"
+    },
+    "uom": {
+      "KGM": "кг",
+      "NMP": "упак",
+      "PCE": "шт"
+    }
+  },
+  "multipleOptions": null
+}

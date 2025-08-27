@@ -10,6 +10,7 @@ require_once __DIR__ . '/bootstrap.php';
 require CORE . '/funcs.php';
 
 $router = new Router();
+
 require CONFIG . '/routes.php';
 try {
     $router->match();
